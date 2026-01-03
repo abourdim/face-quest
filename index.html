@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Face Quest Lab</title>
+
+  <meta name="theme-color" content="#061022" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="bg-orbs"></div>
+
+  <div class="shell">
+    <!-- WORKSHOP-STYLE HERO TOP BAR -->
+    <header class="topbar hero-topbar">
+      <div class="hero-brand">
+        <div class="hero-left">
+          <img class="hero-logo logo-float" src="logo.svg" alt="logo" />
+        </div>
+
+        <div class="hero-center">
+          <div class="hero-title title-workshop">🤖 Face Quest Lab • Level Up!</div>
+          <div class="hero-sub">Teach the app your face • Unlock missions • micro:bit Robot Buddy</div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-tagline">FACE QUEST</div>
+
+          <div class="pill pill-xp" id="pillXp" title="Earn XP when you Enroll + Verify!">
+            <span class="pill-emoji" aria-hidden="true">⭐</span>
+            <span>XP: <span id="xpValue">0</span></span>
+          </div>
+
+          <div class="pill pill-ready" id="pillTop">
+            <span class="pill-dot ok" id="pillDot"></span>
+            <span id="topChipText">Idle. Click Start.</span>
+          </div>
+
+          <button class="btn btn-ghost" id="btnClearCache">Clear cache</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN GRID -->
+    <main class="grid">
+      <!-- LEFT COLUMN -->
+      <section class="stack">
+        <!-- CAMERA CARD -->
+        <div class="card glass">
+          <div class="card-head">
+            <div>
+              <div class="card-title">📷 FACE SCANNER</div>
+              <div class="card-sub">Center your face in the frame, then teach (enroll) or unlock (verify).</div>
+            </div>
+
+            <div class="pill" id="statusPill">
+              <span class="pill-dot" id="statusDot"></span>
+              <span id="statusPillText">Idle. Click Start.</span>
+            </div>
+          </div>
+
+          <div class="video-wrap">
+            <video id="video" autoplay playsinline muted></video>
+            <div class="scanline"></div>
+            <div class="vignette"></div>
+          </div>
+
+          <div class="actions">
+            <button id="btnStart" class="btn btn-primary">🚀 Start Mission</button>
+            <button id="btnEnroll" class="btn btn-soft" disabled>🧠 Teach My Face</button>
+            <button id="btnVerify" class="btn btn-soft" disabled>🔓 Unlock!</button>
+            <button id="btnClear" class="btn btn-ghost" disabled>🧹 Reset Face</button>
+
+            <!-- Speech (uses browser Web Speech APIs) -->
+            <button id="btnSpeech" class="btn btn-ghost" type="button" title="Toggle spoken feedback">🔊 Speech: Off</button>
+            <button id="btnVoice" class="btn btn-ghost" type="button" title="Voice commands (Start / Teach / Unlock / Reset)">🎤 Voice</button>
+          </div>
+
+          <div class="settings">
+            <div class="field">
+              <label for="selDetector">Detector</label>
+              <select id="selDetector">
+                <option value="ssd">SSD (accurate)</option>
+                <option value="tiny">Tiny (fast)</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="selDistance">Distance</label>
+              <select id="selDistance">
+                <option value="euclidean">Euclidean</option>
+                <option value="cosine">Cosine</option>
+              </select>
+            </div>
+
+            <div class="field wide">
+              <label for="rngThreshold">Threshold <span class="muted" id="txtThreshold">0.60</span></label>
+              <input id="rngThreshold" type="range" min="0.30" max="1.20" step="0.01" value="0.60" />
+            </div>
+
+            <div class="field wide">
+              <label for="rngVerifyFrames">Verify frames <span class="muted" id="txtVerifyFrames">12</span></label>
+              <input id="rngVerifyFrames" type="range" min="5" max="25" step="1" value="12" />
+            </div>
+          </div>
+
+          <div class="tips">
+            <div class="tips-title">Quick Tips</div>
+            <ol>
+              <li>Use good light (like a science lab!) and keep your face centered</li>
+              <li>Teach once, then unlock anytime</li>
+              <li>If it says “No Match” a lot: try moving closer or gently raising the threshold</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- MICRO:BIT CARD -->
+        <div class="card glass">
+          <div class="card-head">
+            <div>
+              <div class="card-title">🔗 ROBOT BUDDY (micro:bit)</div>
+              <div class="card-sub">BLE UART link — your robot can celebrate MATCH / NO</div>
+            </div>
+
+            <div class="pill" id="mbPill">
+              <span class="pill-dot bad" id="mbConnDot"></span>
+              <span id="mbConnText">DISCONNECTED</span>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-primary" id="mbConnectBtn">🤝 Connect</button>
+            <button class="btn btn-ghost" id="mbDisconnectBtn">Disconnect</button>
+            <button class="btn btn-soft" id="mbTestBtn">🧪 Send TEST</button>
+          </div>
+
+          <div class="tips">
+            <div class="tips-title">How to connect</div>
+            <ol>
+              <li>Flash micro:bit MakeCode program (BLE UART)</li>
+              <li>Click Connect and select “BBC micro:bit”</li>
+              <li>Unlock → sends MATCH / NO, micro:bit replies with ACK/STATE</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN -->
+      <section class="stack">
+        <div class="card glass log-card">
+          <div class="card-head">
+            <div>
+              <div class="card-title">🧾 QUEST LOG</div>
+              <div class="card-sub">Geeky logs (timestamp • module tag • color coded)</div>
+            </div>
+
+            <div class="actions compact">
+              <button class="btn btn-ghost" id="btnCopyLog" type="button">Copy</button>
+              <button class="btn btn-soft" id="btnClearLog" type="button">Clear</button>
+            </div>
+          </div>
+
+          <div id="log" class="log"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div id="status">Idle. Click Start.</div>
+      <div class="muted">local • on-device</div>
+    </footer>
+  </div>
+
+  <script src="./face-api.min.js"></script>
+  <script src="./ble_microbit.js"></script>
+  <script src="./app.js"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "Face Quest Lab (Face ID + micro:bit)",
+  "short_name": "FaceQuest",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "icons": [
+    { "src": "logo.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
