@@ -149,13 +149,11 @@ Everything stays on **your computer** 👍
 
 <p align="center">
   <a href="https://github.com/abourdim/face-quest" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-Face%20Quest-black?style=for-the-badge&logo=github">
   </a>
 </p>
 
 <p align="center">
-  <a href="https://makecode.microbit.org/" target="_blank">
-    <img src="https://img.shields.io/badge/micro:bit-MakeCode-blue?style=for-the-badge&logo=microbit">
+  <a href="https://makecode.microbit.org/_dLef9q7KYUgq" target="_blank">
   </a>
 </p>
 
