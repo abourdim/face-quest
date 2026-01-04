@@ -28,6 +28,13 @@ const btnStart = document.getElementById("btnStart");
 const btnEnroll = document.getElementById("btnEnroll");
 const btnVerify = document.getElementById("btnVerify");
 const btnClear = document.getElementById("btnClear");
+const btnSwitchCamera = document.getElementById("btnSwitchCamera");
+const btnMirror = document.getElementById("btnMirror");
+const camDot = document.getElementById("camDot");
+const camState = document.getElementById("camState");
+const mirrorDot = document.getElementById("mirrorDot");
+const mirrorState = document.getElementById("mirrorState");
+
 
 // Speech UI (Web Speech API)
 const btnSpeech = document.getElementById("btnSpeech");
@@ -196,6 +203,9 @@ const mbTestBtn = document.getElementById("mbTestBtn");
 
 // State
 let stream = null;
+let currentFacingMode = "user"; // user (front) | environment (back)
+let mirrorOn = true;
+
 let modelsLoaded = false;
 
 // Offscreen canvas for quality checks
@@ -519,19 +529,63 @@ function estimateBlurVariance(box) {
   return varSum / n;
 }
 
+
+function setDot(dotEl, isOk) {
+  if (!dotEl) return;
+  dotEl.classList.toggle("ok", !!isOk);
+  dotEl.classList.toggle("bad", !isOk);
+}
+
+function updateCameraUI(isOn) {
+  if (camState) {
+    if (!isOn) camState.textContent = "Camera: OFF";
+    else camState.textContent = `Camera: ON (${currentFacingMode === "environment" ? "Back" : "Front"})`;
+  }
+  setDot(camDot, !!isOn);
+}
+
+function updateMirrorUI() {
+  if (mirrorState) mirrorState.textContent = mirrorOn ? "Mirror: ON" : "Mirror: OFF";
+  setDot(mirrorDot, mirrorOn);
+  if (btnMirror) btnMirror.textContent = mirrorOn ? "🪞 Mirror ON" : "🪞 Mirror OFF";
+
+  // Mirror is visual only (CSS). It does not change the underlying camera pixels.
+  if (video) {
+    video.style.transformOrigin = "center";
+    video.style.transform = mirrorOn ? "scaleX(-1)" : "scaleX(1)";
+  }
+}
+
+function stopCamera() {
+  try {
+    if (stream) {
+      for (const t of stream.getTracks()) t.stop();
+    }
+  } catch (_) {}
+  stream = null;
+  if (video) video.srcObject = null;
+  updateCameraUI(false);
+}
+
 // ---------------- Camera ----------------
 async function startCamera() {
   logLine("info", "Requesting camera…", "APP");
   setStatus("Powering up camera…", "loading");
 
+  // If a stream already exists (e.g., after switching cameras), stop it first.
+  if (stream) stopCamera();
+
   stream = await navigator.mediaDevices.getUserMedia({
-    video: { facingMode: "user" },
+    video: { facingMode: { ideal: currentFacingMode } },
     audio: false
   });
 
   video.srcObject = stream;
   await new Promise(r => video.onloadedmetadata = r);
   await video.play();
+
+  updateMirrorUI();
+  updateCameraUI(true);
 
   logLine("success", "Camera started", "APP");
   setStatus("Camera ready! Teach your face to begin.", "success");
@@ -739,6 +793,46 @@ btnStart?.addEventListener("click", async () => {
   }
 });
 
+/* ---------------- Added: Switch camera + Mirror ---------------- */
+// Initialize status pills for the new controls
+updateCameraUI(!!stream);
+updateMirrorUI();
+
+btnSwitchCamera?.addEventListener("click", async () => {
+  try {
+    // Toggle between front and back camera
+    currentFacingMode = (currentFacingMode === "user") ? "environment" : "user";
+
+    // Default mirror ON for front camera, OFF for back camera (still toggleable)
+    mirrorOn = (currentFacingMode === "user");
+    updateMirrorUI();
+
+    btnSwitchCamera.disabled = true;
+    logLine("info", "Switching camera…", "APP");
+    setStatus("Switching camera…", "loading");
+
+    await startCamera();
+
+    setStatus("Camera ready! Teach your face or unlock.", "ok");
+    logLine("success", "Camera switched", "APP");
+  } catch (e) {
+    console.error(e);
+    setStatus("Switch camera failed: " + (e?.message || e), "bad");
+    logLine("error", "Switch camera failed: " + (e?.message || e), "APP");
+    updateCameraUI(!!stream);
+  } finally {
+    btnSwitchCamera.disabled = false;
+  }
+});
+
+btnMirror?.addEventListener("click", () => {
+  mirrorOn = !mirrorOn;
+  updateMirrorUI();
+});
+/* ---------------- End added controls ---------------- */
+
+
+
 btnEnroll?.addEventListener("click", async () => {
   try {
     await enroll();
@@ -875,3 +969,9 @@ mbTestBtn?.addEventListener("click", async () => {
   // micro:bit UI
   updateMicrobitUI();
 })();
+
+
+// Release the camera when leaving the page
+window.addEventListener("beforeunload", () => {
+  try { stopCamera(); } catch (_) {}
+});

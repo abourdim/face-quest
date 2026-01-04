@@ -79,6 +79,22 @@
             <button id="btnVoice" class="btn btn-ghost" type="button" title="Voice commands (Start / Teach / Unlock / Reset)">🎤 Voice</button>
           </div>
 
+          <!-- Camera controls (added) -->
+          <div class="actions" style="gap:10px; flex-wrap:wrap;">
+            <button id="btnSwitchCamera" class="btn btn-soft" type="button">🔁 Switch camera</button>
+            <button id="btnMirror" class="btn btn-soft" type="button">🪞 Mirror ON</button>
+
+            <div class="pill pill-ready" style="margin-left:auto;">
+              <span class="pill-dot bad" id="camDot"></span>
+              <span id="camState">Camera: OFF</span>
+            </div>
+
+            <div class="pill pill-ready">
+              <span class="pill-dot ok" id="mirrorDot"></span>
+              <span id="mirrorState">Mirror: ON</span>
+            </div>
+          </div>
+
           <div class="settings">
             <div class="field">
               <label for="selDetector">Detector</label>
