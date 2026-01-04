@@ -1,155 +1,167 @@
-🧠😄 Face Quest
-Face Recognition Game with Camera & micro
+# 🧠😄 Face Quest  
+### Face Recognition Game with Camera & micro:bit
 
-Welcome to Face Quest!
-This project uses a camera and artificial intelligence (AI) to recognize a face.
-It can also talk to a micro using Bluetooth 🔵.
+Welcome to **Face Quest**!  
+Face Quest is a fun and educational project that helps kids and beginners learn how **Artificial Intelligence (AI)** works using a **camera**, a **web browser**, and a **micro:bit**.
 
-This project is made to be fun, educational, and safe 🎉
+Everything runs **locally on your computer**, which makes it safe and privacy-friendly 👍
 
-👦👧 Who is this for?
+---
 
-Kids & students
+## 👦👧 Who is this project for?
+- Kids & students 👧👦  
+- Beginners in programming 💻  
+- Curious minds who want to learn AI 🤖  
 
-Beginners in programming
+No advanced math, no difficult words, just learning by playing 😄
 
-Anyone curious about AI, faces, and technology
+---
 
-No advanced math needed 😊
-
-🎯 What does Face Quest do?
+## 🎯 What does Face Quest do?
 
 Face Quest can:
 
-✅ Turn on your camera
-✅ Detect a face
-✅ Learn a face (Enroll)
-✅ Check if it’s the same face (Verify)
-✅ Send the result to a micro
-✅ Work offline in your browser
+✅ Turn on your camera  
+✅ Find a face on the screen  
+✅ Learn a face (**Enroll**)  
+✅ Check if the same face comes back (**Verify**)  
+✅ Send the result to a **micro:bit** using Bluetooth  
+✅ Work **offline** (no internet needed after setup)
 
-👉 Everything runs on your computer, not on the internet!
+---
 
-📸 How it works (simple explanation)
+## 📸 How does it work? (Very simple)
 
-The camera sees your face 👀
+1. The camera sees your face 👀  
+2. The computer finds where the face is 🙂  
+3. The face is turned into secret numbers 🔢  
+4. The numbers are saved (Enroll)  
+5. Later, numbers are compared (Verify)  
+6. If they match → ✅ YES  
+7. If not → ❌ NO  
 
-The computer finds your face 🙂
+This is how **face recognition** works in real life 🤖
 
-The computer turns your face into numbers 🔢
+---
 
-It remembers those numbers
+## 🧩 Buttons explained
 
-Later, it compares faces
+| Button | What it does |
+|------|-------------|
+| ▶️ Start | Turns on the camera |
+| 🧾 Enroll | Saves your face |
+| ✅ Verify | Checks if it’s you |
+| 🧹 Clear | Deletes saved face |
+| 🔗 Connect | Connects to micro:bit |
 
-If they match → ✅ YES
+---
 
-If not → ❌ NO
+## 🧠 AI Models used (simple explanation)
 
-This is called Face Recognition 🤖
+Face Quest uses **3 small AI brains**:
 
-🧩 Buttons explained
-Button	What it does
-▶️ Start	Turns on the camera
-🧾 Enroll	Saves your face
-✅ Verify	Checks if it’s you
-🧹 Clear	Deletes saved face
-🔗 Connect	Connects to micro
-🧠 AI Models used (don’t worry 😄)
+1. 👤 **Face Detector**  
+   Finds where the face is
 
-The app uses 3 small AI brains:
+2. 📍 **Face Landmarks**  
+   Finds eyes, nose, and mouth
 
-👤 Face Detector
-→ Finds where the face is
+3. 🧬 **Face Recognition**  
+   Turns your face into numbers
 
-📍 Face Landmarks
-→ Finds eyes, nose, mouth
+You don’t need to understand the math to use them 😊
 
-🧬 Face Recognition
-→ Turns your face into numbers
+---
 
-You don’t need to understand the math to use it 👍
+## 📁 Project structure
 
-📁 Project files (important!)
+```
 Face-Quest/
-│
 ├── index.html        → The web page
-├── app.js            → Main brain of the app
+├── app.js            → Main app logic
 ├── face-api.min.js   → AI library
 ├── ble_microbit.js   → micro:bit Bluetooth
-├── styles.css        → Colors & design
-│
+├── styles.css        → Design & colors
 ├── models/           → AI models (VERY IMPORTANT)
-│   ├── tiny_face_detector_model-weights_manifest.json
-│   ├── tiny_face_detector_model-shard1
-│   ├── face_landmark_68_model-weights_manifest.json
-│   ├── face_landmark_68_model-shard1
-│   ├── face_recognition_model-weights_manifest.json
-│   ├── face_recognition_model-shard1
-│   └── face_recognition_model-shard2
-│
 └── README.md
+```
 
-⚠️ If the models folder is missing, the app will NOT work.
+⚠️ If the **models/** folder is missing, the app will not work.
 
-▶️ How to run the project
-Step 1: Open a terminal
+---
 
+## ▶️ How to run the project
+
+### Step 1: Open a terminal
 Go to the project folder.
 
-Step 2: Start a local server
-
-Example:
-
+### Step 2: Start a local server
+```bash
 python3 -m http.server 8012
-Step 3: Open the browser
+```
 
+### Step 3: Open the browser
 Go to:
-
+```
 http://localhost:8012
+```
 
-🎉 That’s it!
+Allow camera access when asked 📸
 
-🔵 micro (optional but cool!)
+---
 
-If you connect a micro:
+## 🔵 micro:bit (optional but fun!)
 
-The app sends MATCH or NO
+If you connect a **micro:bit**:
 
-The micro can:
+- The app sends **MATCH** or **NO**
+- The micro:bit can:
+  - Show LEDs 💡
+  - Display icons 😀
+  - Play sounds 🎵
 
-Show icons
+This makes Face Quest feel like a real game 🎮
 
-Turn on LEDs
+---
 
-Make sounds 🎵
+## 🛡️ Safety & Privacy
 
-This makes Face Quest feel like a real game!
+✅ No photos are saved  
+✅ No face data sent to the internet  
+✅ No accounts needed  
+✅ Safe for kids  
 
-🛡️ Safety & Privacy
+Everything stays on **your computer** 👍
 
-✅ No photos are saved
-✅ No internet needed
-✅ No data sent to servers
-✅ Everything stays on your computer
+---
 
-Safe for kids 👍
+## 🌟 What can you learn?
 
-🌟 What you can learn
+- How AI sees faces  
+- How cameras work in browsers  
+- How Bluetooth works  
+- How real security systems work  
+- How to build fun tech projects 🚀  
 
-How AI sees faces
+---
 
-How browsers use cameras
+## 🔗 Useful Links
 
-How Bluetooth works
+<p align="center">
+  <a href="https://github.com/abourdim/face-quest" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-Face%20Quest-black?style=for-the-badge&logo=github">
+  </a>
+</p>
 
-How real biometric systems work
+<p align="center">
+  <a href="https://makecode.microbit.org/" target="_blank">
+    <img src="https://img.shields.io/badge/micro:bit-MakeCode-blue?style=for-the-badge&logo=microbit">
+  </a>
+</p>
 
-How to build fun tech projects 🚀
+---
 
-❤️ Have fun!
+## ❤️ Have fun!
 
-Face Quest is about learning by playing.
-Try changing the code, test with friends, and explore AI safely!
-
-Happy coding 😄👨‍💻👩‍💻
+Face Quest is all about **learning by playing** 🎉  
+Try it, change it, and explore AI safely! 😄
