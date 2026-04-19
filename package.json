@@ -1,0 +1,9 @@
+{
+  "name": "face-quest",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Face Quest — Learn • Spot • Play",
+  "scripts": { "build:etsy": "node etsy-package/build-package.js" },
+  "devDependencies": { "@playwright/test": "^1.48.0" }
+}
