@@ -25,15 +25,14 @@ A second-by-second script: **what to say** + **what to click / do** to produce a
 
 Before you press Record:
 
-- [ ] webcam + BBC micro:bit V2 powered on, showing the **X** icon *(if not → re-flash `makecode.ts`)*
-- [ ] Chrome or Edge open with `index.html` loaded
-- [ ] BLE paired — status chip is **green**
-- [ ] Theme set — **Neon** photographs best; **Arctic** reads best in harsh daylight
-- [ ] Language matches your voiceover (EN / FR / AR)
-- [ ] Servo plugged into P1 if you're showing Robot Arm or Buggy
-- [ ] Tab 6 (3D) open with Buggy or Robot Arm selected — looks impressive in the hero shot
+- [ ] Laptop webcam clean, front-lit, plain background
+- [ ] Chrome or Edge open, folder served via `python3 -m http.server 8012`, Face Quest loaded at `http://localhost:8012`
+- [ ] Clicked **🚀 Start Mission** once — "Camera: ON" pill green, three AI models logged loaded
+- [ ] Previous enrollment cleared with **🧹 Reset Face** so Teach shows a real first-time flow
+- [ ] **Threshold** at 0.60, **Verify frames** at 12 (defaults — cleanest demo)
+- [ ] Optional: BBC micro:bit V2 powered, MakeCode BLE UART sketch flashed, not yet connected
 - [ ] Phone in 9:16 on a tripod, front-lit, clean background
-- [ ] Desk cleared — only the board + one prop (buggy / servo / cable) in frame
+- [ ] Desk cleared — only the laptop (and the micro:bit if used) in frame
 - [ ] Captions app running OR on-screen text plan ready
 - [ ] Script read aloud once, timed under 55 seconds
 - [ ] Phone silenced, kids / dogs warned
@@ -43,11 +42,11 @@ Before you press Record:
 ## The 60-second arc
 
 ```
- 0–3 s   HOOK        "Watch what this micro:bit does in 60 seconds."
- 3–10 s  CONTEXT     Board → laptop → Connect → green chip.
-10–35 s  DEMO        Tilt → 3D mirrors. Button A → LED heart. Servo swings. GamePad.
-35–50 s  PAYOFF      Live graph with Simulate. Record / Replay / CSV.
-50–55 s  CTA         "Full kit, lifetime updates — link below."
+ 0–3 s   HOOK        "Watch a browser learn my face in 60 seconds."
+ 3–10 s  CONTEXT     Start Mission → camera on → detector boxes appear.
+10–35 s  DEMO        Teach My Face → Unlock match → friend swap → NO MATCH.
+35–50 s  PAYOFF      Optional: micro:bit shows ✓ on MATCH, drives P0 HIGH.
+50–55 s  CTA         "Full kit, lesson plan, stickers — link below."
 55–60 s  END FRAME   Logo + handle frozen for the loop preview.
 ```
 
@@ -55,52 +54,52 @@ Etsy loops the video, so the **end frame should match the cover** — keeps view
 
 ---
 
-## Script Template A — "Your micro:bit becomes a playground" (hero demo)
+## Script Template A — "Teach the app your face" (hero demo)
 
-**Use case:** the main Etsy listing video. Showcases the 3D, the BLE pairing, and the live graph in one go.
+**Use case:** the main Etsy listing video. Showcases Start → Teach → Unlock + the privacy promise in one go.
 
 | Time | What to SAY | What to CLICK / DO |
 |---|---|---|
-| 0–3 s | *"Your micro:bit becomes a playground — in the browser, in 60 seconds."* | Close-up of the real board with the X icon on the LEDs. Your hand holds it. |
-| 3–10 s | *"One page, one click, paired."* | Cut to the laptop. Click **🔗 Connect to micro:bit** → pick the board → chip turns green. |
-| 10–20 s | *"Sensors live — tilt it, the 3D model tilts too."* | Tab **6 · 3D Board**. Tilt the real board. The virtual one mirrors it. Hold both in frame. |
-| 20–30 s | *"Press A — the LEDs react. Drag a slider — the servo swings."* | Press A. Cut to Tab **3 · Motors**, drag Servo 1 slider — real servo swings in frame. |
-| 30–40 s | *"Live graph with record, replay, CSV. A lab in a browser tab."* | Tab **5 · Graph** → click **🎲 Simulate** → chart dances → hover on **⏺ Record** and **📄 CSV**. |
-| 40–50 s | *"4 themes, 3 languages, works offline, no install, no account."* | Quick theme swap (header dropdown) → show Neon → Arctic. |
-| 50–55 s | *"Link below — lifetime updates, teachers and kids welcome."* | Face-cam back on. Eye contact. |
+| 0–3 s | *"In 60 seconds I'll teach a browser to recognise my face — and nothing leaves my laptop."* | Close-up on the Face Scanner: face box + landmark dots pulsing on your face. |
+| 3–10 s | *"One folder, one click. Three tiny AI models load from disk."* | Click **🚀 Start Mission**. Quest Log ticks: detector / landmarks / recognition loaded. |
+| 10–20 s | *"Centre my face. Click Teach. It saves a string of 128 numbers — not a photo."* | Click **🧠 Teach My Face**. Samples collected. XP bumps up. Cut to DevTools → IndexedDB shows numbers, not an image. |
+| 20–30 s | *"Step back, step forward. Unlock."* | Click **🔓 Unlock!** → "MATCH ✅". |
+| 30–35 s | *"Friend steps in. No match."* | Friend enters the frame. Click Unlock → "NO MATCH ❌". |
+| 35–50 s | *"Optional: pair a micro:bit. The match lights a real LED grid."* | Click **🤝 Connect**, pick the board. Unlock → micro:bit shows ✓, P0 HIGH. Tight shot. |
+| 50–55 s | *"Full kit, lesson plan, 30 stickers — link below."* | Face-cam back on. Eye contact. |
 | 55–60 s | *"Happy hacking."* | Hold still. Logo + handle overlay freezes. This becomes the loop frame. |
 
 ---
 
 ## Script Template B — "Teacher Tuesday" (classroom angle)
 
-**Use case:** targeting teachers and STEM workshop organisers.
+**Use case:** targeting teachers and STEM / AI literacy workshop organisers.
 
 | Time | What to SAY | What to CLICK / DO |
 |---|---|---|
-| 0–3 s | *"STEM teachers — you need to see this."* | Overhead shot of a laptop + 5 micro:bits laid out on a desk. |
-| 3–10 s | *"One browser tab. Live sensors. No install on 30 laptops."* | Click Connect. Status goes green. Cut to Sensors tab — values streaming. |
-| 10–20 s | *"Calibrate the compass right in the UI. Baseline the sound for a quiet classroom."* | Sensors tab → Calibrate. Show the Set Level / Set Ambient buttons. |
-| 20–30 s | *"Record a full lesson. Export CSV. Drop into a lab report."* | Graph tab → Record → Stop → Save Session → CSV. |
-| 30–40 s | *"4 themes — Arctic for projectors. 3 languages — Arabic with full RTL."* | Swap theme to Arctic. Swap language to Arabic — watch the UI flip RTL. |
-| 40–50 s | *"Site license for up to 30 teachers. Lifetime updates."* | Text overlay with the licensing tiers + Etsy shop name. |
-| 50–60 s | *"Link below. Tag me when you run a workshop."* | Face-cam, hold the micro:bit, smile, freeze on logo. |
+| 0–3 s | *"Teach AI without sending a single photo to the cloud."* | Overhead shot of a laptop + the printable lesson plan + sticker sheet on a desk. |
+| 3–10 s | *"One folder served locally. Three AI models, zero accounts."* | Click Start Mission. Quest Log shows models loaded. |
+| 10–20 s | *"Kids enroll their face — only a descriptor is saved, never a photo."* | Teach My Face. Open DevTools → IndexedDB → point at the number array. |
+| 20–30 s | *"Slide the Threshold. Watch strict turn into loose in real time."* | Move Threshold from 0.40 to 0.90. Unlock at each value. Narrate the change. |
+| 30–40 s | *"30 printable stickers. 45-minute lesson plan with rubric. A3 classroom poster."* | Cut to the printables flat-lay. |
+| 40–50 s | *"Site license, one school, unlimited students."* | Text overlay with the licensing tiers + Etsy shop name. |
+| 50–60 s | *"Link below. Tag me when you run it in class."* | Face-cam, hold the printable poster, smile, freeze on logo. |
 
 ---
 
-## Script Template C — "Kid builds a robot" (parent / home-school angle)
+## Script Template C — "Kid teaches a computer" (parent / home-school angle)
 
 **Use case:** showing a young maker using the app — UGC / influencer feel.
 
 | Time | What to SAY | What to CLICK / DO |
 |---|---|---|
-| 0–3 s | *"My kid built a robot. With a browser tab."* | Close-up: a small hand tapping Connect. |
-| 3–10 s | *"The micro:bit drives the servo. The 3D model mirrors the real robot."* | Tab 6 (3D Buggy). Real robot next to the laptop. Buggy in 3D follows. |
-| 10–20 s | *"D-pad in the browser → arrows on the LED → commands to the motors."* | Tab 4 (GamePad). Press ⬆ → LED arrow. Buggy crawls forward. |
-| 20–30 s | *"Tilt the brain — the ball rolls to the targets."* | Tab 6 → Balance Game model. Tilt the board. Ball rolls. |
-| 30–40 s | *"Graph the sensors. Record the run. Replay for homework."* | Tab 5 → Record 3 s of accel → Replay → Save Session. |
-| 40–50 s | *"No login. Nothing leaves the computer. Offline after first load."* | Close the Wi-Fi indicator (airplane mode). App still works. |
-| 50–60 s | *"Full kit on Etsy. Link below."* | Kid holding the robot + board. Smile. Freeze. |
+| 0–3 s | *"My kid taught a computer their face. With a browser tab."* | Close-up: a small hand tapping Start Mission. |
+| 3–10 s | *"No photos, no cloud, no login. Just a webcam and curiosity."* | Camera turns on. Face box snaps onto the kid's face. |
+| 10–20 s | *"Click Teach. The computer remembers the numbers."* | Kid clicks Teach My Face. Watch the XP counter bump. |
+| 20–30 s | *"Click Unlock. Match!"* | Kid clicks Unlock → MATCH ✅. They grin. |
+| 30–40 s | *"We plug in a micro:bit. It shows a tick when it's really them."* | Connect the board. Unlock → micro:bit shows ✓. |
+| 40–50 s | *"Mom tries. No match. The computer can tell."* | Parent leans in. Unlock → NO MATCH ❌. Kid laughs. |
+| 50–60 s | *"Full kit on Etsy. Link below."* | Kid holding the micro:bit + a sticker sheet. Smile. Freeze. |
 
 ---
 
@@ -108,7 +107,7 @@ Etsy loops the video, so the **end frame should match the cover** — keeps view
 
 - **One scene per phase.** Do not cut every 2 s — it feels frantic.
 - **Switch scenes on words**, not mid-sentence.
-- **Pause 1 second on the graph record button** — visual emphasis.
+- **Pause 1 second on the MATCH / NO MATCH verdict** — visual emphasis.
 - **Look at the camera lens**, not the screen, during all CTAs.
 - **Smile for the final 3 seconds**. The loop frame matters.
 - **Watch the clock** — if you pass 55 s, re-cut. Etsy compresses aggressively.
@@ -119,11 +118,12 @@ Etsy loops the video, so the **end frame should match the cover** — keeps view
 
 | ❌ Don't | ✅ Do |
 |---|---|
-| Start with "Hi, I'm…" + 10 s intro | First 3 s = the board tilting a 3D model on the laptop |
+| Start with "Hi, I'm…" + 10 s intro | First 3 s = the face box snapping onto your face |
 | Film landscape (16:9) | 9:16 portrait — Etsy autoplays on mobile |
 | Demo on Safari / iPhone | Show Chrome/Edge only. iOS users will buy and refund |
-| Skip captions | Burn in captions — the feed is muted by default |
-| Whisper | Speak 15% louder and 10% slower than normal conversation |
+| Save or flash an actual photo of the buyer's face | Only show the numeric descriptor in DevTools — reinforce privacy |
+| Skip captions | Burn in "Teach", "Unlock", "MATCH", "NO MATCH" — the feed is muted |
+| Whisper | Speak 15 % louder and 10 % slower than normal conversation |
 | Forget the CTA | "Link below" in the last 5 s, every single time |
 | End mid-sentence | Land your closing line. Then hold 2 seconds of silence |
 | Cluttered desk | Clean area in frame — even a tiny frame shows clutter |
@@ -135,7 +135,7 @@ Etsy loops the video, so the **end frame should match the cover** — keeps view
 1. Watch the playback **once**, eyes off the script. Does it land?
 2. If >60 s → trim with a simple editor (iMovie, CapCut, DaVinci). Aim for 55 s.
 3. Burn in captions if you haven't already. Keep them centered below the subject.
-4. First frame — set it to a strong, still visual (the board in hand, or the logo). This is your cover.
+4. First frame — set it to a strong, still visual (the face-scanner hero, or the logo). This is your cover.
 5. Export MP4 / H.264, under 100 MB.
 6. Upload to the Etsy listing. Verify autoplay. Check on a phone with sound off.
 
@@ -144,10 +144,10 @@ Etsy loops the video, so the **end frame should match the cover** — keeps view
 ## Etsy-specific upload tips
 
 - Etsy listing videos appear at the top as an **autoplaying preview tile**. First frame is the cover — make it visually clean.
-- Use the listing **title** to echo the video's first words. If you say *"Your micro:bit becomes a playground"*, the listing title starts with *"Face Quest — BLE Control Panel…"*.
+- Use the listing **title** to echo the video's first words. If you say *"Teach a browser your face in 60 seconds"*, the listing title leads with *"Face Quest — In-Browser Face Recognition Lab…"*.
 - Add the captions text into the listing **description** — searchable, helps SEO.
 - Tag the listing with words you actually said in the video.
-- Price tiers: single user `{{PRICE}}` · classroom / site `{{PRICE}}`.
+- Launch day: share code `QUESTLAUNCH` → single-user drops to $8 for 48 h.
 
 ---
 
@@ -166,11 +166,11 @@ Etsy loops the video, so the **end frame should match the cover** — keeps view
 ## Quick-reference cheat card
 
 ```
-PRE     V2 has X icon · Chrome open · BLE green · 9:16 phone · Neon theme
+PRE     Camera clean · Chrome served via http.server · Reset face · Threshold 0.60 · 9:16 phone
 LAUNCH  Record → first words land in the first 3 seconds
-DURING  Tilt → 3D · A → LED · slider → servo · Simulate → graph
+DURING  Start → Teach → Unlock match · friend → no match · micro:bit ✓
 AFTER   Stop → trim to 55 s → burn captions → first frame = thumbnail
-UPLOAD  Etsy listing → upload MP4 → echo first words in listing title
+UPLOAD  Etsy listing → upload MP4 → echo first words in listing title · QUESTLAUNCH promo
 ```
 
 ---
@@ -179,48 +179,53 @@ UPLOAD  Etsy listing → upload MP4 → echo first words in listing title
 
 **Title (140 chars max):**
 ```
-Face Quest — BLE Control Panel for Teachers & Kids · Sensors · Servos · Live Graph · 3D Models · No Install · Chrome / Edge
+Face Quest — In-Browser Face Recognition Lab for Kids & Classrooms · Webcam + micro:bit · Learn Spot Play · No Cloud · Chrome / Edge
 ```
 
 **160-char short description:**
 ```
-Browser-based BLE control panel for the webcam + BBC micro:bit V2. Sensors, servos, live graphs, 3D models, and a GamePad — all from Chrome. No install, no account.
+In-browser face recognition lab for kids & classrooms. Three AI models run locally — no photos saved. Webcam + optional BBC micro:bit V2. Chrome / Edge.
 ```
 
 **13 Etsy tags:**
 ```
-micro:bit, BLE, bluetooth, education, STEM, robotics, kids coding, teacher resource, sensors, servos, classroom, home school, makerspace
+face recognition, AI for kids, STEM, education, micro:bit, webcam project, coding club, teacher resource, classroom, home school, privacy first, browser app, makerspace
 ```
 
 **Materials:**
 ```
-HTML5, JavaScript, Web Bluetooth, Chart.js, Three.js, PWA, MakeCode, TypeScript
+HTML5, JavaScript, face-api.js, Web Bluetooth, IndexedDB, PWA, MakeCode, TypeScript
 ```
 
 **SEO keywords:**
 ```
-browser-based · no-install · privacy-first · offline-capable · web bluetooth · micro:bit V2 · STEM workshop · teacher resource
+in-browser face recognition · no photos saved · privacy-first AI · offline-capable · web bluetooth micro:bit · AI literacy lesson · kids coding · face-api.js classroom
 ```
 
-**Price tiers (fill the `{{PRICE}}` placeholders):**
+**Price tiers:**
 
-| Tier | Who | Price |
+| Tier | Who | Price (USD) |
 |---|---|---|
-| Single user | One teacher / family / maker | `{{PRICE}}` |
-| Classroom / Site | Up to 30 teachers at one school | `{{PRICE}}` |
-| District / OEM | Multiple sites — DM through order | Custom |
+| Launch / early-bird | First 100 buyers | `$14.99` |
+| Standard single-user | One teacher / family / maker | `$19.99` |
+| Bundle (all extras) | Single-user + printables + lesson pack | `$34.99` |
+| Tripwire | Quick-Start card only | `$5` |
+| Site / Classroom | One school, unlimited students | `$249` |
+| District / OEM | Multiple sites — DM through order | `$599+` |
+
+Launch promo: share `QUESTLAUNCH` on launch day — single-user drops to `$8` for 48 hours.
 
 ---
 
 ## 7-image listing order
 
-1. **Hero** — real micro:bit + laptop, 3D model mirroring the board's tilt. Title overlay in Orbitron.
-2. **Tabs overview** — grid screenshot of all 8 tabs with emoji labels.
-3. **Live graph** — Chart.js close-up with colored lines + annotations, Record button glowing red.
-4. **3D models** — split screenshot of Buggy + Robot Arm.
-5. **Hand-holding** — real servo plugged into P1, sliders on the screen.
-6. **Theme sampler** — 2×2 grid: Stealth · Neon · Arctic · Blaze.
-7. **License card** — "Single-user license · Lifetime updates · No cloud · Chrome / Edge" on a dark gradient.
+1. **Hero** — Face Quest scanner with the face box + landmarks on the seller's face, "🧠 Teach My Face" button glowing. Title overlay in Orbitron.
+2. **Teach / Unlock flow** — triptych: Start → Teach → Unlock with MATCH ✅.
+3. **Threshold close-up** — slider at 0.60 with the Quest Log showing "MATCH distance 0.42".
+4. **Robot Buddy** — real micro:bit V2 showing ✓ next to a laptop running Face Quest.
+5. **Privacy promise** — 3-up card: "No photos" · "No internet" · "No account".
+6. **Printables bundle** — flat-lay: quick-start card, controls cheat sheet, A3 poster, sticker sheet.
+7. **License card** — "Single-user license · Lifetime updates · Chrome / Edge · Webcam required" on a dark gradient.
 
 ---
 

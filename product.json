@@ -9,12 +9,13 @@
   "VERSION_PLAIN": "1.0.0",
   "TAGLINE": "Learn • Spot • Play",
   "HARDWARE": "webcam + BBC micro:bit V2",
-  "PRICE_LAUNCH": "12.99",
-  "PRICE_STANDARD": "17.99",
-  "PRICE_BUNDLE": "29.99",
+  "PRICE_LAUNCH": "14.99",
+  "PRICE_STANDARD": "19.99",
+  "PRICE_BUNDLE": "34.99",
   "PRICE_TRIPWIRE": "5",
-  "PRICE_SITE": "199",
-  "PRICE_DISTRICT": "499",
-  "PROMO_CODE": "LAUNCH10",
-  "PROMO_PRICE": "7"
+  "PRICE_SITE": "249",
+  "PRICE_DISTRICT": "599",
+  "PROMO_CODE": "QUESTLAUNCH",
+  "PROMO_PRICE": "8",
+  "ALLOWED_TERMS": []
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Face Quest Keyboard Shortcuts Cheat Sheet</title>
+<title>Face Quest Controls Cheat Sheet</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Orbitron:wght@500&family=Tajawal:wght@400;500;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -72,89 +72,84 @@
 <div class="page">
 
   <div class="header">
-    <h1>Face Quest Shortcuts</h1>
+    <h1>Face Quest Controls</h1>
     <span>Cheat Sheet &mdash; Laminate Me!</span>
   </div>
-  <div class="laminate-tip">Print &rarr; Laminate &rarr; Stick near your micro:bit</div>
+  <div class="laminate-tip">Print &rarr; Laminate &rarr; Stick next to the lab computer</div>
 
   <div class="cols">
 
     <!-- Column 1 -->
     <div>
       <div class="group">
-        <div class="group-title">Streaming &amp; Data</div>
-        <div class="row"><kbd>Space</kbd><span class="label">Pause / Resume sensor stream</span></div>
-        <div class="row"><kbd>K</kbd><span class="label">Clear graph buffer</span></div>
-        <div class="row"><kbd>F</kbd><span class="label">Toggle fullscreen graph</span></div>
-        <div class="row"><kbd>R</kbd><span class="label">Start / Stop session recording</span></div>
+        <div class="group-title">Mission Buttons</div>
+        <div class="row"><kbd>🚀 Start</kbd><span class="label">Turn on the webcam &amp; load AI models</span></div>
+        <div class="row"><kbd>🧠 Teach</kbd><span class="label">Enroll your face (collects sharp samples)</span></div>
+        <div class="row"><kbd>🔓 Unlock</kbd><span class="label">Verify 1:1 against the saved face</span></div>
+        <div class="row"><kbd>🔒 Lock</kbd><span class="label">Return to the locked state manually</span></div>
+        <div class="row"><kbd>🧹 Reset</kbd><span class="label">Delete the saved enrollment</span></div>
       </div>
 
       <div class="group">
-        <div class="group-title">Tabs (1&ndash;8)</div>
-        <div class="row"><kbd>1</kbd><span class="label">LEDs &mdash; 5&times;5 matrix</span></div>
-        <div class="row"><kbd>2</kbd><span class="label">Sensors &mdash; live readings</span></div>
-        <div class="row"><kbd>3</kbd><span class="label">Servos &mdash; P1 &amp; P2</span></div>
-        <div class="row"><kbd>4</kbd><span class="label">GamePad &mdash; D-pad + Fire</span></div>
-        <div class="row"><kbd>5</kbd><span class="label">Graph &mdash; Chart.js live plot</span></div>
-        <div class="row"><kbd>6</kbd><span class="label">3D Board &mdash; Three.js view</span></div>
-        <div class="row"><kbd>7</kbd><span class="label">Bench &mdash; raw JSON console</span></div>
-        <div class="row"><kbd>8</kbd><span class="label">About &mdash; version &amp; credits</span></div>
+        <div class="group-title">Camera &amp; Preview</div>
+        <div class="row"><kbd>🔁 Switch</kbd><span class="label">Cycle to the next available camera</span></div>
+        <div class="row"><kbd>🪞 Mirror</kbd><span class="label">Flip preview left/right</span></div>
+        <div class="row"><kbd>🧾 Copy Log</kbd><span class="label">Copy the Quest Log to the clipboard</span></div>
+        <div class="row"><kbd>🧹 Clear Log</kbd><span class="label">Wipe the on-screen log</span></div>
       </div>
     </div>
 
     <!-- Column 2 -->
     <div>
       <div class="group">
-        <div class="group-title">LEDs &amp; Overlays</div>
-        <div class="row"><kbd>P</kbd><span class="label">Open LED preset picker</span></div>
-        <div class="row"><kbd>C</kbd><span class="label">Clear LED matrix</span></div>
-        <div class="row"><kbd>H</kbd><span class="label">Heart preset</span></div>
-        <div class="row"><kbd>S</kbd><span class="label">Smile preset</span></div>
-        <div class="row"><kbd>Esc</kbd><span class="label">Close any overlay / fullscreen</span></div>
+        <div class="group-title">Voice Commands (click 🎤 Voice)</div>
+        <div class="row"><kbd>"Start"</kbd><span class="label">Start the webcam mission</span></div>
+        <div class="row"><kbd>"Teach" / "Enroll"</kbd><span class="label">Begin enrollment</span></div>
+        <div class="row"><kbd>"Unlock" / "Verify" / "Open"</kbd><span class="label">Run verify</span></div>
+        <div class="row"><kbd>"Lock"</kbd><span class="label">Lock the app</span></div>
+        <div class="row"><kbd>"Reset" / "Clear"</kbd><span class="label">Delete the saved face</span></div>
       </div>
 
       <div class="group">
-        <div class="group-title">3D Board Models</div>
-        <div class="row"><kbd>M</kbd><span class="label">Switch model (cycle)</span></div>
-        <div class="row"><span style="font-size:14px;">🔲</span><span class="label">micro:bit V2 board</span></div>
-        <div class="row"><span style="font-size:14px;">🚗</span><span class="label">Buggy robot</span></div>
-        <div class="row"><span style="font-size:14px;">🦾</span><span class="label">Robot Arm</span></div>
-        <div class="row"><span style="font-size:14px;">🎯</span><span class="label">Balance game</span></div>
-        <div class="row"><span style="font-size:14px;">🌦️</span><span class="label">Weather station</span></div>
+        <div class="group-title">Tuning Knobs</div>
+        <div class="row"><kbd>Detector</kbd><span class="label">SSD (accurate) or Tiny (fast)</span></div>
+        <div class="row"><kbd>Distance</kbd><span class="label">Euclidean or Cosine similarity</span></div>
+        <div class="row"><kbd>Threshold</kbd><span class="label">0.30 &ndash; 1.20 &bull; lower = stricter match</span></div>
+        <div class="row"><kbd>Verify Frames</kbd><span class="label">5 &ndash; 25 &bull; how many frames to average</span></div>
       </div>
 
       <div class="group">
-        <div class="group-title">Themes &amp; View</div>
-        <div class="row"><kbd>T</kbd><span class="label">Cycle theme (Stealth &rarr; Neon &rarr; Arctic &rarr; Blaze)</span></div>
-        <div class="row"><kbd>L</kbd><span class="label">Cycle language (EN &rarr; FR &rarr; AR)</span></div>
-        <div class="row"><kbd>?</kbd><span class="label">Show shortcuts help overlay</span></div>
+        <div class="group-title">Test Mode (PIN-gated)</div>
+        <div class="row"><kbd>🔑 Set PIN</kbd><span class="label">Create or change the 4-digit PIN</span></div>
+        <div class="row"><kbd>🧪 Test Mode</kbd><span class="label">Continuous verify loop (demo/debug)</span></div>
+        <div class="row"><kbd>0&ndash;9 / Enter / Esc</kbd><span class="label">PIN pad keyboard support</span></div>
       </div>
     </div>
 
     <!-- Column 3 -->
     <div>
       <div class="group">
-        <div class="group-title">BLE State Cheat Sheet</div>
-        <div class="ble-row"><span class="dot d-gray"></span><span class="label"><strong style="color:#cbd5e1;">Disconnected</strong> &mdash; click Connect to pair</span></div>
-        <div class="ble-row"><span class="dot d-amber"></span><span class="label"><strong style="color:#fbbf24;">Pairing</strong> &mdash; choose "BBC micro:bit [xxxxx]"</span></div>
-        <div class="ble-row"><span class="dot d-green"></span><span class="label"><strong style="color:#22c55e;">Connected</strong> &mdash; data is streaming live</span></div>
-        <div class="ble-row"><span class="dot d-blue"></span><span class="label"><strong style="color:#22d3ee;">Simulate</strong> &mdash; fake data, no board needed</span></div>
-        <div class="ble-row"><span class="dot d-red"></span><span class="label"><strong style="color:#ef4444;">Error</strong> &mdash; auto-retry 3x, then prompt</span></div>
+        <div class="group-title">micro:bit BLE State</div>
+        <div class="ble-row"><span class="dot d-gray"></span><span class="label"><strong style="color:#cbd5e1;">Disconnected</strong> &mdash; click 🤝 Connect to pair</span></div>
+        <div class="ble-row"><span class="dot d-amber"></span><span class="label"><strong style="color:#fbbf24;">Pairing</strong> &mdash; pick "BBC micro:bit [xxxxx]"</span></div>
+        <div class="ble-row"><span class="dot d-green"></span><span class="label"><strong style="color:#22c55e;">Connected</strong> &mdash; MATCH / NO messages flow</span></div>
+        <div class="ble-row"><span class="dot d-red"></span><span class="label"><strong style="color:#ef4444;">Error</strong> &mdash; re-flash firmware, re-pair</span></div>
       </div>
 
       <div class="group">
-        <div class="group-title">Servos (P1 / P2)</div>
-        <div class="row"><kbd>Q</kbd> / <kbd>A</kbd><span class="label">P1 servo +/- 10&deg;</span></div>
-        <div class="row"><kbd>W</kbd> / <kbd>S</kbd><span class="label">P2 servo +/- 10&deg;</span></div>
-        <div class="row"><kbd>0</kbd><span class="label">Center both servos (90&deg;)</span></div>
-        <div class="row"><kbd>O</kbd><span class="label">Servos OFF (detach PWM)</span></div>
+        <div class="group-title">UART Messages (app &rarr; board)</div>
+        <div class="row"><kbd>MATCH</kbd><span class="label">Unlock succeeded &bull; P0 HIGH, ✓ icon</span></div>
+        <div class="row"><kbd>NO</kbd><span class="label">Unlock failed &bull; P0 LOW, ✗ icon</span></div>
+        <div class="row"><kbd>ENROLLED</kbd><span class="label">Face was just taught &bull; ❤ icon</span></div>
+        <div class="row"><kbd>LOCK</kbd><span class="label">Manual lock &bull; P0 LOW, ✗ icon</span></div>
+        <div class="row"><kbd>TEST</kbd><span class="label">Connection ping &bull; shows "T"</span></div>
       </div>
 
       <div class="group">
         <div class="group-title">Pro Tips</div>
         <div class="row" style="flex-direction:column;align-items:start;">
-          <span class="label" style="color:#22d3ee;">No board? Turn on <strong>Simulate Mode</strong> in Settings for Sine/Random/Ramp data.</span>
-          <span class="label" style="color:#64748b;font-size:11px;">Only <strong>Chrome</strong> / <strong>Edge</strong> (desktop or Android) support Web Bluetooth.</span>
+          <span class="label" style="color:#22d3ee;">Raise <strong>Threshold</strong> if "No Match" is too strict; lower it if strangers are getting in.</span>
+          <span class="label" style="color:#64748b;font-size:11px;">Only <strong>Chrome</strong> / <strong>Edge</strong> (desktop) support Web Bluetooth for the micro:bit.</span>
         </div>
       </div>
     </div>
@@ -162,8 +157,8 @@
   </div>
 
   <div class="footer">
-    <span>Face Quest v1.0.0 &bull; Print on A4 landscape, laminate, love.</span>
-    <span class="brand">For the webcam + BBC micro:bit V2</span>
+    <span>Face Quest v1.0.0 &bull; Print A4 landscape, laminate, love.</span>
+    <span class="brand">Webcam + BBC micro:bit V2</span>
   </div>
 
 </div>

@@ -79,68 +79,68 @@
 
   <div class="header">
     <h1>Face Quest</h1>
-    <div class="sub">Browser BLE Control Panel for the webcam + BBC micro:bit V2</div>
+    <div class="sub">In-browser face recognition lab &bull; webcam + optional BBC micro:bit V2</div>
     <div class="ver">v1.0.0 &bull; Digital Download</div>
     <div class="line"></div>
   </div>
 
   <div class="thanks">
-    <strong>Thank you for buying Face Quest!</strong> You just grabbed a zero-install, zero-account, browser-local control panel for the webcam + BBC micro:bit V2. Everything runs on your machine &mdash; no cloud, no telemetry, no nonsense. This page walks you through the first three things to do.
+    <strong>Thank you for buying Face Quest!</strong> You just grabbed a zero-install, zero-account face recognition classroom in a folder. Three tiny AI models run entirely in your browser &mdash; no photos saved, no cloud, no telemetry. This page walks you through the first three things to do.
   </div>
 
   <h2>First 3 Things To Do</h2>
   <div class="steps-mini">
-    <div class="step-m"><div class="num">1</div><span><strong style="color:#22c55e;">Flash the firmware.</strong> Open <a style="color:#22d3ee;">makecode.microbit.org</a>, switch to JavaScript, paste <code class="c">makecode.ts</code>, click Download, and drag the <code class="c">.hex</code> to your micro:bit V2. The board will show an <strong style="color:#fff;">X</strong>.</span></div>
-    <div class="step-m"><div class="num">2</div><span><strong style="color:#22c55e;">Open the app.</strong> Double-click <code class="c">index.html</code> in <strong style="color:#fff;">Chrome</strong> or <strong style="color:#fff;">Edge</strong>. It loads locally. Click <strong style="color:#22c55e;">Connect</strong>, pick your board, watch the status dot turn green.</span></div>
-    <div class="step-m"><div class="num">3</div><span><strong style="color:#22c55e;">Play.</strong> Press <kbd>1</kbd>&hellip;<kbd>8</kbd> to hop between LEDs, Sensors, Servos, GamePad, Graph, 3D, Bench, About. Tap <kbd>F</kbd> for fullscreen graph. No board? Flip on <strong style="color:#22d3ee;">Simulate Mode</strong>.</span></div>
+    <div class="step-m"><div class="num">1</div><span><strong style="color:#22c55e;">Serve the folder.</strong> Open a terminal in the project folder and run <code class="c">python3 -m http.server 8012</code>. Then visit <code class="c">http://localhost:8012</code> in Chrome or Edge. (A plain file:// open won't let the browser grant camera permission.)</span></div>
+    <div class="step-m"><div class="num">2</div><span><strong style="color:#22c55e;">Start Mission.</strong> Click <strong style="color:#22c55e;">🚀 Start Mission</strong> and allow camera access. The three AI models load from <code class="c">./models</code>. Click <strong style="color:#22c55e;">🧠 Teach My Face</strong>, then <strong style="color:#22c55e;">🔓 Unlock!</strong>.</span></div>
+    <div class="step-m"><div class="num">3</div><span><strong style="color:#22c55e;">Pair a Robot Buddy (optional).</strong> Flash the provided <code class="c">microbit.ts</code> to a BBC micro:bit V2, click <strong style="color:#22c55e;">🤝 Connect</strong>. On every Unlock the board shows ✓ / ✗ and drives pin <code class="c">P0</code> HIGH on MATCH.</span></div>
   </div>
 
   <h2>What&apos;s in the ZIP</h2>
   <div class="files">
-    <div class="file"><span class="icon">🌐</span><code>index.html</code><span>&mdash; Main app</span></div>
-    <div class="file"><span class="icon">🎨</span><code>styles.css</code><span>&mdash; 4 themes</span></div>
+    <div class="file"><span class="icon">🌐</span><code>index.html</code><span>&mdash; Face Quest Lab UI</span></div>
+    <div class="file"><span class="icon">🎨</span><code>styles.css</code><span>&mdash; Dark lab theme</span></div>
     <div class="file"><span class="icon">📦</span><code>sw.js</code><span>&mdash; Offline PWA</span></div>
-    <div class="file"><span class="icon">🤖</span><code>makecode.ts</code><span>&mdash; Firmware</span></div>
-    <div class="file"><span class="icon">⚙️</span><code>js/*.js</code><span>&mdash; BLE + logic</span></div>
-    <div class="file"><span class="icon">🎲</span><code>js/models/</code><span>&mdash; 5 3D models</span></div>
-    <div class="file"><span class="icon">📖</span><code>docs/guide.html</code><span>&mdash; Full user guide</span></div>
-    <div class="file"><span class="icon">⌨️</span><code>docs/cheatsheet.html</code><span>&mdash; Shortcuts</span></div>
-    <div class="file"><span class="icon">❓</span><code>docs/faq.html</code><span>&mdash; FAQ</span></div>
+    <div class="file"><span class="icon">🧠</span><code>app.js</code><span>&mdash; Main logic</span></div>
+    <div class="file"><span class="icon">🤖</span><code>face-api.min.js</code><span>&mdash; AI library</span></div>
+    <div class="file"><span class="icon">📁</span><code>models/</code><span>&mdash; 3 AI models</span></div>
+    <div class="file"><span class="icon">🔗</span><code>ble_microbit.js</code><span>&mdash; BLE UART link</span></div>
+    <div class="file"><span class="icon">⚙️</span><code>microbit.ts</code><span>&mdash; MakeCode firmware</span></div>
+    <div class="file"><span class="icon">📖</span><code>README.md</code><span>&mdash; Full guide</span></div>
     <div class="file"><span class="icon">📜</span><code>LICENSE.txt</code><span>&mdash; Your license</span></div>
   </div>
-  <p style="font-size:11px;color:#64748b;">Printable extras live in <code class="c">etsy-package/</code>: quick-start card, shortcut cheat sheet, A3 classroom poster, sticker sheet, lesson plan.</p>
+  <p style="font-size:11px;color:#64748b;">Printable extras live in <code class="c">etsy-package/</code>: quick-start card, controls cheat sheet, A3 classroom poster, sticker sheet, lesson plan.</p>
 
   <h2>Requirements</h2>
   <div class="req">
-    <div><span class="check">&#10003;</span><span class="label">BBC micro:bit <strong style="color:#fff;">V2</strong> (V1 lacks the sound sensor)</span></div>
-    <div><span class="check">&#10003;</span><span class="label">Chrome 90+ or Edge 90+ on desktop or Android (Web Bluetooth)</span></div>
-    <div><span class="check">&#10003;</span><span class="label">Bluetooth enabled on the host device</span></div>
-    <div><span class="check">&#10003;</span><span class="label">Optional: hobby servos on pins <strong style="color:#22c55e;">P1</strong> / <strong style="color:#22c55e;">P2</strong></span></div>
+    <div><span class="check">&#10003;</span><span class="label">Webcam (built-in or USB)</span></div>
+    <div><span class="check">&#10003;</span><span class="label">Chrome 90+ or Edge 90+ on desktop (getUserMedia + Web Bluetooth)</span></div>
+    <div><span class="check">&#10003;</span><span class="label">A way to serve the folder over HTTP (<code class="c">python3 -m http.server</code> works)</span></div>
+    <div><span class="check">&#10003;</span><span class="label">Optional: BBC micro:bit <strong style="color:#fff;">V2</strong> for the Robot Buddy link</span></div>
     <div><span class="check">&#10003;</span><span class="label">No internet needed after first load &mdash; installs as a PWA</span></div>
   </div>
 
   <h2>Key Features</h2>
   <div class="box">
-    <p><strong style="color:#22d3ee;">Control:</strong> 5&times;5 LED matrix &bull; 2 servos (P1/P2) &bull; buzzer &bull; D-pad gamepad</p>
-    <p><strong style="color:#22d3ee;">Read:</strong> temperature &bull; light &bull; sound &bull; accelerometer &bull; compass &bull; buttons &bull; touch pins</p>
-    <p><strong style="color:#22d3ee;">Visualize:</strong> Chart.js live graph (fullscreen, record, export JSON) &bull; 3D Three.js board view with 5 models</p>
-    <p><strong style="color:#22d3ee;">Polish:</strong> 4 themes &bull; EN / FR / AR &bull; simulate mode &bull; keyboard shortcuts &bull; PWA offline</p>
+    <p><strong style="color:#22d3ee;">Detect:</strong> face detector (SSD or Tiny) &bull; 68 facial landmarks &bull; 128-number face descriptor</p>
+    <p><strong style="color:#22d3ee;">Enroll &amp; Verify:</strong> 1:1 matching &bull; Euclidean or Cosine distance &bull; tunable threshold 0.30 – 1.20</p>
+    <p><strong style="color:#22d3ee;">Play:</strong> XP counter &bull; PIN-gated Test Mode &bull; auto-lock after 5 s of no face &bull; Speech feedback &amp; voice commands</p>
+    <p><strong style="color:#22d3ee;">Robot Buddy:</strong> BLE UART micro:bit link &bull; MATCH / NO / ENROLLED / LOCK / TEST messages &bull; P0 HIGH on match</p>
   </div>
 
   <h2>Privacy</h2>
   <div class="box">
-    <h4>100% Local &mdash; Zero Data Collection</h4>
-    <p>Runs entirely in your browser. No accounts, no cloud, no tracking, no analytics. Sessions, settings, and recordings stay on your device. Safe for school networks.</p>
+    <h4>100% Local &mdash; No Photos Saved</h4>
+    <p>face-api.js runs entirely in your browser. The only thing stored locally is a 128-number descriptor in IndexedDB &mdash; not a photo. No accounts, no cloud, no tracking. Safe for classrooms.</p>
   </div>
 
-  <h2>Languages</h2>
-  <p>Built-in <strong style="color:#fff;">English</strong>, <strong style="color:#fff;">Français</strong>, and <strong style="color:#fff;">العربية</strong> (full RTL). Cycle with <kbd>L</kbd>.</p>
+  <h2>Language</h2>
+  <p>Face Quest ships in <strong style="color:#fff;">English</strong>. Seller playbooks for shop owners are included in <strong style="color:#fff;">English</strong>, <strong style="color:#fff;">Français</strong>, and <strong style="color:#fff;">العربية</strong>.</p>
 
   <h2>Need Help?</h2>
   <div class="box">
-    <p>Open <code class="c">docs/guide.html</code> for the complete walkthrough and troubleshooting.</p>
-    <p>Open <code class="c">docs/faq.html</code> for the top buyer questions.</p>
-    <p>Press <kbd>?</kbd> inside the app for the built-in shortcuts overlay.</p>
+    <p>Open <code class="c">USERGUIDE.html</code> (or <code class="c">USERGUIDE.md</code>) for the complete walkthrough and troubleshooting.</p>
+    <p>Open <code class="c">README.md</code> at the project root for the kid-friendly overview.</p>
+    <p>Use <strong>🎤 Voice</strong> inside the app to try "Start", "Teach", "Unlock", "Lock", "Reset".</p>
   </div>
 
   <div class="footer">

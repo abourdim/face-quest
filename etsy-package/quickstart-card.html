@@ -79,69 +79,69 @@
 
   <div class="header">
     <h1>Face Quest</h1>
-    <div class="sub">Browser BLE Control Panel for the webcam + BBC micro:bit V2</div>
-    <div class="tagline">No install &bull; No account &bull; 100% local &bull; EN / FR / AR</div>
+    <div class="sub">In-browser face recognition lab &bull; webcam + optional BBC micro:bit V2</div>
+    <div class="tagline">No install &bull; No account &bull; 100% local &bull; English printables</div>
     <div class="line"></div>
   </div>
 
   <div class="steps">
     <div class="step">
       <div class="step-num">1</div>
-      <div class="icon">🤖</div>
-      <h3>Flash the Firmware</h3>
-      <p>Open <a style="color:#22d3ee;">makecode.microbit.org</a>, switch to JavaScript, paste <code class="code">makecode.ts</code>, hit <strong style="color:#22c55e;">Download</strong> and drag to your micro:bit V2.</p>
+      <div class="icon">🌐</div>
+      <h3>Open the App</h3>
+      <p>In the project folder run <code class="code">python3 -m http.server 8012</code>, then open <code class="code">http://localhost:8012</code> in <strong style="color:#fff;">Chrome</strong> or <strong style="color:#fff;">Edge</strong>. Allow the webcam.</p>
     </div>
     <div class="step">
       <div class="step-num">2</div>
-      <div class="icon">🌐</div>
-      <h3>Open the App</h3>
-      <p>Double-click <code class="code">index.html</code> in <strong style="color:#fff;">Chrome</strong> or <strong style="color:#fff;">Edge</strong>. No server, no install. Works offline as a PWA.</p>
+      <div class="icon">🚀</div>
+      <h3>Start Mission</h3>
+      <p>Click <span class="pill pg">🚀 Start Mission</span>. Three tiny AI models load from <code class="code">./models</code>: face detector, landmarks, recognition. The scanner turns on.</p>
     </div>
     <div class="step">
       <div class="step-num">3</div>
-      <div class="icon">📡</div>
-      <h3>Pair over BLE</h3>
-      <p>Click <span class="pill pg">Connect</span>, pick <strong style="color:#fff;">BBC micro:bit [xxxxx]</strong> in the browser prompt. The board LEDs flash a tick.</p>
+      <div class="icon">🧠</div>
+      <h3>Teach My Face</h3>
+      <p>Center your face and click <span class="pill pg">🧠 Teach My Face</span>. The app collects sharp samples and saves a 128-number descriptor locally &mdash; no photos.</p>
     </div>
     <div class="step">
       <div class="step-num">4</div>
-      <div class="icon">🎛️</div>
-      <h3>Play with the Tabs</h3>
-      <p>LEDs, Sensors, Servos, GamePad, Graph, 3D board, Bench, About. Press <kbd style="background:rgba(0,0,0,.5);border:1px solid rgba(34,197,94,.25);border-radius:5px;padding:1px 6px;font-size:11px;font-family:'Orbitron',monospace;color:#22c55e;">1</kbd>–<kbd style="background:rgba(0,0,0,.5);border:1px solid rgba(34,197,94,.25);border-radius:5px;padding:1px 6px;font-size:11px;font-family:'Orbitron',monospace;color:#22c55e;">8</kbd> to jump.</p>
+      <div class="icon">🔓</div>
+      <h3>Unlock!</h3>
+      <p>Click <span class="pill pg">🔓 Unlock!</span>. The app compares live frames to your saved face. Match &rarr; &#x2705;. No match &rarr; &#x274C;. Tweak <strong style="color:#22c55e;">Threshold</strong> for strictness.</p>
     </div>
     <div class="step step-full">
       <div class="step-num">5</div>
-      <div class="icon">📈</div>
-      <h3>Graph It &amp; Save</h3>
-      <p>Open the <strong style="color:#22c55e;">Graph</strong> tab to see live temperature, light, sound and motion rolling across Chart.js. Press <kbd style="background:rgba(0,0,0,.5);border:1px solid rgba(34,197,94,.2);border-radius:4px;padding:0 6px;font-family:'Orbitron',monospace;font-size:11px;color:#22c55e;">F</kbd> for fullscreen, tap <span class="pill pb">Record</span> to capture a session and export it as JSON. No micro:bit? Try <strong style="color:#22d3ee;">Simulate Mode</strong>.</p>
+      <div class="icon">🔗</div>
+      <h3>Pair the Robot Buddy (optional)</h3>
+      <p>Flash the MakeCode BLE UART sketch to your BBC micro:bit V2. Click <span class="pill pb">🤝 Connect</span>, pick <strong style="color:#fff;">BBC micro:bit [xxxxx]</strong>. On Unlock, the micro:bit shows <strong style="color:#22c55e;">✓</strong> / <strong style="color:#f87171;">✗</strong>, drives <code class="code">P0</code> HIGH on MATCH, and acks over UART.</p>
     </div>
   </div>
 
-  <div class="section-title">Essential Shortcuts</div>
+  <div class="section-title">Core Buttons</div>
   <div class="shortcuts">
-    <div class="shortcut"><kbd>Space</kbd><span>Pause stream</span></div>
-    <div class="shortcut"><kbd>1-8</kbd><span>Switch tab</span></div>
-    <div class="shortcut"><kbd>P</kbd><span>LED presets</span></div>
-    <div class="shortcut"><kbd>F</kbd><span>Fullscreen graph</span></div>
-    <div class="shortcut"><kbd>K</kbd><span>Clear graph</span></div>
-    <div class="shortcut"><kbd>Esc</kbd><span>Close overlay</span></div>
-    <div class="shortcut"><kbd>?</kbd><span>Shortcuts help</span></div>
-    <div class="shortcut"><kbd>T</kbd><span>Cycle themes</span></div>
+    <div class="shortcut"><kbd>Start</kbd><span>Webcam on</span></div>
+    <div class="shortcut"><kbd>Teach</kbd><span>Enroll face</span></div>
+    <div class="shortcut"><kbd>Unlock</kbd><span>Verify 1:1</span></div>
+    <div class="shortcut"><kbd>Reset</kbd><span>Clear saved face</span></div>
+    <div class="shortcut"><kbd>Mirror</kbd><span>Flip preview</span></div>
+    <div class="shortcut"><kbd>Switch</kbd><span>Change camera</span></div>
+    <div class="shortcut"><kbd>Speech</kbd><span>Voice feedback</span></div>
+    <div class="shortcut"><kbd>Voice</kbd><span>"Teach" / "Unlock"</span></div>
   </div>
 
   <div class="section-title">Highlights</div>
   <div class="features">
-    <div class="feat"><strong>5&times;5 LED Matrix</strong>Draw, presets, hex patterns</div>
-    <div class="feat"><strong>Live Sensors</strong>Temp, light, sound, accel, compass</div>
-    <div class="feat"><strong>Dual Servos P1/P2</strong>Sliders, gauges, OFF buttons</div>
-    <div class="feat"><strong>3D Board View</strong>micro:bit, Buggy, Arm, Balance, Weather</div>
-    <div class="feat"><strong>4 Themes</strong>Stealth, Neon, Arctic, Blaze</div>
-    <div class="feat"><strong>Trilingual</strong>English, Français, العربية</div>
+    <div class="feat"><strong>3 AI Models</strong>Detector, landmarks, recognition</div>
+    <div class="feat"><strong>SSD or Tiny</strong>Pick accurate or fast</div>
+    <div class="feat"><strong>Threshold Dial</strong>Euclidean or cosine</div>
+    <div class="feat"><strong>BLE micro:bit</strong>MATCH / NO / LOCK / TEST</div>
+    <div class="feat"><strong>PIN-gated Test Mode</strong>Continuous scan</div>
+    <div class="feat"><strong>100% Offline</strong>Installable PWA</div>
   </div>
 
   <div class="footer">
     <div class="url">Face Quest v1.0.0</div>
-    <div class="copy">For webcam + BBC micro:bit V2 &bull; Web Bluetooth required &bull; Chrome / Edge</div>
+    <div class="copy">Webcam required &bull; BBC micro:bit V2 optional &bull; Chrome / Edge (Web Bluetooth)</div>
   </div>
 
 </div>
