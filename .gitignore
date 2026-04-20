@@ -9,5 +9,6 @@
 etsy-package/output/
 etsy-package/FaceQuest-v*/
 
-# Track the shipped ZIP for reference
-!etsy-package/FaceQuest-v*.zip
+# ZIP excluded: exceeds GitHub 100MB limit (face-api.js models ~209MB).
+# Rebuild locally with `node etsy-package/build-package.js`.
+etsy-package/FaceQuest-v*.zip
