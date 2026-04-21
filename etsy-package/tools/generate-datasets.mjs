@@ -1,12 +1,12 @@
 /**
  * Generate a synthetic sensor-data corpus — 100 CSV files covering plausible
- * micro:bit sensor sessions (temperature, light, sound, tilt, face match, etc.).
+ * micro:bit sensor sessions (Say teach, tilt, face match, etc.).
  *
  * Purpose: makes the product hardware-OPTIONAL. Teachers without a micro:bit
  * can still teach data-analysis using the shipped datasets. Expands TAM
  * from "schools with hardware budget" to "any classroom with laptops."
  *
- * Each CSV matches the format produced by the app's Graph tab CSV export:
+ * Each CSV matches the format produced by the app's Quest Log CSV export:
  *   timestamp_ms,sensor_name,value
  *
  * Datasets are grouped by scenario:
