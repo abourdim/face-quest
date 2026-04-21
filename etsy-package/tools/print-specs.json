@@ -1,91 +1,91 @@
 {
-  "_comment": "Per-language strings for the poster (A3 portrait) and flyer (A4 portrait). Used by generate-print.mjs. Screenshots referenced are resolved from output/<lang>/screenshots/.",
+  "_comment": "Print specs for Face Quest (browser face recognition game). face-api.js · 128-D descriptor local · Teach/Verify/Unlock · Quest Log + XP · voice commands · optional micro:bit V2 BLE.",
 
   "common": {
     "url": "abourdim.github.io/face-quest",
     "qrUrl": "https://abourdim.github.io/face-quest/?utm_source=etsy&utm_medium=print&utm_campaign=poster",
     "screenshots": {
       "teacher": "screenshot-scanner.png",
-      "kid": "screenshot-audience-kid-3d.png",
+      "kid": "screenshot-buddy.png",
       "maker": "screenshot-audience-maker-3d.png"
     }
   },
 
   "en": {
     "brand": "face-quest",
-    "posterTitle": "Every sensor.\nLive in every browser.",
-    "posterKicker": "WEB BLUETOOTH · MICRO:BIT V2",
-    "posterSubtitle": "Classroom-ready control panel. 30 laptops. Zero install.",
+    "posterTitle": "Teach a face.\nUnlock with a glance.",
+    "posterKicker": "face-api.js · 128-D DESCRIPTOR · LOCAL ONLY",
+    "posterSubtitle": "A privacy-first face recognition game. Nothing uploads. Nothing stored in the cloud.",
     "features": [
-      { "icon": "⚡", "h": "Live sensors", "p": "Temperature, sound, light, face tracker, face match — all streaming in real time." },
-      { "icon": "🎛️", "h": "Full control", "p": "Paint LEDs, enroll a face, drive motors. Record CSV sessions for lessons." },
-      { "icon": "🧊", "h": "Live 3D mirror", "p": "A photoreal board tilts with your micro:bit. Kids see the physics click." }
+      { "icon": "🎓", "h": "Teach My Face", "p": "Enroll in 10 seconds. A 128-dimensional descriptor lives in your browser — never on a server." },
+      { "icon": "🔓", "h": "Verify & unlock", "p": "Look at the camera, or say “unlock”. Earn XP. Track attempts in the Quest Log." },
+      { "icon": "🛡️", "h": "No cloud. Ever.", "p": "Runs 100% in your browser. No account, no upload, no telemetry. COPPA-friendly by design." }
     ],
     "steps": [
-      "Plug in the micro:bit (USB or battery).",
       "Open Chrome or Edge on any laptop.",
-      "Visit the URL below — no install.",
-      "Click Connect, pick your board.",
-      "Dot goes green. You're live."
+      "Click Teach — show your face.",
+      "Click Verify — glance at the camera.",
+      "Say “unlock” to trigger by voice.",
+      "(Optional) pair a micro:bit for ✓/✗ on 5×5 LEDs."
     ],
     "stepsHeader": "Get started in 60 seconds",
     "qrCaption": "Scan to try the live demo",
     "audienceLine": "For teachers, kids, and makers.",
-    "footerLeft": "Chrome / Edge · Works offline · No account",
-    "footerRight": "MakeCode firmware · Open source friendly",
-    "flyerTagline": "The browser IS the IDE.",
-    "motto": "Every scientist started by asking \"what happens if I press this?\""
+    "footerLeft": "Chrome / Edge · No account · No uploads",
+    "footerRight": "TensorFlow.js · Open source friendly",
+    "flyerTagline": "Your face. Your key. Your browser.",
+    "motto": "The best privacy policy is a file that never leaves."
   },
 
   "fr": {
     "brand": "face-quest",
-    "posterTitle": "Chaque capteur,\nen direct dans le navigateur.",
-    "posterKicker": "WEB BLUETOOTH · MICRO:BIT V2",
-    "posterSubtitle": "Panneau de contrôle prêt pour la classe. 30 ordinateurs. Zéro installation.",
+    "posterTitle": "Apprends ton visage.\nDéverrouille d'un regard.",
+    "posterKicker": "face-api.js · DESCRIPTEUR 128-D · 100 % LOCAL",
+    "posterSubtitle": "Un jeu de reconnaissance faciale respectueux. Rien ne part, rien n'est stocké dans le cloud.",
     "features": [
-      { "icon": "⚡", "h": "Capteurs en direct", "p": "Fonctionnalités du produit — voir la description." },
-      { "icon": "🎛️", "h": "Contrôle complet", "p": "Peindre les LEDs, faire tourner les face scans, piloter les moteurs. Export CSV." },
-      { "icon": "🧊", "h": "Miroir 3D", "p": "Une carte photoréaliste s'incline avec votre micro:bit. La physique prend vie." }
+      { "icon": "🎓", "h": "Apprends mon visage", "p": "Enrôlement en 10 secondes. Un descripteur 128-D vit dans ton navigateur — jamais sur un serveur." },
+      { "icon": "🔓", "h": "Vérifie et déverrouille", "p": "Regarde la caméra, ou dis « unlock ». Gagne de l'XP. Suis chaque tentative dans le Quest Log." },
+      { "icon": "🛡️", "h": "Zéro cloud", "p": "100 % dans le navigateur. Pas de compte, pas d'upload, pas de télémétrie. Conforme RGPD." }
     ],
     "steps": [
-      "Branchez le micro:bit (USB ou pile).",
-      "Ouvrez Chrome ou Edge.",
-      "Visitez l'URL ci-dessous — rien à installer.",
-      "Cliquez Connecter, choisissez votre carte.",
-      "Le point passe au vert. C'est parti."
+      "Ouvre Chrome ou Edge.",
+      "Clique Teach — montre ton visage.",
+      "Clique Verify — jette un œil à la caméra.",
+      "Dis « unlock » pour activer par la voix.",
+      "(Optionnel) connecte un micro:bit : ✓/✗ sur LEDs 5×5."
     ],
     "stepsHeader": "Démarrez en 60 secondes",
     "qrCaption": "Scannez pour la démo en direct",
     "audienceLine": "Pour les enseignants, les enfants et les makers.",
-    "footerLeft": "Chrome / Edge · Hors ligne · Sans compte",
-    "footerRight": "Firmware MakeCode · Compatible open source",
-    "flyerTagline": "Le navigateur EST l'IDE.",
-    "motto": "Chaque scientifique a commencé par demander « que se passe-t-il si j'appuie ici ? »"
+    "footerLeft": "Chrome / Edge · Sans compte · Sans upload",
+    "footerRight": "TensorFlow.js · Compatible open source",
+    "flyerTagline": "Ton visage. Ta clé. Ton navigateur.",
+    "motto": "La meilleure politique de confidentialité est un fichier qui ne part jamais."
   },
 
   "ar": {
     "brand": "face-quest",
-    "posterTitle": "كل حساس،\nمباشرةً في المتصفح.",
-    "posterKicker": "WEB BLUETOOTH · MICRO:BIT V2",
-    "posterSubtitle": "لوحة تحكم جاهزة للقاعة الدراسية. 30 جهازاً. بدون تثبيت.",
+    "posterTitle": "علّم وجهك.\nافتح بنظرة.",
+    "posterKicker": "face-api.js · بصمة 128-D · محلّي فقط",
+    "posterSubtitle": "لعبة تعرّف على الوجه تحترم الخصوصية. لا رفع، لا تخزين سحابي.",
     "features": [
-      { "icon": "⚡", "h": "مستشعرات حية", "p": "الحرارة، الصوت، الضوء، التسارع، البوصلة — كلها في الوقت الحقيقي." },
-      { "icon": "🎛️", "h": "تحكم كامل", "p": "ارسم على مصفوفة LED، أدِر السيرفو، قُد المحركات. تصدير CSV للدروس." },
-      { "icon": "🧊", "h": "مرآة ثلاثية الأبعاد", "p": "لوحة واقعية تميل مع micro:bit الفعلي. الفيزياء تصبح مرئية." }
+      { "icon": "🎓", "h": "علّم وجهي", "p": "تسجيل في 10 ثوانٍ. بصمة 128-D تسكن متصفحك — لا خادم أبداً." },
+      { "icon": "🔓", "h": "تحقّق وافتح", "p": "انظر إلى الكاميرا أو قل « unlock ». اربح XP. تابع المحاولات في سجل المهام." },
+      { "icon": "🛡️", "h": "بلا سحاب. إطلاقاً.", "p": "100٪ داخل المتصفح. بدون حساب، بدون رفع، بدون تتبّع. صديق للخصوصية بالتصميم." }
     ],
     "steps": [
-      "وصّل micro:bit (USB أو بطارية).",
       "افتح Chrome أو Edge.",
-      "زُر الرابط أدناه — بدون تثبيت.",
-      "اضغط Connect واختر لوحتك.",
-      "تتحول النقطة إلى الأخضر. جاهز."
+      "اضغط Teach — أظهر وجهك.",
+      "اضغط Verify — انظر إلى الكاميرا.",
+      "قل « unlock » للتشغيل بالصوت.",
+      "(اختياري) اربط micro:bit: ✓/✗ على LED 5×5."
     ],
     "stepsHeader": "ابدأ خلال 60 ثانية",
     "qrCaption": "امسح لتجربة العرض المباشر",
     "audienceLine": "للمعلمين والأطفال والمبدعين.",
-    "footerLeft": "Chrome / Edge · يعمل دون اتصال · بدون حساب",
-    "footerRight": "فيرموير MakeCode · متوافق مع المصدر المفتوح",
-    "flyerTagline": "المتصفح هو بيئة التطوير.",
-    "motto": "كل عالِم بدأ بسؤال: «ماذا يحدث لو ضغطت هنا؟»"
+    "footerLeft": "Chrome / Edge · بدون حساب · بدون رفع",
+    "footerRight": "TensorFlow.js · متوافق مع المصدر المفتوح",
+    "flyerTagline": "وجهك. مفتاحك. متصفحك.",
+    "motto": "أفضل سياسة خصوصية هي ملفٌّ لا يغادر."
   }
 }

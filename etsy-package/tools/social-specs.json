@@ -1,5 +1,5 @@
 {
-  "_comment": "Social media kit specs — 4 aspect ratios per language, driven by generate-social.mjs. Screenshots resolved from output/<lang>/screenshots/.",
+  "_comment": "Social kit for Face Quest. face-api.js · 128-D descriptor · local-only · voice commands.",
 
   "formats": [
     { "name": "ig-post",    "w": 1080, "h": 1080, "label": "Instagram feed",   "layout": "square" },
@@ -12,29 +12,29 @@
 
   "en": {
     "brand": "face-quest",
-    "kicker": "MICRO:BIT · WEB BLUETOOTH",
-    "title": "Every sensor.\nLive in the browser.",
-    "subtitle": "Chrome / Edge · Zero install · Works offline",
+    "kicker": "face-api.js · 128-D DESCRIPTOR · LOCAL ONLY",
+    "title": "Teach a face.\nUnlock with a glance.",
+    "subtitle": "Chrome / Edge · No cloud · No uploads · Voice commands",
     "cta": "Try the demo →",
     "url": "abourdim.github.io/face-quest",
-    "hashtags": "#microbit  #STEM  #EdTech"
+    "hashtags": "#FaceRecognition  #PrivacyFirst  #EdTech  #STEM  #TensorFlowJS"
   },
   "fr": {
     "brand": "face-quest",
-    "kicker": "MICRO:BIT · WEB BLUETOOTH",
-    "title": "Chaque capteur,\nen direct dans le navigateur.",
-    "subtitle": "Chrome / Edge · Zéro installation · Hors ligne",
+    "kicker": "face-api.js · DESCRIPTEUR 128-D · 100 % LOCAL",
+    "title": "Apprends ton visage.\nDéverrouille d'un regard.",
+    "subtitle": "Chrome / Edge · Sans cloud · Sans upload · Commandes vocales",
     "cta": "Essayer la démo →",
     "url": "abourdim.github.io/face-quest",
-    "hashtags": "#microbit  #STEM  #EdTech"
+    "hashtags": "#ReconnaissanceFaciale  #RGPD  #EdTech  #STEM  #TensorFlowJS"
   },
   "ar": {
     "brand": "face-quest",
-    "kicker": "MICRO:BIT · WEB BLUETOOTH",
-    "title": "كل حساس،\nمباشرةً في المتصفح.",
-    "subtitle": "Chrome / Edge · بدون تثبيت · يعمل دون اتصال",
+    "kicker": "face-api.js · بصمة 128-D · محلّي فقط",
+    "title": "علّم وجهك.\nافتح بنظرة.",
+    "subtitle": "Chrome / Edge · بدون سحاب · بدون رفع · أوامر صوتية",
     "cta": "← جرّب العرض التوضيحي",
     "url": "abourdim.github.io/face-quest",
-    "hashtags": "#microbit  #STEM  #EdTech"
+    "hashtags": "#تعرف_على_الوجه  #خصوصية  #EdTech  #STEM  #TensorFlowJS"
   }
 }
