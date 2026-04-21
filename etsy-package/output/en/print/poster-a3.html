@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><meta charset="UTF-8"><style>
+  @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Orbitron:wght@500;700&family=Inter:wght@400;600;800;900&family=Tajawal:wght@400;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A3 portrait; margin: 0; }
+  html, body { width: 297mm; height: 420mm; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #020617;
+    color: #e8ffe8;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .page { width: 297mm; height: 420mm; padding: 16mm 18mm 60mm; position: relative; overflow: hidden; }
+  .page::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(circle at 18% 12%, rgba(34,197,94,.18) 0%, transparent 45%),
+      radial-gradient(circle at 85% 88%, rgba(34,211,238,.12) 0%, transparent 55%);
+  }
+  .page::after {
+    content: ''; position: absolute; inset: 10mm;
+    border: 1.5px solid rgba(34,197,94,.2); border-radius: 8mm;
+    pointer-events: none;
+  }
+
+  .kicker {
+    font-family: 'Orbitron', monospace; font-size: 11pt;
+    color: #22d3ee; letter-spacing: 0.25em;
+    margin-bottom: 4mm;
+    
+  }
+  .title {
+    font-family: 'Orbitron', 'Inter', sans-serif;
+    font-size: 56pt;
+    font-weight: 700;
+    color: #22c55e;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 40px rgba(34,197,94,.3);
+    white-space: pre-line;
+    max-width: 240mm;
+  }
+  .subtitle {
+    font-size: 16pt;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-top: 6mm;
+    line-height: 1.35;
+    max-width: 240mm;
+  }
+
+  .hero-shot {
+    margin: 8mm auto 0;
+    width: 100%; max-width: 235mm; height: 180mm;
+    border-radius: 4mm; overflow: hidden;
+    box-shadow: 0 8mm 20mm rgba(0,0,0,.55), 0 0 0 1.5px rgba(34,197,94,.25);
+    background: #000;
+  }
+  .hero-shot img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+
+  .features {
+    display: flex; gap: 5mm; margin-top: 6mm;
+    margin-bottom: 55mm;
+  }
+  .feat {
+    flex: 1;
+    background: rgba(15,23,42,.75);
+    border: 1px solid rgba(34,197,94,.18);
+    border-radius: 4mm;
+    padding: 5mm 4mm;
+  }
+  .feat .icon { font-size: 22pt; display: block; margin-bottom: 2mm; }
+  .feat h3 { color: #22c55e; font-size: 14pt; font-weight: 800; margin-bottom: 2mm; }
+  .feat p { color: #94a3b8; font-size: 10pt; line-height: 1.4; }
+
+  .qr-block {
+    position: absolute; bottom: 14mm; right: 18mm;
+    display: flex; align-items: center; gap: 5mm;
+    background: rgba(10,14,18,.92); color: #e8ffe8;
+    padding: 5mm 6mm; border-radius: 3mm;
+    border: 1px solid rgba(34,197,94,.3);
+  }
+  .qr-block img { width: 32mm; height: 32mm; background: #fff; padding: 1mm; border-radius: 1mm; display: block; }
+  .qr-block .qr-caption { font-weight: 700; font-size: 11pt; color: #22c55e; line-height: 1.2; margin-bottom: 1.5mm; }
+  .qr-block .qr-url { font-family: 'Orbitron', monospace; font-size: 8pt; color: #94a3b8; letter-spacing: 0.05em; }
+
+  .footer {
+    position: absolute; bottom: 14mm; left: 18mm;
+    max-width: 120mm;
+  }
+  .footer .left { font-size: 9pt; color: #64748b; }
+  .footer .brand { font-family: 'Orbitron', monospace; font-size: 11pt; color: #22c55e; letter-spacing: 0.12em; margin-top: 2mm; }
+</style></head>
+<body><div class="page">
+  <div class="kicker">WEB BLUETOOTH · MICRO:BIT V2</div>
+  <div class="title">Every sensor.
+Live in every browser.</div>
+  <div class="subtitle">Classroom-ready control panel. 30 laptops. Zero install.</div>
+
+  <div class="hero-shot"><img src="file://D:/work/dev/16_workshop/102_etsy/face-quest/etsy-package/output/en/screenshots/screenshot-scanner.png"></div>
+
+  <div class="features">
+    
+    <div class="feat">
+      <span class="icon">⚡</span>
+      <h3>Live sensors</h3>
+      <p>Temperature, sound, light, face tracker, face match — all streaming in real time.</p>
+    </div>
+    <div class="feat">
+      <span class="icon">🎛️</span>
+      <h3>Full control</h3>
+      <p>Paint LEDs, enroll a face, drive motors. Record CSV sessions for lessons.</p>
+    </div>
+    <div class="feat">
+      <span class="icon">🧊</span>
+      <h3>Live 3D mirror</h3>
+      <p>A photoreal board tilts with your micro:bit. Kids see the physics click.</p>
+    </div>
+  </div>
+
+  <div class="qr-block">
+    <img src="data:image/png;base64,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">
+    <div>
+      <div class="qr-caption">Scan to try the live demo</div>
+      <div class="qr-url">abourdim.github.io/face-quest</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left">Chrome / Edge · Works offline · No account<br>MakeCode firmware · Open source friendly</div>
+    <div class="brand">face-quest</div>
+  </div>
+</div></body></html>

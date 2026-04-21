@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════════════════════
+  ⚠️  REWRITE PER PRODUCT — DO NOT SHIP AS-IS
+  ───────────────────────────────────────────────────────────────────────
+  apply-template.mjs only substituted identifiers (Face Quest,
+  v1.0.0, https://abourdim.github.io/face-quest/, etc.). The feature content, steps,
+  shortcuts, and examples below were inherited from the template's
+  source product (face-quest) and WILL BE WRONG for your product
+  unless you rewrite them.
+  
+  Before including this file in a buyer ZIP:
+    1. Delete this banner.
+    2. Rewrite every mention of specific features, shortcuts,
+       tab names, hardware interactions, etc. to match your product.
+    3. Verify with: grep -iE "face scan|chart\.js|3d board|gamepad|
+       face tracker|face match|led matrix|3 modes|sensors tab" this-file.
+  ═══════════════════════════════════════════════════════════════════════
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Face Quest Quick-Start Card</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Orbitron:wght@500&family=Tajawal:wght@400;500;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4 portrait; margin: 0; }
+  body { width: 210mm; height: 297mm; font-family: 'Tajawal', sans-serif; background: #020617; color: #cbd5e1; overflow: hidden; }
+
+  .page { width: 210mm; height: 297mm; padding: 14mm 16mm; position: relative; overflow: hidden; }
+  .page::before {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(34,197,94,.015) 3px, rgba(34,197,94,.015) 6px);
+    pointer-events: none;
+  }
+
+  .header { text-align: center; margin-bottom: 10mm; position: relative; }
+  .header h1 { font-family: 'Righteous', sans-serif; font-size: 42px; color: #22c55e; letter-spacing: 2px; }
+  .header .sub { font-size: 16px; color: #94a3b8; margin-top: 2px; }
+  .header .tagline { font-size: 13px; color: #64748b; margin-top: 4px; }
+  .header .line { width: 80%; height: 2px; background: linear-gradient(90deg, transparent, rgba(34,197,94,.35), transparent); margin: 8px auto 0; }
+
+  .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8mm; }
+  .step {
+    background: rgba(15,23,42,.6); border: 1px solid rgba(34,197,94,.14);
+    border-radius: 14px; padding: 16px 18px; position: relative;
+  }
+  .step-num {
+    position: absolute; top: -10px; left: 14px;
+    width: 28px; height: 28px; background: #22c55e; color: #020617;
+    border-radius: 50%; font-family: 'Orbitron', monospace; font-size: 13px;
+    display: flex; align-items: center; justify-content: center; font-weight: 700;
+  }
+  .step h3 { font-size: 16px; color: #22c55e; margin-top: 8px; margin-bottom: 4px; font-family: 'Righteous', sans-serif; }
+  .step p { font-size: 13px; color: #94a3b8; line-height: 1.5; }
+  .step .icon { font-size: 28px; text-align: center; margin-bottom: 2px; }
+  .step-full { grid-column: 1 / -1; }
+
+  .section-title { font-family: 'Righteous', sans-serif; font-size: 20px; color: #22d3ee; margin: 6mm 0 4mm; display: flex; align-items: center; gap: 8px; }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: rgba(34,211,238,.18); }
+
+  .shortcuts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 6mm; }
+  .shortcut {
+    background: rgba(15,23,42,.5); border: 1px solid rgba(34,197,94,.08);
+    border-radius: 10px; padding: 8px 10px; text-align: center;
+  }
+  .shortcut kbd {
+    display: inline-block; background: rgba(0,0,0,.5); border: 1px solid rgba(34,197,94,.3);
+    border-radius: 6px; padding: 3px 10px; font-family: 'Orbitron', monospace; font-size: 14px;
+    color: #22c55e; box-shadow: 0 2px 4px rgba(0,0,0,.4); margin-bottom: 3px;
+  }
+  .shortcut span { display: block; font-size: 10px; color: #64748b; }
+
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 6mm; }
+  .feat {
+    background: rgba(15,23,42,.4); border: 1px solid rgba(34,197,94,.06);
+    border-radius: 8px; padding: 8px 10px; font-size: 12px; color: #94a3b8;
+  }
+  .feat strong { color: #22d3ee; display: block; font-size: 13px; margin-bottom: 2px; }
+
+  .footer {
+    position: absolute; bottom: 12mm; left: 16mm; right: 16mm;
+    text-align: center; border-top: 1px solid rgba(34,197,94,.1);
+    padding-top: 8px;
+  }
+  .footer .url { font-family: 'Orbitron', monospace; font-size: 12px; color: #22c55e; }
+  .footer .copy { font-size: 10px; color: #64748b; margin-top: 2px; }
+
+  .pill { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 10px; font-weight: 700; }
+  .pg { background: rgba(34,197,94,.1); color: #22c55e; border: 1px solid rgba(34,197,94,.25); }
+  .pb { background: rgba(34,211,238,.1); color: #22d3ee; border: 1px solid rgba(34,211,238,.25); }
+  code.code { background: rgba(34,197,94,.1); padding: 1px 6px; border-radius: 4px; color: #22c55e; font-size: 12px; font-family: 'Orbitron', monospace; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <h1>Face Quest</h1>
+    <div class="sub">Browser BLE Control Panel for the webcam + BBC micro:bit V2</div>
+    <div class="tagline">No install &bull; No account &bull; 100% local &bull; EN / FR / AR</div>
+    <div class="line"></div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="icon">🤖</div>
+      <h3>Flash the Firmware</h3>
+      <p>Open <a style="color:#22d3ee;">makecode.microbit.org</a>, switch to JavaScript, paste <code class="code">makecode.ts</code>, hit <strong style="color:#22c55e;">Download</strong> and drag to your micro:bit V2.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="icon">🌐</div>
+      <h3>Open the App</h3>
+      <p>Double-click <code class="code">index.html</code> in <strong style="color:#fff;">Chrome</strong> or <strong style="color:#fff;">Edge</strong>. No server, no install. Works offline as a PWA.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="icon">📡</div>
+      <h3>Pair over BLE</h3>
+      <p>Click <span class="pill pg">Connect</span>, pick <strong style="color:#fff;">BBC micro:bit [xxxxx]</strong> in the browser prompt. The board LEDs flash a tick.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="icon">🎛️</div>
+      <h3>Play with the Tabs</h3>
+      <p>LEDs, Sensors, Face Enroll, Voice Commands, Graph, camera view, Bench, About. Press <kbd style="background:rgba(0,0,0,.5);border:1px solid rgba(34,197,94,.25);border-radius:5px;padding:1px 6px;font-size:11px;font-family:'Orbitron',monospace;color:#22c55e;">1</kbd>–<kbd style="background:rgba(0,0,0,.5);border:1px solid rgba(34,197,94,.25);border-radius:5px;padding:1px 6px;font-size:11px;font-family:'Orbitron',monospace;color:#22c55e;">8</kbd> to jump.</p>
+    </div>
+    <div class="step step-full">
+      <div class="step-num">5</div>
+      <div class="icon">📈</div>
+      <h3>Graph It &amp; Save</h3>
+      <p>Open the <strong style="color:#22c55e;">Graph</strong> tab to see live temperature, light, sound and motion rolling across face-api.js. Press <kbd style="background:rgba(0,0,0,.5);border:1px solid rgba(34,197,94,.2);border-radius:4px;padding:0 6px;font-family:'Orbitron',monospace;font-size:11px;color:#22c55e;">F</kbd> for fullscreen, tap <span class="pill pb">Record</span> to capture a session and export it as JSON. No micro:bit? Try <strong style="color:#22d3ee;">Simulate Mode</strong>.</p>
+    </div>
+  </div>
+
+  <div class="section-title">Essential Shortcuts</div>
+  <div class="shortcuts">
+    <div class="shortcut"><kbd>Space</kbd><span>Pause stream</span></div>
+    <div class="shortcut"><kbd>1-8</kbd><span>Switch tab</span></div>
+    <div class="shortcut"><kbd>P</kbd><span>LED presets</span></div>
+    <div class="shortcut"><kbd>F</kbd><span>Fullscreen graph</span></div>
+    <div class="shortcut"><kbd>K</kbd><span>Clear graph</span></div>
+    <div class="shortcut"><kbd>Esc</kbd><span>Close overlay</span></div>
+    <div class="shortcut"><kbd>?</kbd><span>Shortcuts help</span></div>
+    <div class="shortcut"><kbd>T</kbd><span>Cycle themes</span></div>
+  </div>
+
+  <div class="section-title">Highlights</div>
+  <div class="features">
+    <div class="feat"><strong>5&times;5 LED Matrix</strong>Draw, presets, hex patterns</div>
+    <div class="feat"><strong>Live Sensors</strong>Temp, light, sound, accel, face match</div>
+    <div class="feat"><strong>Dual Face Enroll P1/P2</strong>Sliders, gauges, OFF buttons</div>
+    <div class="feat"><strong>Camera View View</strong>micro:bit, Buggy, Arm, Balance, Weather</div>
+    <div class="feat"><strong>4 Themes</strong>Stealth, Neon, Arctic, Blaze</div>
+    <div class="feat"><strong>Trilingual</strong>English, Français, العربية</div>
+  </div>
+
+  <div class="footer">
+    <div class="url">Face Quest v1.0.0</div>
+    <div class="copy">For webcam + BBC micro:bit V2 &bull; Web Bluetooth required &bull; Chrome / Edge</div>
+  </div>
+
+</div>
+<!-- QR-BLOCK-START -->
+<div style="position:fixed;right:12mm;bottom:12mm;display:flex;gap:8mm;align-items:center;
+  background:rgba(10,14,18,0.92);color:#e8ffe8;padding:4mm 5mm;border-radius:3mm;
+  box-shadow:0 2mm 6mm rgba(0,0,0,0.35);font-family:-apple-system,Segoe UI,sans-serif;
+  max-width:80mm;z-index:9999;">
+  <img src="data:image/png;base64,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bbnRNje25bdqmxvb8qW2+Um25Ubb3NiWv9U2X9qWG23zpW250TY/ybb8rRMA4DknAMBzTgCA55wAAM85AQCecwIAPOcEAHjOCQDwnBMA4DknAMBzTgCA5/wJ/7/ahv+NbbnRNje25SfZli+1zd/alhttw3+3LTfa5rfali9ty0+yLV9qm6+cAADPOQEAnnMCADznBAB4zgkA8JwTAOA5JwDAc04AgOecAADPOQEAnnMCADznTz62LT/JttxomxvbcqNtfopt+Una5sa23Gibn2Rbfoq2+dK23GibG9vykm250TY/Rdvc2JYvtc2NbfmtTgCA55wAAM85AQCecwIAPOcEAHjOCQDwnBMA4DknAMBzTgCA55wAAM85AQCe0/0jH2qbG9tyo21esi032uZvbcuNtvnStnypbW5sy422ubEtN9rmxrb8rbb5SbblRtvc2JafpG2+tC1/q22+tC38b5wAAM85AQCecwIAPOcEAHjOCQDwnBMA4DknAMBzTgCA55wAAM85AQCecwIAPOdPLrXNjW15ybbcaJsbbXNjW76yLTfa5kbbfGlbbrTNjW250TZfapu/tS1fapvfrG1esS032uZLbfObbcuNtrmxLX/rBAB4zgkA8JwTAOA5JwDAc04AgOecAADPOQEAnnMCADznBAB4zgkA8JwTAOA5f3JpW77UNr9Z29zYlhttc6Nt/ta2fGlbbrTNS7blS23zt9rmxrZ8qW1ubMuNtvnSttxomxvb8pW2+Um25UbbfGlbfqsTAOA5JwDAc04AgOecAADPOQEAnnMCADznBAB4zgkA8JwTAOA5JwDAc04AgOf8yS+3LTfa5kvbcqNtfoq2+Um25Ubb/CRt86VtubEtf6ttbrQN/13bfKltXtE2N7blRtu84gQAeM4JAPCcEwDgOScAwHNOAIDnnAAAzzkBAJ5zAgA85wQAeM4JAPCcP7nUNl/alp9kW260zZe25adomy+1zY1tudE2N7blRtvc2JYbbXNjW36KbbnRNl/alp+kbW5sy1fa5ktt86W24T87AQCecwIAPOcEAHjOCQDwnBMA4DknAMBzTgCA55wAAM85AQCecwIAPOcEAHjOn1zalt9sW760LV9qmxvb8ltty422+VLb3NiWG21zY1t+im250TY3tuVLbfOTbMuX2uYr2/KTtM2NbbnRNje25ac4AQCecwIAPOcEAHjOCQDwnBMA4DknAMBzTgCA55wAAM85AQCecwIAPOcEAHjOn1xqG/492/JbbctPsi1fapsbbXNjW77UNn9rW36StrmxLT/Jttxomxvb8lu1zY1t+c3a5qc4AQCecwIAPOcEAHjOCQDwnBMA4DknAMBzTgCA55wAAM85AQCecwIAPOcEAHjOn3xsW17SNl/alhtt87e25UbbfGlbXtI2N7blxrZ8pW2+tC3837QtP0nb3NiW3+oEAHjOCQDwnBMA4DknAMBzTgCA55wAAM85AQCecwIAPOcEAHjOCQDwnBMA4Dl/8sO0zU+yLT9J2/wU23Kjbb7UNje25ca2fKltbrTNV7blJdvypbZ5Rdv8Ztvypbb50rb8rRMA4DknAMBzTgCA55wAAM85AQCecwIAPOcEAHjOCQDwnBMA4DknAMBzTgCA5/wJv8q23GibV2zLjba5sS032ubGtvwUbXNjW260zU/SNl/alhttc6NtbmzLb9U2N7blS21zY1tutM1XTgCA55wAAM85AQCecwIAPOcEAHjOCQDwnBMA4DknAMBzTgCA55wAAM85AQCe8yf8n7YtX2mbL7XNT9I2N7blJ2mbr7TNl9rmxrb8Zttyo21utM1PsS03toV/xwkA8JwTAOA5JwDAc04AgOecAADPOQEAnnMCADznBAB4zgkA8JwTAOA5JwDAc/7kh9kW/j1t87e25ca23GibL23Ljbb5Utvc2JYbbXNjW/5W23xpW260zU+yLV9qm1e0zZe25Ubb3NiWG23zU5wAAM85AQCecwIAPOcEAHjOCQDwnBMA4DknAMBzTgCA55wAAM85AQCecwIAPOdPPtY2/Hva5sa2fKVtbmzLjba50TZf2pYbbcN/1ja/Wdv8JNvylbb50rbcaJsbbXNjW36SbfnKCQDwnBMA4DknAMBzTgCA55wAAM85AQCecwIAPOcEAHjOCQDwnBMA4DknAMBzun8EAHjKCQDwnBMA4DknAMBzTgCA55wAAM85AQCecwIAPOcEAHjOCQDwnBMA4Dn/HxMnmHyzuqqFAAAAAElFTkSuQmCC" alt="QR code — scan to open live demo" style="width:24mm;height:24mm;background:#fff;padding:1mm;border-radius:1.5mm;display:block;"/>
+  <div style="display:flex;flex-direction:column;gap:1mm;min-width:0;">
+    <div style="font-weight:700;font-size:9pt;color:#00ff88;line-height:1.2;">Live demo · Chrome / Edge</div>
+    <div style="font-size:7pt;opacity:0.75;line-height:1.3;word-break:break-all;">abourdim.github.io/face-quest/</div>
+  </div>
+</div>
+<!-- QR-BLOCK-END -->
+</body>
+</html>

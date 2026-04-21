@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════════════════════
+  ⚠️  REWRITE PER PRODUCT — DO NOT SHIP AS-IS
+  ───────────────────────────────────────────────────────────────────────
+  apply-template.mjs only substituted identifiers (Face Quest,
+  v1.0.0, https://abourdim.github.io/face-quest/, etc.). The feature content, steps,
+  shortcuts, and examples below were inherited from the template's
+  source product (face-quest) and WILL BE WRONG for your product
+  unless you rewrite them.
+  
+  Before including this file in a buyer ZIP:
+    1. Delete this banner.
+    2. Rewrite every mention of specific features, shortcuts,
+       tab names, hardware interactions, etc. to match your product.
+    3. Verify with: grep -iE "face scan|chart\.js|3d board|gamepad|
+       face tracker|face match|led matrix|3 modes|sensors tab" this-file.
+  ═══════════════════════════════════════════════════════════════════════
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Face Quest Keyboard Shortcuts Cheat Sheet</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Orbitron:wght@500&family=Tajawal:wght@400;500;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4 landscape; margin: 0; }
+  body { width: 297mm; height: 210mm; font-family: 'Tajawal', sans-serif; background: #020617; color: #cbd5e1; overflow: hidden; }
+
+  .page { width: 297mm; height: 210mm; padding: 10mm 14mm; position: relative; overflow: hidden; }
+  .page::before {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(34,197,94,.012) 3px, rgba(34,197,94,.012) 6px);
+    pointer-events: none;
+  }
+
+  .header { text-align: center; margin-bottom: 6mm; }
+  .header h1 { font-family: 'Righteous', sans-serif; font-size: 32px; color: #22c55e; display: inline; }
+  .header span { font-size: 16px; color: #64748b; margin-left: 12px; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+
+  .group { margin-bottom: 6px; }
+  .group-title {
+    font-family: 'Righteous', sans-serif; font-size: 14px; color: #22d3ee;
+    padding: 4px 10px; background: rgba(34,211,238,.06); border-radius: 8px;
+    border-left: 3px solid #22d3ee; margin-bottom: 4px;
+  }
+
+  .row {
+    display: flex; align-items: center; gap: 8px; padding: 4px 8px;
+    border-radius: 6px;
+  }
+  .row:nth-child(even) { background: rgba(34,197,94,.02); }
+
+  kbd {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 30px; height: 26px; padding: 0 8px;
+    background: rgba(0,0,0,.6); border: 1px solid rgba(34,197,94,.3);
+    border-radius: 6px; font-family: 'Orbitron', monospace; font-size: 11px;
+    color: #22c55e; box-shadow: 0 2px 4px rgba(0,0,0,.4);
+    white-space: nowrap;
+  }
+  .label { font-size: 12px; color: #94a3b8; flex: 1; }
+
+  .footer {
+    position: absolute; bottom: 8mm; left: 14mm; right: 14mm;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(34,197,94,.1); padding-top: 4px;
+  }
+  .footer span { font-size: 10px; color: #64748b; }
+  .footer .brand { font-family: 'Orbitron', monospace; font-size: 11px; color: #22c55e; }
+
+  .laminate-tip {
+    position: absolute; top: 10mm; right: 14mm;
+    font-size: 9px; color: #64748b; background: rgba(34,197,94,.05);
+    border: 1px solid rgba(34,197,94,.12); border-radius: 8px; padding: 3px 10px;
+  }
+
+  .ble-row { display: flex; align-items: center; gap: 8px; padding: 4px 8px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .d-green { background: #22c55e; box-shadow: 0 0 8px rgba(34,197,94,.6); }
+  .d-amber { background: #fbbf24; box-shadow: 0 0 8px rgba(251,191,36,.6); }
+  .d-red { background: #ef4444; box-shadow: 0 0 8px rgba(239,68,68,.6); }
+  .d-blue { background: #22d3ee; box-shadow: 0 0 8px rgba(34,211,238,.6); }
+  .d-gray { background: #475569; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <h1>Face Quest Shortcuts</h1>
+    <span>Cheat Sheet &mdash; Laminate Me!</span>
+  </div>
+  <div class="laminate-tip">Print &rarr; Laminate &rarr; Stick near your micro:bit</div>
+
+  <div class="cols">
+
+    <!-- Column 1 -->
+    <div>
+      <div class="group">
+        <div class="group-title">Streaming &amp; Data</div>
+        <div class="row"><kbd>Space</kbd><span class="label">Pause / Resume sensor stream</span></div>
+        <div class="row"><kbd>K</kbd><span class="label">Clear graph buffer</span></div>
+        <div class="row"><kbd>F</kbd><span class="label">Toggle fullscreen graph</span></div>
+        <div class="row"><kbd>R</kbd><span class="label">Start / Stop session recording</span></div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">Tabs (1&ndash;8)</div>
+        <div class="row"><kbd>1</kbd><span class="label">LEDs &mdash; 5&times;5 matrix</span></div>
+        <div class="row"><kbd>2</kbd><span class="label">Sensors &mdash; live readings</span></div>
+        <div class="row"><kbd>3</kbd><span class="label">Face Enroll &mdash; P1 &amp; P2</span></div>
+        <div class="row"><kbd>4</kbd><span class="label">Voice Commands &mdash; D-pad + Fire</span></div>
+        <div class="row"><kbd>5</kbd><span class="label">Graph &mdash; face-api.js live plot</span></div>
+        <div class="row"><kbd>6</kbd><span class="label">Camera View &mdash; Three.js view</span></div>
+        <div class="row"><kbd>7</kbd><span class="label">Bench &mdash; raw JSON console</span></div>
+        <div class="row"><kbd>8</kbd><span class="label">About &mdash; version &amp; credits</span></div>
+      </div>
+    </div>
+
+    <!-- Column 2 -->
+    <div>
+      <div class="group">
+        <div class="group-title">LEDs &amp; Overlays</div>
+        <div class="row"><kbd>P</kbd><span class="label">Open LED preset picker</span></div>
+        <div class="row"><kbd>C</kbd><span class="label">Clear LED matrix</span></div>
+        <div class="row"><kbd>H</kbd><span class="label">Heart preset</span></div>
+        <div class="row"><kbd>S</kbd><span class="label">Smile preset</span></div>
+        <div class="row"><kbd>Esc</kbd><span class="label">Close any overlay / fullscreen</span></div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">Camera View Models</div>
+        <div class="row"><kbd>M</kbd><span class="label">Switch model (cycle)</span></div>
+        <div class="row"><span style="font-size:14px;">🔲</span><span class="label">micro:bit V2 board</span></div>
+        <div class="row"><span style="font-size:14px;">🚗</span><span class="label">Buggy robot</span></div>
+        <div class="row"><span style="font-size:14px;">🦾</span><span class="label">Robot Arm</span></div>
+        <div class="row"><span style="font-size:14px;">🎯</span><span class="label">Balance game</span></div>
+        <div class="row"><span style="font-size:14px;">🌦️</span><span class="label">Weather station</span></div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">Themes &amp; View</div>
+        <div class="row"><kbd>T</kbd><span class="label">Cycle theme (Stealth &rarr; Neon &rarr; Arctic &rarr; Blaze)</span></div>
+        <div class="row"><kbd>L</kbd><span class="label">Cycle language (EN &rarr; FR &rarr; AR)</span></div>
+        <div class="row"><kbd>?</kbd><span class="label">Show shortcuts help overlay</span></div>
+      </div>
+    </div>
+
+    <!-- Column 3 -->
+    <div>
+      <div class="group">
+        <div class="group-title">BLE State Cheat Sheet</div>
+        <div class="ble-row"><span class="dot d-gray"></span><span class="label"><strong style="color:#cbd5e1;">Disconnected</strong> &mdash; click Connect to pair</span></div>
+        <div class="ble-row"><span class="dot d-amber"></span><span class="label"><strong style="color:#fbbf24;">Pairing</strong> &mdash; choose "BBC micro:bit [xxxxx]"</span></div>
+        <div class="ble-row"><span class="dot d-green"></span><span class="label"><strong style="color:#22c55e;">Connected</strong> &mdash; data is streaming live</span></div>
+        <div class="ble-row"><span class="dot d-blue"></span><span class="label"><strong style="color:#22d3ee;">Simulate</strong> &mdash; fake data, no board needed</span></div>
+        <div class="ble-row"><span class="dot d-red"></span><span class="label"><strong style="color:#ef4444;">Error</strong> &mdash; auto-retry 3x, then prompt</span></div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">Face Enroll (P1 / P2)</div>
+        <div class="row"><kbd>Q</kbd> / <kbd>A</kbd><span class="label">P1 face scan +/- 10&deg;</span></div>
+        <div class="row"><kbd>W</kbd> / <kbd>S</kbd><span class="label">P2 face scan +/- 10&deg;</span></div>
+        <div class="row"><kbd>0</kbd><span class="label">Center both face scans (90&deg;)</span></div>
+        <div class="row"><kbd>O</kbd><span class="label">Face Enroll OFF (detach PWM)</span></div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">Pro Tips</div>
+        <div class="row" style="flex-direction:column;align-items:start;">
+          <span class="label" style="color:#22d3ee;">No board? Turn on <strong>Simulate Mode</strong> in Settings for Sine/Random/Ramp data.</span>
+          <span class="label" style="color:#64748b;font-size:11px;">Only <strong>Chrome</strong> / <strong>Edge</strong> (desktop or Android) support Web Bluetooth.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <span>Face Quest v1.0.0 &bull; Print on A4 landscape, laminate, love.</span>
+    <span class="brand">For the webcam + BBC micro:bit V2</span>
+  </div>
+
+</div>
+<!-- QR-BLOCK-START -->
+<div style="position:fixed;right:12mm;bottom:12mm;display:flex;gap:8mm;align-items:center;
+  background:rgba(10,14,18,0.92);color:#e8ffe8;padding:4mm 5mm;border-radius:3mm;
+  box-shadow:0 2mm 6mm rgba(0,0,0,0.35);font-family:-apple-system,Segoe UI,sans-serif;
+  max-width:80mm;z-index:9999;">
+  <img src="data:image/png;base64,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" alt="QR code — scan to open live demo" style="width:24mm;height:24mm;background:#fff;padding:1mm;border-radius:1.5mm;display:block;"/>
+  <div style="display:flex;flex-direction:column;gap:1mm;min-width:0;">
+    <div style="font-weight:700;font-size:9pt;color:#00ff88;line-height:1.2;">Open on your computer</div>
+    <div style="font-size:7pt;opacity:0.75;line-height:1.3;word-break:break-all;">abourdim.github.io/face-quest/</div>
+  </div>
+</div>
+<!-- QR-BLOCK-END -->
+</body>
+</html>
