@@ -46,7 +46,7 @@
 
 ## Title (140 char max — pack it with searchable keywords)
 
-Bluetooth Web App for BBC micro:bit V2 + Illustrated Guide | Features, AI Face Recognition, Live Graphs | STEM Classroom | Digital Download
+Browser AI Face Recognition Game for Kids + Optional BBC micro:bit V2 | Enroll, Verify, Voice Commands, 100% Offline | Digital Download
 
 > Product name in your Etsy shop is **"Face Quest"** — use the phrase **"for the BBC micro:bit V2"** everywhere else to stay within the Micro:bit Educational Foundation's trademark-use guidelines.
 
@@ -57,7 +57,7 @@ Digital Downloads → Educational Resources
 
 ## Tags (13 max — Etsy lets you use all 13, use them)
 
-micro:bit, microbit v2, STEM, coding kids, BBC microbit, bluetooth app, MakeCode, classroom resource, homeschool STEM, robotics, web bluetooth, coding club, chromebook stem
+ai for kids, face recognition game, teachable ai, machine learning kids, microbit v2, coding kids, STEM classroom, privacy first ai, homeschool STEM, coding club, chromebook stem, voice commands, webcam game
 
 > Replaced the two weakest tags (`edtech` — corporate, not what teachers search; `sensor playground` — zero search volume) with `coding club` and `chromebook stem` (both strong long-tail teacher queries).
 
@@ -82,18 +82,17 @@ micro:bit, microbit v2, STEM, coding kids, BBC microbit, bluetooth app, MakeCode
 > 🧪 **Try it now** (Simulate mode, no micro:bit needed): <https://abourdim.github.io/face-quest/>
 >
 > ✨ **What you get** (instant download):
-> • A complete web app (HTML, CSS, JS) you run locally in Chrome or Edge
-> • Ready-to-flash micro:bit firmware (`makecode.ts`)
-> • **Illustrated trilingual user guide (EN/FR/AR) with built-in diagrams:**
->   — architecture diagram • micro:bit V2 pin-out • firmware flow storyboard
->   — interactive LED playground inside the guide (click cells, copy hex commands)
->   — visual troubleshooting: decision tree, symptom picker, icon gallery, reset recipe
-> • A printable Quick Setup guide (`SETUP.md`)
-> • 4 themes (Stealth, Neon, Arctic, Blaze)
-> • 3 modes: Face Scanner, Sensors, Face Enroll, Voice Commands, Graph, Camera View, Bench, Settings
-> • 5 interactive 3D models (micro:bit, Buggy, Robot Arm, Balance Game, Weather Station)
-> • Session recording, live graphs, annotations, JSON export
-> • Beginner & Expert modes — grows with the learner
+> • Complete face-recognition web game — trains and recognizes faces **entirely in the browser** using face-api.js (TensorFlow.js)
+> • **Teach a face**: enrol one face with a few frames; app computes a 128-D descriptor locally
+> • **Verify / Unlock**: live webcam match → MATCH or NO-MATCH in ~200ms
+> • **Voice commands**: "start", "teach", "unlock", "lock", "reset" — hands-free play
+> • **Speech feedback**: app reads its own status aloud ("Face learned. You're ready to unlock.")
+> • **Auto-lock mode** — locks when the face leaves frame (PIN-protected test mode)
+> • **Quest log + XP counter** — gamified reward loop for kids
+> • **Optional BBC micro:bit V2**: app sends `MATCH` / `NO` over BLE UART to the micro:bit, which displays ✓ or ✗ on the 5×5 LED grid
+> • **Privacy-first by design**: no cloud upload, no account, face descriptors live only in the browser's local storage; the webcam feed never leaves the device
+> • Front/back camera switch + mirror toggle
+> • Trilingual **seller docs** (EN/FR/AR) — the app UI itself is English-first (the voice commands ARE the UI)
 >
 > 🧒 **Perfect for**: classrooms, homeschool, after-school clubs, makerspaces, STEM camps, robotics enthusiasts, parents teaching kids to code.
 >
@@ -130,18 +129,19 @@ Paste this block into the listing just above the FAQ. No fabricated reviews — 
 
 ## Compare table for the description
 
-**What makes Face Quest different?** Side-by-side with the two free alternatives most teachers try first:
+**What makes Face Quest different?** Side-by-side with AI alternatives parents try:
 
-| Feature | Face Quest | MakeCode Editor | Raw Web Bluetooth demos |
+| Feature | Face Quest | Google Teachable Machine | Face-unlock consumer apps |
 |---|:---:|:---:|:---:|
-| Works in-browser, zero install | ✅ | ✅ | ✅ |
-| Ready-to-use sensor dashboard (temp, light, sound, accel, face match, touch) | ✅ | ❌ | ❌ |
-| Live graph + CSV / PNG export + session record & replay | ✅ | ❌ | ❌ |
-| Dual face scan control UI with gauges and trim | ✅ | ❌ | Build it yourself |
-| 5 interactive 3D models (micro:bit, Buggy, Arm, Balance, Weather) | ✅ | ❌ | ❌ |
-| Trilingual EN/FR/AR with full RTL support | ✅ | Partial | ❌ |
-| Classroom lesson plan + printable stickers & A3 poster | ✅ | ❌ | ❌ |
-| Works offline after first load (installable PWA) | ✅ | ❌ | ❌ |
+| Runs 100% in-browser, no cloud, no account | ✅ | Training uploads to Google | Cloud |
+| Face descriptors stored locally only | ✅ | ❌ | ❌ |
+| Voice commands + spoken feedback | ✅ | ❌ | Partial |
+| Optional micro:bit V2 LED grid feedback | ✅ | ❌ | ❌ |
+| Gamified XP + quest log for kids | ✅ | ❌ | ❌ |
+| Auto-lock mode (PIN protected) | ✅ | ❌ | ✅ |
+| Works on Chromebook | ✅ | ✅ | ❌ (Android/iOS only) |
+| COPPA-friendly by design | ✅ | ❌ | Varies |
+| Classroom lesson plan + printable stickers + A3 poster | ✅ | ❌ | ❌ |
 
 ---
 
