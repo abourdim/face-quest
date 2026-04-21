@@ -126,7 +126,7 @@
   <div class="slate-clap">🎬</div>
   <div class="tag">— ETSY PLAYBOOK · v1.0.0 —</div>
   <h1>Face Quest</h1>
-  <div class="tag">The 1-minute listing demo · copy-ready snippets</div>
+  <div class="tag">AI face recognition game for kids · 1-minute listing demo · copy-ready snippets</div>
   <div class="meta"><span><b>Format:</b> 9:16 portrait</span><span><b>Length:</b> ≤ 60 s</span><span><b>Goal:</b> turn scrollers into buyers</span></div>
 </div>
 
@@ -145,14 +145,14 @@
 <h2>Before you press Record</h2>
 <div class="card">
   <ul class="checklist" onclick="var li=event.target.closest('li');if(li)li.classList.toggle('checked')">
-    <li><input type="checkbox"><label>micro:bit V2 powered on, showing <kbd>X</kbd> icon<span class="where">If not → reflash <code>makecode.ts</code></span></label></li>
-    <li><input type="checkbox"><label>Chrome or Edge open, <code>index.html</code> loaded<span class="where">Safari/Firefox/iOS will not work</span></label></li>
-    <li><input type="checkbox"><label>BLE connected — status chip is <strong>green</strong><span class="where">Click 🔗 Connect, pick BBC micro:bit from picker</span></label></li>
-    <li><input type="checkbox"><label>Theme picked — <strong>Neon</strong> looks best on camera<span class="where">Header → paint-roller dropdown</span></label></li>
-    <li><input type="checkbox"><label>Servo plugged into P1 (if showing Robot Arm / Buggy)</label></li>
-    <li><input type="checkbox"><label>3D Board tab open, Buggy or Robot Arm selected<span class="where">Tab 6 → model dropdown</span></label></li>
-    <li><input type="checkbox"><label>Phone in 9:16 mode on a tripod, lit from the front</label></li>
-    <li><input type="checkbox"><label>Desk cleared — only the board and one prop in frame</label></li>
+    <li><input type="checkbox"><label>Webcam plugged in and tested — face visible, good lighting on the face<span class="where">Front-facing light beats overhead every time</span></label></li>
+    <li><input type="checkbox"><label>Chrome or Edge open, <code>index.html</code> loaded<span class="where">Safari/Firefox/iOS will not work — face-api.js needs Chromium</span></label></li>
+    <li><input type="checkbox"><label>face-api.js models loaded — status reads "Models ready"<span class="where">First load takes a few seconds; watch the loader</span></label></li>
+    <li><input type="checkbox"><label>localStorage cleared — hit <strong>Reset</strong> so Enroll starts from zero<span class="where">No prior descriptors so the demo feels fresh</span></label></li>
+    <li><input type="checkbox"><label>Microphone permission granted for voice commands<span class="where">Browser prompt → Allow, once per domain</span></label></li>
+    <li><input type="checkbox"><label>BBC micro:bit V2 (optional) paired over BLE — chip shows ✓/✗ on LEDs<span class="where">Skip if filming the browser-only demo</span></label></li>
+    <li><input type="checkbox"><label>Kid / talent briefed — knows the voice commands "teach" and "unlock"</label></li>
+    <li><input type="checkbox"><label>Phone in 9:16 mode on a tripod, framed on the laptop screen + face</label></li>
     <li><input type="checkbox"><label>Script read aloud once — timed under 55 s</label></li>
   </ul>
 </div>
@@ -162,11 +162,12 @@
 <h2>Structure</h2>
 <div class="card">
   <pre style="color:var(--accent2);font-family:var(--mono);font-size:.9rem;line-height:1.7;margin:0">
- 0–3 s   HOOK        "Watch what this micro:bit does in 60 seconds."
- 3–10 s  CONTEXT     Board on-screen, X icon → status turns green.
-10–35 s  DEMO        Tilt → 3D model follows. Press A → LED heart. Servo swings.
-35–50 s  PAYOFF      Zoom on live graph + 3D model mirroring real board.
-50–55 s  CTA         "Full kit in my shop — link below."
+ 0–3 s   HOOK        "Your kid teaches the computer their face — in 3 seconds."
+ 3–10 s  CONTEXT     Privacy panel: no cloud, no account, no uploads. Ever.
+10–25 s  DEMO 1      Enroll → Verify. Face → MATCH in green, confidence bar fills.
+25–40 s  DEMO 2      Voice "unlock" → "Welcome back!". Step away → auto-lock.
+40–50 s  PAYOFF      Optional micro:bit ✓ on LEDs · XP counter ticks up.
+50–55 s  CTA         "Full game + firmware + teacher guide. Link below."
 55–60 s  END FRAME   Logo + handle frozen for the loop preview.</pre>
 </div>
 
@@ -176,97 +177,108 @@
      Fill each SAY/DO with a product-specific line BEFORE shooting.
      Never ship this file with the placeholder italics still in place. -->
 
-<h2>6-scene template — Face Quest</h2>
-<p class="aka" style="color:#f59e0b;font-weight:700;">⚠️ The 6 scenes below are shells. Replace every line with a filmable action specific to Face Quest before you shoot.</p>
+<h2>6-scene script — Face Quest</h2>
+<p class="aka" style="color:#22c55e;font-weight:700;">✓ Shot-ready. Each scene has a tested SAY line and a filmable DO action. Read aloud once to verify under 55 s before you roll.</p>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:00–00:03</span><span class="scene-phase phase-hook">HOOK</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[Hook line — 1-second promise, the reason a scroller stops]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[The hook shot — what the viewer sees during the line]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Your kid teaches the computer their face — in 3 seconds."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Child sits in front of the laptop, clicks the big green <strong>Teach</strong> button. Status text reads "Face learned." Webcam overlay draws the detection box live.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:03–00:10</span><span class="scene-phase phase-demo">CONTEXT</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[Who this is for, what problem it solves]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[Setup shot — connecting, first meaningful screen]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Runs entirely on your laptop. No cloud. No account. No face uploads. Ever."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Cut to the Privacy panel in the UI — highlight "face descriptor stays local" and "localStorage only". Zoom on the 128-D descriptor visualised as a tiny bar graph.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:10–00:25</span><span class="scene-phase phase-demo">DEMO 1</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[First wow-moment — a marquee feature of Face Quest]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[The 15-second action shot]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Enroll once. Then every time the camera sees you — MATCH in 200 milliseconds."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Enroll → Verify loop. Child's face enters frame → <strong>MATCH</strong> badge flashes green, confidence bar fills to 95%+. Sibling tries → NO-MATCH in red.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:25–00:40</span><span class="scene-phase phase-demo">DEMO 2</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[Second wow-moment — second feature / use case]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[The 15-second action shot]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Say 'unlock' — the app recognises your voice AND your face. Walk away, it auto-locks."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Kid says "Unlock" aloud → app speaks back "Welcome back!". Kid steps away from the laptop → screen dims, PIN overlay appears as auto-lock kicks in.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:40–00:50</span><span class="scene-phase phase-payoff">PAYOFF</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[The "why it matters" — time saved, skill acquired, safety]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[The screen that carries the message — export, capture, result]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Optional micro:bit gives them a real-world thumbs-up. This is how AI works — inside your own browser."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Split frame: browser MATCH badge on the left, BBC micro:bit V2 on the right lights up <strong>✓</strong> on its 5×5 LEDs. Quest Log counter ticks <code>+10 XP</code>.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:50–00:60</span><span class="scene-phase phase-cta">CTA + END FRAME</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[Call to action — full kit + link in description]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[Logo overlay, 3-second still for the loop]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Full game, firmware, and teacher guide. Link below."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>End card: Face Quest logo, "abourdim.github.io/face-quest", 3-second freeze for the Etsy loop preview.</div>
   </div>
 </div>
 
 <!-- ═══════════ LISTING COPY ═══════════ -->
 <div class="slug" id="listing">SLUG — COPY-READY LISTING TEXT</div>
 <h2>Etsy title (140 chars max)</h2>
-<div class="copybox">[TODO — 140-char Etsy title, see ETSY_LISTING.md]<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
+<div class="copybox">Face Quest — AI Face Recognition Game for Kids · Teach My Face · Voice Unlock · Privacy-First · Browser-Based · Chrome/Edge · micro:bit<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
 
 <h2>Short description (first 160 chars — shown in search)</h2>
-<div class="copybox">[TODO — 160-char short description, see ETSY_LISTING.md]<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
+<div class="copybox">Kids teach the computer their face in 3 seconds, then unlock it with a glance or a voice command. Runs 100% in your browser — no cloud, no account, no uploads.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
 
 <h2>Full description</h2>
-<div class="copybox">🎮 Face Quest — a browser-based BLE control panel for the BBC micro:bit V2.
+<div class="copybox">🎮 Face Quest — an AI face recognition game for kids that runs 100% in your browser.
 
-[TODO — 1-sentence pitch of what the product does when opened]
+Open one HTML file in Chrome or Edge, show your face to the webcam, and the app learns who you are in 3 seconds. Then it unlocks, welcomes you back, and turns learning AI into a gamified quest — with zero data ever leaving your device.
+
 WHAT YOU GET
-• [TODO — product-specific feature 1]• [TODO — your live signal list]• [TODO — your control surface if any]• [TODO — your interactive surface]
-• [TODO — your record/replay/export feature]• [TODO — your visualization feature if any]• [TODO — your themes / UI variety + languages]• 📱 PWA — installable, offline-capable
-• 👶 Beginner mode + 🧙 Expert mode
+• 🧠 Teach My Face flow — enroll a face with a few webcam frames, compute a 128-D descriptor locally
+• ⚡ Verify / Unlock flow — live webcam match returns MATCH or NO-MATCH in ~200 ms
+• 🎙 Voice commands — "start", "teach", "unlock", "lock", "reset" via the Web Speech API
+• 🔊 Speech feedback — the app speaks its own status ("Face learned. You're ready to unlock.")
+• 🔒 Auto-lock mode — PIN-protected; locks when the face leaves frame, unlocks on a match
+• 🏆 Quest Log + XP counter — gamified reward loop that keeps kids coming back
+• 🔁 Front/back camera switch + mirror toggle
+• 📡 Optional BBC micro:bit V2 over BLE UART — app sends MATCH / NO → ✓ or ✗ on the 5×5 LEDs
+• 🛡 Privacy-first by design — no cloud, no account, descriptors live only in localStorage
+• 📱 PWA — installable, offline-capable after first load
+• 👶 Kid-friendly UI + 🧙 Teacher / parent PIN controls
 
 WHAT'S IN YOUR DOWNLOAD
-• index.html — the full app
-• makecode.ts — micro:bit firmware (flash once from MakeCode)
+• index.html — the full face recognition game
+• face-api.js models — TensorFlow.js weights bundled locally, no CDN fetch
+• makecode.ts — optional micro:bit firmware (flash once from MakeCode)
 • SETUP.md — 5-minute quick-start
-• docs/ — illustrated guide, cheat sheet, FAQ, Etsy playbook
+• docs/ — illustrated guide, teacher lesson plan, FAQ, Etsy playbook
 • LICENSE — personal / classroom single-user license
 
 REQUIREMENTS
-• BBC micro:bit V2 (V1 works but has no sound sensor)
+• Webcam (built-in laptop cam is fine)
 • Chrome or Edge on desktop (or Chrome on Android)
-• Bluetooth enabled
+• Microphone (for voice commands — optional but recommended)
+• BBC micro:bit V2 + Bluetooth (optional, for LED feedback)
 • HTTPS or file:// — double-clicking the HTML works
 
 WHO IT'S FOR
-Teachers running STEM workshops · home-schooling families · robotics clubs · makers prototyping BLE projects · anyone curious about the micro:bit.
+Teachers introducing AI in the classroom · home-schooling families · robotics and STEM clubs · parents who want a safe first look at face recognition · anyone curious how face-api.js and TensorFlow.js actually work.
 
 PRIVACY FIRST
-Nothing leaves your computer. No analytics, no logins, no cloud. All calibrations, recordings, and presets live in your browser's localStorage and on your disk.
+Nothing leaves your computer. Ever. Webcam frames never leave the device. No analytics, no logins, no cloud. The 128-D face descriptor lives only in your browser's localStorage and can be wiped with one click.
 
 LIFETIME UPDATES
 Every version shipped from this listing is yours forever. Re-download the latest ZIP anytime from your Etsy Purchases page.
 
-Happy hacking! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
+Happy questing! 🚀🧠🎮<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
 
 <h2>Price tiers</h2>
 <table>
@@ -280,16 +292,16 @@ Happy hacking! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.
 <div class="slug" id="tags">SLUG — TAGS + MATERIALS</div>
 <h2>13 Etsy tags (20 chars each)</h2>
 <div class="pills">
-  <span class="pill">micro:bit</span>
-  <span class="pill">BLE</span>
-  <span class="pill">bluetooth</span>
-  <span class="pill">education</span>
+  <span class="pill">face recognition</span>
+  <span class="pill">AI for kids</span>
+  <span class="pill">face-api.js</span>
+  <span class="pill">TensorFlow.js</span>
   <span class="pill">STEM</span>
-  <span class="pill">robotics</span>
+  <span class="pill">voice commands</span>
   <span class="pill">kids coding</span>
   <span class="pill">teacher resource</span>
-  <span class="pill">sensors</span>
-  <span class="pill">[product tag]</span>
+  <span class="pill">privacy first</span>
+  <span class="pill">micro:bit</span>
   <span class="pill">classroom</span>
   <span class="pill">home school</span>
   <span class="pill">makerspace</span>
@@ -299,29 +311,29 @@ Happy hacking! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.
 <div class="pills">
   <span class="pill">HTML5</span>
   <span class="pill">JavaScript</span>
+  <span class="pill">face-api.js</span>
+  <span class="pill">TensorFlow.js</span>
+  <span class="pill">Web Speech API</span>
   <span class="pill">Web Bluetooth</span>
-  <span class="pill">[render lib]</span>
-  <span class="pill">[3D lib if any]</span>
   <span class="pill">PWA</span>
   <span class="pill">MakeCode</span>
-  <span class="pill">TypeScript</span>
 </div>
 
 <h2>SEO keywords</h2>
-<p><code>browser-based</code> · <code>no-install</code> · <code>privacy-first</code> · <code>offline-capable</code> · <code>web bluetooth</code> · <code>teacher resource</code> · <code>STEM workshop</code> · <code>micro:bit V2</code></p>
+<p><code>face recognition game</code> · <code>AI for kids</code> · <code>privacy-first</code> · <code>no-cloud</code> · <code>browser-based</code> · <code>128-D descriptor</code> · <code>enroll verify</code> · <code>voice unlock</code> · <code>teacher resource</code> · <code>STEM AI workshop</code></p>
 
 <!-- ═══════════ IMAGES ═══════════ -->
 <div class="slug" id="images">SLUG — 7-IMAGE LISTING ORDER</div>
 <h2>Image sequence (Etsy shows 1 &amp; 2 largest)</h2>
 <div class="card">
   <ol style="padding-left:22px;line-height:2">
-    <li><strong>[TODO — Hero shot: hardware + computer screen showing the marquee product state]</strong></li>
-    <li><strong>[TODO — grid screenshot of your main screens or features]</strong></li>
-    <li><strong>[TODO — close-up of your marquee feature]</strong></li>
-    <li><strong>[TODO — split screenshot showing two product features]</strong></li>
-    <li><strong>[TODO — shot showing hardware in-use or hand-to-screen reference]</strong></li>
-    <li><strong>[TODO — styling / variety grid].</li>
-    <li><strong>Text card</strong> — "Single-user license · Lifetime updates · No cloud · Chrome / Edge" on a dark gradient.</li>
+    <li><strong>Hero shot</strong> — kid's face framed by the webcam overlay with the live detection box, a big green <strong>MATCH</strong> badge, and the tagline "AI face recognition game for kids" on a dark gradient.</li>
+    <li><strong>Teach My Face flow</strong> — the enroll UI with the sample-count badge ("3 / 5 samples captured"), green progress ring, and the "Face learned" status line.</li>
+    <li><strong>Voice commands panel</strong> — microphone icon lit red (listening), command chips visible: "start", "teach", "unlock", "lock", "reset", with a speech bubble reading "Welcome back!".</li>
+    <li><strong>Auto-lock demo</strong> — split screen: LEFT = face in frame, app unlocked, Quest Log visible · RIGHT = face absent, PIN overlay covers the UI.</li>
+    <li><strong>Quest Log + XP counter</strong> — screenshot of the gamified panel: quest titles, checkmarks, and the XP counter at e.g. <code>+120 XP</code>.</li>
+    <li><strong>Privacy-first infographic</strong> — a simple diagram: webcam → 128-D descriptor → localStorage, with big red "NO CLOUD" and "NO UPLOADS" stamps.</li>
+    <li><strong>Optional micro:bit BLE feedback</strong> — split frame: browser showing MATCH + BBC micro:bit V2 showing the <strong>✓</strong> icon on its 5×5 LEDs.</li>
   </ol>
 </div>
 
@@ -330,19 +342,20 @@ Happy hacking! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.
 <h2>Common mistakes</h2>
 <table>
   <tr><th>❌ Don't</th><th>✅ Do</th></tr>
-  <tr><td>Start with "Hi, I'm…" + 10s of intro</td><td>Open with the real board tilting a 3D model in the first 3 s</td></tr>
+  <tr><td>Start with "Hi, I'm…" + 10s of intro</td><td>Open on the child's face → click Teach → "Face learned" in the first 3 s</td></tr>
   <tr><td>Film landscape (16:9)</td><td>9:16 portrait — Etsy autoplays on mobile</td></tr>
-  <tr><td>Talk over busy on-screen animation</td><td>Let the visual breathe for 1s, then explain</td></tr>
-  <tr><td>Forget captions (Etsy plays muted)</td><td>Burn in captions or add a text overlay every scene</td></tr>
-  <tr><td>Show iOS / Safari in the video</td><td>Always demo on Chrome/Edge — iPhone users will buy and return</td></tr>
-  <tr><td>Skip the CTA</td><td>Say "link below" in the last 5 seconds every single time</td></tr>
+  <tr><td>Show the child's full face in the Etsy thumbnail</td><td>Use a staged actor or your own face; if a real kid, ask the parent and blur/overlay the webcam frame</td></tr>
+  <tr><td>Forget captions (Etsy plays muted)</td><td>Burn in captions on every voice-command moment — "Unlock", "Welcome back!"</td></tr>
+  <tr><td>Demo with "cloud AI" wording</td><td>Say "runs in your browser", "no uploads", "private by design" at least twice</td></tr>
+  <tr><td>Show iOS / Safari in the video</td><td>Always demo on Chrome/Edge — face-api.js + getUserMedia need it</td></tr>
+  <tr><td>Skip the CTA</td><td>Say "full game + firmware + teacher guide, link below" in the last 5 seconds</td></tr>
 </table>
 
 <!-- ═══════════ QUICK CARD ═══════════ -->
 <div class="slug">SLUG — POCKET CHEAT CARD</div>
-<div class="copybox">PRE    V2 powered (X icon) · Chrome open · BLE green · 9:16 phone
-SHOOT  Hook in 3 s · [TODO — 3 verbs for your product] · CTA
-POST   Trim to 55 s · captions burn-in · first frame = thumbnail
+<div class="copybox">PRE    Webcam ready · Chrome open · models loaded · localStorage reset · 9:16 phone
+SHOOT  Hook (Teach) · Verify (MATCH) · Voice "unlock" · Auto-lock · CTA
+POST   Trim to 55 s · captions on every voice line · first frame = thumbnail
 LIST   Title · 160-char desc · 13 tags · 7 images · price tiers</div>
 
 <p style="text-align:center;margin-top:40px;color:var(--muted);font-size:.85rem">

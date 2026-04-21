@@ -126,7 +126,7 @@
   <div class="slate-clap">🎬</div>
   <div class="tag">— PLAYBOOK ETSY · v1.0.0 —</div>
   <h1>Face Quest</h1>
-  <div class="tag">La démo d'annonce en 1 minute · extraits prêts à copier</div>
+  <div class="tag">Jeu de reconnaissance faciale IA pour enfants · démo 1 minute · extraits prêts à copier</div>
   <div class="meta"><span><b>Format :</b> portrait 9:16</span><span><b>Durée :</b> ≤ 60 s</span><span><b>Objectif :</b> transformer les curieux en acheteurs</span></div>
 </div>
 
@@ -145,14 +145,14 @@
 <h2>Avant d'appuyer sur Rec</h2>
 <div class="card">
   <ul class="checklist" onclick="var li=event.target.closest('li');if(li)li.classList.toggle('checked')">
-    <li><input type="checkbox"><label>micro:bit V2 allumé, icône <kbd>X</kbd> affichée<span class="where">Sinon → reflasher <code>makecode.ts</code></span></label></li>
-    <li><input type="checkbox"><label>Chrome ou Edge ouvert, <code>index.html</code> chargé<span class="where">Safari/Firefox/iOS ne fonctionneront pas</span></label></li>
-    <li><input type="checkbox"><label>BLE connecté — la puce d'état est <strong>verte</strong><span class="where">Cliquez sur 🔗 Connecter, choisissez BBC micro:bit dans la fenêtre</span></label></li>
-    <li><input type="checkbox"><label>Thème choisi — <strong>Neon</strong> rend le mieux à la caméra<span class="where">En-tête → menu rouleau de peinture</span></label></li>
-    <li><input type="checkbox"><label>Servo branché sur P1 (pour Bras Robot / Buggy)</label></li>
-    <li><input type="checkbox"><label>Onglet 3D Board ouvert, Buggy ou Bras Robot sélectionné<span class="where">Onglet 6 → menu des modèles</span></label></li>
-    <li><input type="checkbox"><label>Téléphone en 9:16 sur trépied, éclairé de face</label></li>
-    <li><input type="checkbox"><label>Bureau dégagé — uniquement la carte et un accessoire dans le cadre</label></li>
+    <li><input type="checkbox"><label>Webcam branchée et testée — visage visible, bien éclairé de face<span class="where">La lumière de face bat toujours celle du plafond</span></label></li>
+    <li><input type="checkbox"><label>Chrome ou Edge ouvert, <code>index.html</code> chargé<span class="where">Safari/Firefox/iOS ne fonctionneront pas — face-api.js exige Chromium</span></label></li>
+    <li><input type="checkbox"><label>Modèles face-api.js chargés — le statut affiche « Models ready »<span class="where">Le premier chargement prend quelques secondes ; attendez la barre</span></label></li>
+    <li><input type="checkbox"><label>localStorage vidé — cliquez <strong>Reset</strong> pour repartir de zéro<span class="where">Aucun descripteur pré-enregistré : la démo paraît fraîche</span></label></li>
+    <li><input type="checkbox"><label>Permission micro accordée pour les commandes vocales<span class="where">Fenêtre du navigateur → Autoriser, une fois par domaine</span></label></li>
+    <li><input type="checkbox"><label>BBC micro:bit V2 (optionnel) appairé en BLE — la puce affiche ✓/✗ sur les LEDs<span class="where">À ignorer si vous filmez la démo navigateur seul</span></label></li>
+    <li><input type="checkbox"><label>Enfant / figurant briefé — connaît les commandes « teach » et « unlock »</label></li>
+    <li><input type="checkbox"><label>Téléphone en 9:16 sur trépied, cadré sur l'écran du portable + le visage</label></li>
     <li><input type="checkbox"><label>Script lu à voix haute une fois — chronométré sous 55 s</label></li>
   </ul>
 </div>
@@ -162,11 +162,12 @@
 <h2>Structure</h2>
 <div class="card">
   <pre style="color:var(--accent2);font-family:var(--mono);font-size:.9rem;line-height:1.7;margin:0">
- 0–3 s   ACCROCHE    « Regardez ce que ce micro:bit fait en 60 secondes. »
- 3–10 s  CONTEXTE    Carte à l'écran, icône X → le statut passe au vert.
-10–35 s  DÉMO        Inclinez → le modèle 3D suit. Appuyez sur A → cœur LED. Le servo bouge.
-35–50 s  RÉCOMPENSE  Zoom sur le graphique en direct + modèle 3D qui reflète la carte réelle.
-50–55 s  CTA         « Kit complet dans ma boutique — lien ci-dessous. »
+ 0–3 s   ACCROCHE    « Ton enfant apprend son visage à l'ordi — en 3 secondes. »
+ 3–10 s  CONTEXTE    Panneau Confidentialité : pas de cloud, pas de compte, zéro envoi.
+10–25 s  DÉMO 1      Enroll → Verify. Visage → MATCH en vert, barre de confiance pleine.
+25–40 s  DÉMO 2      Voix « unlock » → « Welcome back ! ». On s'éloigne → auto-lock.
+40–50 s  RÉCOMPENSE  micro:bit optionnel ✓ sur LEDs · compteur XP qui grimpe.
+50–55 s  CTA         « Jeu complet + firmware + guide prof. Lien ci-dessous. »
 55–60 s  IMAGE FIN   Logo + pseudo figé pour l'aperçu en boucle.</pre>
 </div>
 
@@ -177,97 +178,108 @@
      spécifique à votre produit et chaque `FAIRE` par une action filmable.
      Ne laissez JAMAIS ce fichier partir en production avec les coquilles. -->
 
-<h2>Modèle 6 scènes — Face Quest</h2>
-<p class="aka" style="color:#f59e0b;font-weight:700;">⚠️ Les 6 scènes ci-dessous sont des coquilles. Réécrivez chacune avec une action filmable propre à Face Quest avant de tourner.</p>
+<h2>Script 6 scènes — Face Quest</h2>
+<p class="aka" style="color:#22c55e;font-weight:700;">✓ Prêt au tournage. Chaque scène a sa réplique testée et son action filmable. Relisez à voix haute pour vérifier les 55 s avant de lancer.</p>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:00–00:03</span><span class="scene-phase phase-hook">ACCROCHE</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div><em>[Phrase d'accroche — 1 seconde, promesse claire du produit, pourquoi scroller s'arrête]</em></div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div><em>[Le plan d'accroche — ce qu'on voit à l'écran pendant la phrase]</em></div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Ton enfant apprend son visage à l'ordi — en 3 secondes. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>L'enfant s'assoit devant l'ordinateur portable, clique sur le gros bouton vert <strong>Teach</strong>. Le statut affiche « Face learned. » Le cadre de détection de la webcam se dessine en direct.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:03–00:10</span><span class="scene-phase phase-demo">CONTEXTE</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div><em>[Phrase qui situe : à qui c'est destiné, quel problème c'est résolu]</em></div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div><em>[Action à l'écran — setup, connexion, premier affichage utile]</em></div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Tout tourne sur votre portable. Pas de cloud. Pas de compte. Aucune photo envoyée. Jamais. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>Coupe sur le panneau Confidentialité de l'interface — on met en évidence « le descripteur reste local » et « localStorage uniquement ». Zoom sur le descripteur 128-D visualisé en mini-graphique.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:10–00:25</span><span class="scene-phase phase-demo">DÉMO 1</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div><em>[Premier wow-moment — une fonctionnalité phare de Face Quest]</em></div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div><em>[L'action visible — 15 secondes, mouvement à l'écran]</em></div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Enregistre ton visage une fois. Ensuite, chaque fois que la caméra te voit — MATCH en 200 millisecondes. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>Boucle Enroll → Verify. Le visage de l'enfant entre dans le cadre → badge <strong>MATCH</strong> en vert, barre de confiance à 95 %+. Le frère tente → NO-MATCH en rouge.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:25–00:40</span><span class="scene-phase phase-demo">DÉMO 2</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div><em>[Second wow-moment — une deuxième fonctionnalité / cas d'usage]</em></div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div><em>[L'action visible — 15 secondes]</em></div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Dis "unlock" — l'appli reconnaît ta voix ET ton visage. Tu t'éloignes, elle se verrouille toute seule. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>L'enfant dit « Unlock » à voix haute → l'appli répond « Welcome back! ». L'enfant s'éloigne → l'écran s'assombrit, l'overlay de code PIN apparaît : l'auto-lock est déclenché.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:40–00:50</span><span class="scene-phase phase-payoff">RÉCOMPENSE</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div><em>[Le « pourquoi c'est utile » — bénéfice concret : temps gagné, sécurité, compétence acquise]</em></div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div><em>[L'écran qui porte le message — export, capture, résultat visible]</em></div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Le micro:bit optionnel leur donne un vrai pouce levé. Voilà comment marche l'IA — dans leur propre navigateur. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>Plan divisé : badge MATCH à gauche dans le navigateur, BBC micro:bit V2 à droite affiche <strong>✓</strong> sur ses LEDs 5×5. Le compteur du Quest Log ajoute <code>+10 XP</code>.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:50–00:60</span><span class="scene-phase phase-cta">CTA + IMAGE DE FIN</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div><em>[Appel à l'action — kit complet + lien en description]</em></div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div><em>[Overlay logo + image de fin, 3 secondes immobile]</em></div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Jeu complet, firmware et guide prof. Lien ci-dessous. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>Carte de fin : logo Face Quest, « abourdim.github.io/face-quest », figé 3 secondes pour l'aperçu en boucle Etsy.</div>
   </div>
 </div>
 
 <!-- ═══════════ TEXTE D'ANNONCE ═══════════ -->
 <div class="slug" id="listing">SLUG — TEXTE D'ANNONCE PRÊT À COPIER</div>
 <h2>Titre Etsy (140 caractères max)</h2>
-<div class="copybox">[TODO — titre Etsy 140 caractères, voir ETSY_LISTING-fr.md]<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
+<div class="copybox">Face Quest — Jeu de Reconnaissance Faciale IA pour Enfants · Apprends ton Visage · Voix · 100 % Navigateur · Vie Privée · Chrome/Edge · micro:bit<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
 
 <h2>Description courte (160 premiers caractères — affichés en recherche)</h2>
-<div class="copybox">[TODO — description courte 160 caractères, voir ETSY_LISTING-fr.md]<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
+<div class="copybox">Les enfants apprennent leur visage à l'ordi en 3 secondes, puis le déverrouillent d'un regard ou d'une commande vocale. 100 % navigateur — zéro cloud, zéro compte.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
 
 <h2>Description complète</h2>
-<div class="copybox">🎮 Face Quest — un panneau de contrôle BLE dans le navigateur pour le BBC micro:bit V2.
+<div class="copybox">🎮 Face Quest — un jeu de reconnaissance faciale par IA pour enfants, 100 % dans le navigateur.
 
-[TODO — 1-phrase pitch de ce que le produit fait quand on ouvre le fichier]
+Ouvrez un seul fichier HTML dans Chrome ou Edge, montrez votre visage à la webcam, et l'appli apprend qui vous êtes en 3 secondes. Puis elle se déverrouille, vous souhaite la bienvenue, et transforme l'apprentissage de l'IA en quête gamifiée — sans qu'aucune donnée ne quitte votre machine.
+
 CE QUE VOUS OBTENEZ
-• [TODO — product-specific feature 1]• [TODO — your live signal list]• [TODO — your control surface if any]• [TODO — your interactive surface]
-• [TODO — your record/replay/export feature]• [TODO — your visualization feature if any]• [TODO — your themes / UI variety + languages]• 📱 PWA — installable, utilisable hors ligne
-• [TODO — learning modes if any]
+• 🧠 Flux « Apprends ton visage » — enregistre un visage avec quelques images de webcam, calcule un descripteur 128-D localement
+• ⚡ Flux Vérifier / Déverrouiller — la correspondance en direct renvoie MATCH ou NO-MATCH en ~200 ms
+• 🎙 Commandes vocales — « start », « teach », « unlock », « lock », « reset » via l'API Web Speech
+• 🔊 Retour vocal — l'appli lit elle-même son statut (« Face learned. You're ready to unlock. »)
+• 🔒 Mode auto-lock — protégé par PIN ; se verrouille quand le visage quitte le cadre, se déverrouille sur une correspondance
+• 🏆 Quest Log + compteur XP — boucle de récompense gamifiée qui fait revenir les enfants
+• 🔁 Bascule caméra avant/arrière + effet miroir
+• 📡 BBC micro:bit V2 optionnel en BLE UART — l'appli envoie MATCH / NO → ✓ ou ✗ sur les LEDs 5×5
+• 🛡 Vie privée par conception — pas de cloud, pas de compte, les descripteurs ne vivent que dans localStorage
+• 📱 PWA — installable, utilisable hors ligne après le premier chargement
+• 👶 Interface enfant + 🧙 Contrôles PIN pour parents / enseignants
 
 CONTENU DU TÉLÉCHARGEMENT
-• index.html — l'application complète
-• makecode.ts — firmware micro:bit (à flasher une fois depuis MakeCode)
+• index.html — le jeu de reconnaissance faciale complet
+• modèles face-api.js — poids TensorFlow.js embarqués en local, aucun appel CDN
+• makecode.ts — firmware micro:bit optionnel (à flasher une fois depuis MakeCode)
 • SETUP.md — démarrage rapide en 5 minutes
-• docs/ — guide illustré, aide-mémoire, FAQ, playbook Etsy
+• docs/ — guide illustré, fiche pédagogique prof, FAQ, playbook Etsy
 • LICENSE — licence mono-utilisateur personnelle / classe
 
 PRÉREQUIS
-• BBC micro:bit V2 (V1 fonctionne mais sans capteur de son)
+• Webcam (la cam intégrée du portable suffit)
 • Chrome ou Edge sur ordinateur (ou Chrome sur Android)
-• Bluetooth activé
+• Microphone (pour les commandes vocales — optionnel mais recommandé)
+• BBC micro:bit V2 + Bluetooth (optionnel, pour le retour LED)
 • HTTPS ou file:// — un double-clic sur le HTML suffit
 
 POUR QUI
-Enseignants animant des ateliers STEM · familles en école à la maison · clubs de robotique · makers prototypant des projets BLE · toute personne curieuse du micro:bit.
+Enseignants qui introduisent l'IA en classe · familles en école à la maison · clubs de robotique et STEM · parents qui veulent un premier contact sûr avec la reconnaissance faciale · toute personne curieuse de voir comment face-api.js et TensorFlow.js fonctionnent vraiment.
 
 CONFIDENTIALITÉ D'ABORD
-Rien ne quitte votre ordinateur. Pas d'analytique, pas de connexion, pas de cloud. Tous les calibrages, enregistrements et préréglages restent dans le localStorage du navigateur et sur votre disque.
+Rien ne quitte votre ordinateur. Jamais. Les images de la webcam ne quittent jamais l'appareil. Pas d'analytique, pas de connexion, pas de cloud. Le descripteur facial 128-D ne vit que dans le localStorage du navigateur et peut être effacé d'un clic.
 
 MISES À JOUR À VIE
 Chaque version publiée depuis cette annonce est à vous pour toujours. Retéléchargez le dernier ZIP à tout moment depuis votre page Achats Etsy.
 
-Bon hacking ! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
+Bonne quête ! 🚀🧠🎮<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
 
 <h2>Tarifs</h2>
 <table>
@@ -281,16 +293,16 @@ Bon hacking ! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.w
 <div class="slug" id="tags">SLUG — ÉTIQUETTES + MATÉRIAUX</div>
 <h2>13 étiquettes Etsy (20 caractères chacune)</h2>
 <div class="pills">
-  <span class="pill">micro:bit</span>
-  <span class="pill">BLE</span>
-  <span class="pill">bluetooth</span>
-  <span class="pill">éducation</span>
+  <span class="pill">reconnaissance faciale</span>
+  <span class="pill">IA enfants</span>
+  <span class="pill">face-api.js</span>
+  <span class="pill">TensorFlow.js</span>
   <span class="pill">STEM</span>
-  <span class="pill">robotique</span>
+  <span class="pill">commandes vocales</span>
   <span class="pill">code enfants</span>
   <span class="pill">ressource prof</span>
-  <span class="pill">capteurs</span>
-  <span class="pill">[product tag]</span>
+  <span class="pill">vie privée</span>
+  <span class="pill">micro:bit</span>
   <span class="pill">classe</span>
   <span class="pill">école maison</span>
   <span class="pill">makerspace</span>
@@ -300,29 +312,29 @@ Bon hacking ! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.w
 <div class="pills">
   <span class="pill">HTML5</span>
   <span class="pill">JavaScript</span>
+  <span class="pill">face-api.js</span>
+  <span class="pill">TensorFlow.js</span>
+  <span class="pill">Web Speech API</span>
   <span class="pill">Web Bluetooth</span>
-  <span class="pill">[render lib]</span>
-  <span class="pill">[3D lib if any]</span>
   <span class="pill">PWA</span>
   <span class="pill">MakeCode</span>
-  <span class="pill">TypeScript</span>
 </div>
 
 <h2>Mots-clés SEO</h2>
-<p><code>dans-le-navigateur</code> · <code>sans-installation</code> · <code>respect-vie-privée</code> · <code>hors-ligne</code> · <code>web bluetooth</code> · <code>ressource enseignant</code> · <code>atelier STEM</code> · <code>micro:bit V2</code></p>
+<p><code>jeu reconnaissance faciale</code> · <code>IA pour enfants</code> · <code>vie privée</code> · <code>sans cloud</code> · <code>dans le navigateur</code> · <code>descripteur 128-D</code> · <code>enroll verify</code> · <code>déverrouillage vocal</code> · <code>ressource enseignant</code> · <code>atelier IA STEM</code></p>
 
 <!-- ═══════════ IMAGES ═══════════ -->
 <div class="slug" id="images">SLUG — ORDRE DES 7 IMAGES</div>
 <h2>Séquence d'images (Etsy affiche 1 &amp; 2 en plus grand)</h2>
 <div class="card">
   <ol style="padding-left:22px;line-height:2">
-    <li><strong>[TODO — Hero shot: hardware + computer screen showing the marquee product state]</strong></li>
-    <li><strong>[TODO — grille des écrans ou fonctionnalités du produit]</strong></li>
-    <li><strong>[TODO — plan serré sur votre feature phare]</strong></li>
-    <li><strong>[TODO — split screen of two headline product features]</strong> — capture partagée montrant deux des cinq modèles Three.js.</li>
-    <li><strong>[TODO — plan main-sur-carte ou démo terrain]</strong></li>
-    <li><strong>[TODO — styling / variety grid].</li>
-    <li><strong>Carte texte</strong> — « Licence mono-utilisateur · Mises à jour à vie · Pas de cloud · Chrome / Edge » sur dégradé sombre.</li>
+    <li><strong>Image héros</strong> — visage de l'enfant cadré par la superposition webcam avec la boîte de détection, gros badge vert <strong>MATCH</strong>, tagline « Jeu de reconnaissance faciale IA pour enfants » sur dégradé sombre.</li>
+    <li><strong>Flux Apprends ton visage</strong> — interface d'enregistrement avec le compteur d'échantillons (« 3 / 5 échantillons »), anneau de progression vert, statut « Face learned ».</li>
+    <li><strong>Panneau commandes vocales</strong> — icône micro rouge (en écoute), chips des commandes : « start », « teach », « unlock », « lock », « reset », bulle de dialogue « Welcome back! ».</li>
+    <li><strong>Démo auto-lock</strong> — écran divisé : GAUCHE = visage dans le cadre, appli déverrouillée, Quest Log visible · DROITE = visage absent, overlay PIN couvre l'interface.</li>
+    <li><strong>Quest Log + compteur XP</strong> — capture du panneau gamifié : titres de quêtes, coches, compteur XP à <code>+120 XP</code>.</li>
+    <li><strong>Infographie vie privée</strong> — schéma simple : webcam → descripteur 128-D → localStorage, avec gros tampons rouges « PAS DE CLOUD » et « AUCUN ENVOI ».</li>
+    <li><strong>Retour micro:bit BLE optionnel</strong> — image divisée : navigateur avec MATCH + BBC micro:bit V2 affichant <strong>✓</strong> sur ses LEDs 5×5.</li>
   </ol>
 </div>
 
@@ -331,19 +343,20 @@ Bon hacking ! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.w
 <h2>Erreurs fréquentes</h2>
 <table>
   <tr><th>❌ À éviter</th><th>✅ À faire</th></tr>
-  <tr><td>Commencer par « Bonjour, je suis… » + 10 s d'intro</td><td>Ouvrir avec une action produit visible dans les 3 premières secondes</td></tr>
+  <tr><td>Commencer par « Bonjour, je suis… » + 10 s d'intro</td><td>Ouvrir sur le visage de l'enfant → clic Teach → « Face learned » dans les 3 premières secondes</td></tr>
   <tr><td>Filmer en paysage (16:9)</td><td>Portrait 9:16 — Etsy lit en auto sur mobile</td></tr>
-  <tr><td>Parler par-dessus une animation chargée</td><td>Laisser le visuel respirer 1 s, puis expliquer</td></tr>
-  <tr><td>Oublier les sous-titres (Etsy joue muet)</td><td>Incruster des sous-titres ou ajouter un texte à chaque scène</td></tr>
-  <tr><td>Montrer iOS / Safari dans la vidéo</td><td>Toujours démontrer sur Chrome/Edge — les utilisateurs iPhone achèteront puis rendront</td></tr>
-  <tr><td>Sauter le CTA</td><td>Dire « lien ci-dessous » dans les 5 dernières secondes à chaque fois</td></tr>
+  <tr><td>Montrer le visage complet d'un vrai enfant en miniature Etsy</td><td>Utiliser un figurant ou votre propre visage ; si c'est un vrai enfant, accord du parent + floutage</td></tr>
+  <tr><td>Oublier les sous-titres (Etsy joue muet)</td><td>Incruster les sous-titres sur chaque commande vocale — « Unlock », « Welcome back! »</td></tr>
+  <tr><td>Parler d'« IA cloud »</td><td>Répéter « tout dans le navigateur », « aucun envoi », « vie privée par conception »</td></tr>
+  <tr><td>Montrer iOS / Safari dans la vidéo</td><td>Toujours démontrer sur Chrome/Edge — face-api.js + getUserMedia l'exigent</td></tr>
+  <tr><td>Sauter le CTA</td><td>Dire « jeu complet + firmware + guide prof, lien ci-dessous » dans les 5 dernières secondes</td></tr>
 </table>
 
 <!-- ═══════════ CARTE RAPIDE ═══════════ -->
 <div class="slug">SLUG — AIDE-MÉMOIRE DE POCHE</div>
-<div class="copybox">PRÉ     V2 allumé (icône X) · Chrome ouvert · BLE vert · téléphone 9:16
-TOURNE  Accroche en 3 s · [TODO — 3 key verbs for your product] · CTA
-POST    Coupez à 55 s · sous-titres incrustés · première image = miniature
+<div class="copybox">PRÉ     Webcam prête · Chrome ouvert · modèles chargés · localStorage vidé · téléphone 9:16
+TOURNE  Accroche (Teach) · Verify (MATCH) · Voix « unlock » · Auto-lock · CTA
+POST    Coupez à 55 s · sous-titres sur chaque commande vocale · première image = miniature
 ANNONCE Titre · desc 160 car. · 13 étiquettes · 7 images · tarifs</div>
 
 <p style="text-align:center;margin-top:40px;color:var(--muted);font-size:.85rem">

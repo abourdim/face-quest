@@ -126,9 +126,9 @@
 
 <div class="slate">
   <div class="slate-clap">🎬</div>
-  <div class="tag">— دليل Etsy · الإصدار 1.0.2 —</div>
+  <div class="tag">— دليل Etsy · الإصدار 1.0.0 —</div>
   <h1>Face Quest</h1>
-  <div class="tag">عرض المنتج في دقيقة واحدة · مقتطفات جاهزة للنسخ</div>
+  <div class="tag">لعبة التعرف على الوجه بالذكاء الاصطناعي للأطفال · عرض دقيقة واحدة · مقتطفات جاهزة للنسخ</div>
   <div class="meta"><span><b>الصيغة:</b> عمودي 9:16</span><span><b>المدة:</b> ≤ 60 ثانية</span><span><b>الهدف:</b> تحويل المتصفحين إلى مشترين</span></div>
 </div>
 
@@ -147,14 +147,14 @@
 <h2>قبل الضغط على تسجيل</h2>
 <div class="card">
   <ul class="checklist" onclick="var li=event.target.closest('li');if(li)li.classList.toggle('checked')">
-    <li><input type="checkbox"><label>جهاز micro:bit V2 يعمل ويعرض أيقونة <kbd>X</kbd><span class="where">إن لم يكن كذلك ← أعد تحميل <code>makecode.ts</code></span></label></li>
-    <li><input type="checkbox"><label>Chrome أو Edge مفتوح، وملف <code>index.html</code> محمَّل<span class="where">Safari وFirefox وiOS لن تعمل</span></label></li>
-    <li><input type="checkbox"><label>BLE متصل — شارة الحالة <strong>خضراء</strong><span class="where">اضغط 🔗 اتصال، ثم اختر BBC micro:bit من النافذة</span></label></li>
-    <li><input type="checkbox"><label>تم اختيار السمة — <strong>Neon</strong> تبدو الأفضل أمام الكاميرا<span class="where">الرأس ← قائمة رولر الطلاء</span></label></li>
-    <li><input type="checkbox"><label>المحرِّك موصول بـ P1 (عند عرض الذراع الروبوتية أو العربة)</label></li>
-    <li><input type="checkbox"><label>علامة تبويب 3D Board مفتوحة، مع اختيار العربة أو الذراع<span class="where">علامة التبويب 6 ← قائمة النماذج</span></label></li>
-    <li><input type="checkbox"><label>الهاتف بوضع 9:16 على ترايبود، مضاء من الأمام</label></li>
-    <li><input type="checkbox"><label>المكتب مرتَّب — اللوحة وقطعة واحدة فقط في الإطار</label></li>
+    <li><input type="checkbox"><label>الكاميرا متصلة ومُختبَرة — الوجه واضح والإضاءة جيدة أمام الوجه<span class="where">الإضاءة الأمامية دائمًا أفضل من إضاءة السقف</span></label></li>
+    <li><input type="checkbox"><label>Chrome أو Edge مفتوح، وملف <code>index.html</code> محمَّل<span class="where">Safari وFirefox وiOS لن تعمل — face-api.js يحتاج Chromium</span></label></li>
+    <li><input type="checkbox"><label>نماذج face-api.js محمَّلة — الحالة تقول "Models ready"<span class="where">التحميل الأول يستغرق بضع ثوانٍ؛ انتظر شريط التقدم</span></label></li>
+    <li><input type="checkbox"><label>مسح localStorage — اضغط <strong>Reset</strong> لتبدأ من الصفر<span class="where">بلا بصمات سابقة، تبدو العروض الحية منعشة</span></label></li>
+    <li><input type="checkbox"><label>إذن الميكروفون ممنوح للأوامر الصوتية<span class="where">نافذة المتصفح ← اسمح، مرة واحدة لكل نطاق</span></label></li>
+    <li><input type="checkbox"><label>BBC micro:bit V2 (اختياري) مقترن عبر BLE — اللوحة تعرض ✓/✗ على الـ LED<span class="where">تجاوزها إن صوّرت العرض داخل المتصفح فقط</span></label></li>
+    <li><input type="checkbox"><label>الطفل / الممثل مُطّلع — يعرف أوامر "teach" و"unlock"</label></li>
+    <li><input type="checkbox"><label>الهاتف بوضع 9:16 على ترايبود، مؤطَّر على شاشة الحاسوب + الوجه</label></li>
     <li><input type="checkbox"><label>قراءة النص بصوت عالٍ مرة واحدة — بزمن أقل من 55 ثانية</label></li>
   </ul>
 </div>
@@ -164,11 +164,12 @@
 <h2>البنية</h2>
 <div class="card">
   <pre style="color:var(--accent2);font-family:var(--mono);font-size:.9rem;line-height:1.7;margin:0">
- 0–3 s   HOOK        «Watch what this micro:bit does in 60 seconds.»
- 3–10 s  CONTEXT     Board on-screen, X icon → status turns green.
-10–35 s  DEMO        Tilt → 3D model follows. Press A → LED heart. Servo swings.
-35–50 s  PAYOFF      Zoom on live graph + 3D model mirroring real board.
-50–55 s  CTA         «Full kit in my shop — link below.»
+ 0–3 s   HOOK        "Your kid teaches the computer their face — in 3 seconds."
+ 3–10 s  CONTEXT     Privacy panel: no cloud, no account, no uploads. Ever.
+10–25 s  DEMO 1      Enroll → Verify. Face → MATCH in green, confidence bar fills.
+25–40 s  DEMO 2      Voice "unlock" → "Welcome back!". Step away → auto-lock.
+40–50 s  PAYOFF      Optional micro:bit ✓ on LEDs · XP counter ticks up.
+50–55 s  CTA         "Full game + firmware + teacher guide. Link below."
 55–60 s  END FRAME   Logo + handle frozen for the loop preview.</pre>
 </div>
 
@@ -178,103 +179,108 @@
      املأ كل سطر DIRE/FAIRE بنص خاص بـ Face Quest قبل التصوير.
      لا تُرسل هذا الملف إلى الإنتاج مع النصوص المائلة كما هي. -->
 
-<h2>قالب 6 مشاهد — Face Quest</h2>
-<p class="aka" style="color:#f59e0b;font-weight:700;">⚠️ المشاهد الستة أدناه قوالب فارغة. استبدل كل سطر بفعلٍ قابلٍ للتصوير خاصٍ بـ Face Quest قبل تسجيل الفيديو.</p>
+<h2>نص 6 مشاهد — Face Quest</h2>
+<p class="aka" style="color:#22c55e;font-weight:700;">✓ جاهز للتصوير. كل مشهد له جملة مُختبَرة وفعل قابل للتصوير. اقرأه بصوت عالٍ مرة للتأكد من البقاء تحت 55 ثانية قبل التسجيل.</p>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:00–00:03</span><span class="scene-phase phase-hook">الخطاف</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قل</div><em>[جملة الجذب — ثانية واحدة، وعد واضح يوقف التمرير]</em></div>
-    <div class="do"><div class="do-label">🎬 افعل</div><em>[لقطة الجذب — ما يظهر على الشاشة أثناء الجملة]</em></div>
+    <div class="say"><div class="say-label">🎙 قل</div>«طفلك يعلّم الحاسوب وجهه — في 3 ثوانٍ.»</div>
+    <div class="do"><div class="do-label">🎬 افعل</div>الطفل يجلس أمام الحاسوب المحمول، يضغط زر <strong>Teach</strong> الأخضر الكبير. الحالة تقرأ «Face learned.» مربع الكشف فوق الكاميرا يُرسَم مباشرةً.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:03–00:10</span><span class="scene-phase phase-demo">السياق</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قل</div><em>[لمن هذا المنتج، ما المشكلة التي يحلّها]</em></div>
-    <div class="do"><div class="do-label">🎬 افعل</div><em>[لقطة الإعداد — الاتصال، أول شاشة مفيدة]</em></div>
+    <div class="say"><div class="say-label">🎙 قل</div>«كل شيء يعمل على حاسوبك. بلا سحابة. بلا حساب. ولا تُرفَع أي صورة. أبدًا.»</div>
+    <div class="do"><div class="do-label">🎬 افعل</div>قطع إلى لوحة الخصوصية داخل الواجهة — إبراز «البصمة تبقى محليًا» و«localStorage فقط». تقريب على البصمة 128-D مُصوَّرة كرسم بياني صغير.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:10–00:25</span><span class="scene-phase phase-demo">العرض 1</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قل</div><em>[لحظة الإبهار الأولى — ميزة رئيسية لـ Face Quest]</em></div>
-    <div class="do"><div class="do-label">🎬 افعل</div><em>[لقطة الفعل — 15 ثانية من الحركة المرئية]</em></div>
+    <div class="say"><div class="say-label">🎙 قل</div>«سجِّل وجهك مرة واحدة. بعدها، كلما رأتك الكاميرا — MATCH في 200 مللي ثانية.»</div>
+    <div class="do"><div class="do-label">🎬 افعل</div>حلقة Enroll → Verify. وجه الطفل يدخل الإطار ← شارة <strong>MATCH</strong> تومض بالأخضر، شريط الثقة يمتلئ إلى 95%+. الأخ يجرّب ← NO-MATCH بالأحمر.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:25–00:40</span><span class="scene-phase phase-demo">العرض 2</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قل</div><em>[لحظة الإبهار الثانية — ميزة/حالة استخدام ثانية]</em></div>
-    <div class="do"><div class="do-label">🎬 افعل</div><em>[لقطة الفعل — 15 ثانية]</em></div>
+    <div class="say"><div class="say-label">🎙 قل</div>«قل "unlock" — التطبيق يتعرّف على صوتك ووجهك معًا. تبتعد، يُغلَق من تلقاء نفسه.»</div>
+    <div class="do"><div class="do-label">🎬 افعل</div>الطفل يقول «Unlock» بصوت عالٍ ← التطبيق يرد «Welcome back!». الطفل يبتعد عن الحاسوب ← الشاشة تعتم، ويظهر واجهة الـ PIN بينما يُفعَّل الإغلاق التلقائي.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:40–00:50</span><span class="scene-phase phase-payoff">المكافأة</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قل</div><em>[لماذا هذا مهم — الوقت الموفّر، المهارة المكتسبة، الأمان]</em></div>
-    <div class="do"><div class="do-label">🎬 افعل</div><em>[الشاشة التي تحمل الرسالة — تصدير، التقاط، نتيجة مرئية]</em></div>
+    <div class="say"><div class="say-label">🎙 قل</div>«micro:bit الاختياري يمنحهم إشارة موافقة حقيقية. هكذا يعمل الذكاء الاصطناعي — داخل متصفحك.»</div>
+    <div class="do"><div class="do-label">🎬 افعل</div>إطار مقسوم: شارة MATCH على اليمين في المتصفح، BBC micro:bit V2 على اليسار يُضيء <strong>✓</strong> على مصفوفة 5×5. عدّاد Quest Log يضيف <code>+10 XP</code>.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:50–00:60</span><span class="scene-phase phase-cta">CTA + إطار الختام</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قل</div><em>[الدعوة للشراء — الطقم الكامل + الرابط في الوصف]</em></div>
-    <div class="do"><div class="do-label">🎬 افعل</div><em>[طبقة الشعار، إطار ختام ثابت لـ 3 ثوانٍ]</em></div>
+    <div class="say"><div class="say-label">🎙 قل</div>«اللعبة الكاملة، البرنامج الثابت، ودليل المعلم. الرابط في الأسفل.»</div>
+    <div class="do"><div class="do-label">🎬 افعل</div>بطاقة الختام: شعار Face Quest، «abourdim.github.io/face-quest»، تجميد 3 ثوانٍ لمعاينة الحلقة على Etsy.</div>
   </div>
 </div>
 
 <!-- ═══════════ نص الإعلان ═══════════ -->
 <div class="slug" id="listing">نص إعلان جاهز للنسخ</div>
 <h2>عنوان Etsy (140 حرفًا كحد أقصى)</h2>
-<div class="copybox">Face Quest — لوحة تحكم BLE للمعلمين والأطفال · حساسات · محركات · مخطط حي · نماذج 3D · بلا تثبيت · Chrome / Edge<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
+<div class="copybox">Face Quest — لعبة التعرف على الوجه بالذكاء الاصطناعي للأطفال · علِّم وجهك · أوامر صوتية · داخل المتصفح · خصوصية كاملة · Chrome/Edge · micro:bit<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
 
 <h2>الوصف المختصر (أول 160 حرفًا — تظهر في البحث)</h2>
-<div class="copybox">لوحة تحكم BLE داخل المتصفح للوحة BBC micro:bit V2. حساسات ومحركات ومخططات حية ونماذج ثلاثية الأبعاد ويد تحكم — كلها من Chrome. بلا تثبيت وبلا حساب.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
+<div class="copybox">الأطفال يعلّمون الحاسوب وجوههم في 3 ثوانٍ، ثم يفتحونه بنظرة أو بأمر صوتي. يعمل 100% داخل متصفحك — بلا سحابة، بلا حساب، بلا رفع صور.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
 
 <h2>الوصف الكامل</h2>
-<div class="copybox">🎮 Face Quest — لوحة تحكم BLE تعمل داخل المتصفح للوحة BBC micro:bit V2.
+<div class="copybox">🎮 Face Quest — لعبة تعرّف على الوجه بالذكاء الاصطناعي للأطفال، تعمل 100% داخل متصفحك.
 
-افتح ملف HTML واحدًا في Chrome أو Edge، واقترن عبر Bluetooth، وافتح 8 علامات تبويب من المرح التعليمي (STEM) التفاعلي — بلا تثبيت، بلا حساب، بلا خادم خلفي، بلا تتبع.
+افتح ملف HTML واحدًا في Chrome أو Edge، أظهر وجهك للكاميرا، فيتعلّم التطبيق هويتك في 3 ثوانٍ. ثم يفتح لك، ويرحّب بعودتك، ويحوّل تعلّم الذكاء الاصطناعي إلى مغامرة مُمتّعة — دون أن تغادر أي بيانات جهازك.
 
 ما ستحصل عليه
-• 🎛 شبكة LED + أيقونات جاهزة + نص متحرك
-• 📡 حساسات مباشرة: الحرارة، الإضاءة، الصوت، مقياس التسارع، البوصلة، اللمس
-• ⚙️ محركان (P1 + P2) مع منزلقات ومؤشرات وضبط وأزرار إيقاف
-• 🎮 يد تحكم D-pad للروبوتات والألعاب
-• 📈 [TODO — ميزة منتجك الرئيسية]• 🎲 5 نماذج ثلاثية الأبعاد تفاعلية (Three.js): micro:bit، العربة، الذراع، التوازن، الطقس
-• 🎨 4 سمات (Stealth · Neon · Arctic · Blaze) + 3 لغات (EN · FR · AR مع دعم RTL كامل)
-• 📱 PWA — قابل للتثبيت ويعمل بدون إنترنت
-• 👶 وضع المبتدئ + 🧙 وضع الخبير
+• 🧠 تدفّق «علِّم وجهي» — سجِّل وجهًا بلقطات قليلة من الكاميرا، ويحسب التطبيق بصمة 128-D محليًا
+• ⚡ تدفّق التحقق / الفتح — مطابقة حيّة تعيد MATCH أو NO-MATCH خلال ~200 مللي ثانية
+• 🎙 أوامر صوتية — «start» و«teach» و«unlock» و«lock» و«reset» عبر Web Speech API
+• 🔊 ردود صوتية — التطبيق يقرأ حالته بنفسه («Face learned. You're ready to unlock.»)
+• 🔒 وضع القفل التلقائي — محمي بـ PIN؛ يُقفَل حين يغادر الوجه الإطار، ويُفتَح عند المطابقة
+• 🏆 سجلّ المهام Quest Log + عدّاد XP — حلقة مكافآت مُلعَّبة تُبقي الأطفال متحمّسين
+• 🔁 التبديل بين الكاميرا الأمامية والخلفية + مؤثّر المرآة
+• 📡 BBC micro:bit V2 اختياري عبر BLE UART — التطبيق يرسل MATCH / NO ← ✓ أو ✗ على مصفوفة 5×5
+• 🛡 الخصوصية منذ التصميم — بلا سحابة، بلا حساب، البصمات لا تعيش إلا في localStorage
+• 📱 PWA — قابل للتثبيت، يعمل بدون إنترنت بعد أول تحميل
+• 👶 واجهة صديقة للأطفال + 🧙 ضوابط PIN للأهل والمعلمين
 
 محتويات التنزيل
-• index.html — التطبيق الكامل
-• makecode.ts — برنامج micro:bit الثابت (تُحمَّل مرة واحدة من MakeCode)
+• index.html — لعبة التعرّف على الوجه الكاملة
+• نماذج face-api.js — أوزان TensorFlow.js مُضمَّنة محليًا، بلا جلب من CDN
+• makecode.ts — برنامج micro:bit الثابت الاختياري (يُحمَّل مرة واحدة من MakeCode)
 • SETUP.md — بداية سريعة في 5 دقائق
-• docs/ — دليل مصور، ومرجع سريع، وأسئلة شائعة، ودليل Etsy
+• docs/ — دليل مصوَّر، خطة درس للمعلم، أسئلة شائعة، دليل Etsy
 • LICENSE — رخصة مستخدم وحيد للاستخدام الشخصي / الصفي
 
 المتطلبات
-• BBC micro:bit V2 (V1 يعمل لكن بدون حساس صوت)
+• كاميرا ويب (كاميرا الحاسوب المحمول المدمجة تكفي)
 • Chrome أو Edge على سطح المكتب (أو Chrome على أندرويد)
-• تفعيل Bluetooth
+• ميكروفون (للأوامر الصوتية — اختياري لكنه موصى به)
+• BBC micro:bit V2 + Bluetooth (اختياري، لإشارة LED)
 • HTTPS أو file:// — النقر المزدوج على HTML يكفي
 
 لمن هو موجَّه
-المعلمون الذين يديرون ورش STEM · الأسر التي تدرّس منزليًا · نوادي الروبوتات · صانعو النماذج الأولية لمشاريع BLE · كل مهتم بـ micro:bit.
+المعلمون الذين يقدّمون الذكاء الاصطناعي في الصف · الأسر التي تدرّس منزليًا · نوادي الروبوتات وSTEM · الأهل الذين يريدون تجربة آمنة أولى مع التعرّف على الوجه · كل فضولي يريد أن يرى كيف يعمل face-api.js وTensorFlow.js حقًا.
 
 الخصوصية أولًا
-لا شيء يغادر جهازك. بلا تتبع، بلا تسجيل دخول، بلا سحابة. جميع المعايرات والتسجيلات والإعدادات المسبقة تبقى في localStorage للمتصفح وعلى قرصك.
+لا شيء يغادر جهازك. أبدًا. إطارات الكاميرا لا تغادر الجهاز. بلا تتبّع، بلا تسجيل دخول، بلا سحابة. بصمة الوجه 128-D لا تعيش إلا في localStorage للمتصفح، ويمكن محوها بنقرة واحدة.
 
 تحديثات مدى الحياة
 كل إصدار يُطرح من هذا الإعلان هو ملكك للأبد. أعد تنزيل أحدث ZIP في أي وقت من صفحة مشترياتك في Etsy.
 
-قرصنة سعيدة! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
+رحلة ممتعة! 🚀🧠🎮<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
 
 <h2>فئات الأسعار</h2>
 <table>
@@ -288,16 +294,16 @@
 <div class="slug" id="tags">الوسوم والمواد</div>
 <h2>13 وسمًا لـ Etsy (20 حرفًا لكل وسم)</h2>
 <div class="pills">
-  <span class="pill">micro:bit</span>
-  <span class="pill">BLE</span>
-  <span class="pill">bluetooth</span>
-  <span class="pill">تعليم</span>
+  <span class="pill">تعرّف على الوجه</span>
+  <span class="pill">ذكاء اصطناعي للأطفال</span>
+  <span class="pill">face-api.js</span>
+  <span class="pill">TensorFlow.js</span>
   <span class="pill">STEM</span>
-  <span class="pill">روبوتات</span>
+  <span class="pill">أوامر صوتية</span>
   <span class="pill">برمجة أطفال</span>
   <span class="pill">مورد للمعلم</span>
-  <span class="pill">حساسات</span>
-  <span class="pill">محركات</span>
+  <span class="pill">الخصوصية أولًا</span>
+  <span class="pill">micro:bit</span>
   <span class="pill">غرفة صف</span>
   <span class="pill">تعليم منزلي</span>
   <span class="pill">ميكرسبيس</span>
@@ -307,29 +313,29 @@
 <div class="pills">
   <span class="pill">HTML5</span>
   <span class="pill">JavaScript</span>
+  <span class="pill">face-api.js</span>
+  <span class="pill">TensorFlow.js</span>
+  <span class="pill">Web Speech API</span>
   <span class="pill">Web Bluetooth</span>
-  <span class="pill">[render lib]</span>
-  <span class="pill">[3D lib if any]</span>
   <span class="pill">PWA</span>
   <span class="pill">MakeCode</span>
-  <span class="pill">TypeScript</span>
 </div>
 
 <h2>كلمات SEO</h2>
-<p><code>browser-based</code> · <code>no-install</code> · <code>privacy-first</code> · <code>offline-capable</code> · <code>web bluetooth</code> · <code>teacher resource</code> · <code>STEM workshop</code> · <code>micro:bit V2</code></p>
+<p><code>face recognition game</code> · <code>AI for kids</code> · <code>privacy-first</code> · <code>no-cloud</code> · <code>browser-based</code> · <code>128-D descriptor</code> · <code>enroll verify</code> · <code>voice unlock</code> · <code>teacher resource</code> · <code>STEM AI workshop</code></p>
 
 <!-- ═══════════ الصور ═══════════ -->
 <div class="slug" id="images">ترتيب الصور السبع للإعلان</div>
 <h2>تسلسل الصور (Etsy يعرض 1 و 2 بأكبر حجم)</h2>
 <div class="card">
   <ol style="padding-right:22px;line-height:2">
-    <li><strong>الصورة البطل</strong> — micro:bit حقيقي + لقطة شاشة مقسومة للحاسوب تُظهر النموذج ثلاثي الأبعاد وهو يعكس ميل اللوحة. عنوان بخط Orbitron فوقها.</li>
-    <li><strong>نظرة عامة على الألسنة</strong> — لقطة شبكية لجميع الألسنة الثماني مع رموزها.</li>
-    <li><strong>[TODO — لقطة قريبة لأهم ميزة]</strong></li>
-    <li><strong>[TODO — لقطة مقسومة تُظهر ميزتين رئيسيتين]</strong></li>
-    <li><strong>يد تمسك اللوحة</strong> — محرك حقيقي موصول بـ P1، والمنزلقات على الشاشة في الخلفية.</li>
-    <li><strong>عيّنة السمات</strong> — شبكة 2×2: Stealth · Neon · Arctic · Blaze.</li>
-    <li><strong>بطاقة نصية</strong> — «رخصة مستخدم وحيد · تحديثات مدى الحياة · بلا سحابة · Chrome / Edge» على تدرج داكن.</li>
+    <li><strong>الصورة البطل</strong> — وجه الطفل مُؤطَّر بطبقة كاميرا ويب مع مربع كشف حيّ، شارة <strong>MATCH</strong> خضراء كبيرة، وعنوان «لعبة التعرّف على الوجه بالذكاء الاصطناعي للأطفال» على تدرّج داكن.</li>
+    <li><strong>تدفّق «علِّم وجهي»</strong> — واجهة التسجيل مع عدّاد العيّنات («3 / 5 عيّنات»)، حلقة تقدّم خضراء، وسطر الحالة «Face learned».</li>
+    <li><strong>لوحة الأوامر الصوتية</strong> — أيقونة الميكروفون مُضاءة بالأحمر (يستمع)، شرائح الأوامر ظاهرة: «start» و«teach» و«unlock» و«lock» و«reset»، مع فقّاعة «Welcome back!».</li>
+    <li><strong>عرض القفل التلقائي</strong> — شاشة مقسومة: يمين = الوجه في الإطار، التطبيق مفتوح، سجلّ المهام ظاهر · يسار = الوجه غائب، واجهة PIN تغطّي كل شيء.</li>
+    <li><strong>Quest Log + عدّاد XP</strong> — لقطة للوحة المُلعَّبة: عناوين المهام، علامات الإنجاز، والعدّاد عند <code>+120 XP</code>.</li>
+    <li><strong>إنفوجرافيك الخصوصية</strong> — مخطط بسيط: كاميرا ← بصمة 128-D ← localStorage، مع ختمَي «لا سحابة» و«لا رفع» بلون أحمر كبير.</li>
+    <li><strong>إشارة micro:bit BLE الاختيارية</strong> — إطار مقسوم: متصفح يُظهر MATCH + BBC micro:bit V2 يعرض <strong>✓</strong> على مصفوفة 5×5.</li>
   </ol>
 </div>
 
@@ -338,19 +344,20 @@
 <h2>أخطاء شائعة</h2>
 <table>
   <tr><th>❌ لا تفعل</th><th>✅ افعل</th></tr>
-  <tr><td>ابدأ بـ «مرحبًا، أنا…» مع 10 ثوانٍ من المقدمة</td><td>افتح باللوحة الحقيقية وهي تُميل نموذجًا ثلاثي الأبعاد في أول 3 ثوانٍ</td></tr>
+  <tr><td>البدء بـ «مرحبًا، أنا…» + 10 ثوانٍ مقدمة</td><td>افتح على وجه الطفل ← نقرة Teach ← «Face learned» في أول 3 ثوانٍ</td></tr>
   <tr><td>التصوير بالوضع الأفقي (16:9)</td><td>عمودي 9:16 — Etsy يشغّل تلقائيًا على الجوال</td></tr>
-  <tr><td>التحدث فوق رسوم متحركة مزدحمة</td><td>اترك الصورة تتنفس لثانية، ثم اشرح</td></tr>
-  <tr><td>نسيان الترجمة (Etsy يشغّل كتم الصوت)</td><td>ادمج الترجمة أو أضف نصًا في كل مشهد</td></tr>
-  <tr><td>عرض iOS / Safari في الفيديو</td><td>اعرض دائمًا على Chrome/Edge — مستخدمو iPhone سيشترون ثم يطلبون استرجاع المبلغ</td></tr>
-  <tr><td>تخطي CTA</td><td>قل «الرابط في الأسفل» في آخر 5 ثوانٍ في كل مرة</td></tr>
+  <tr><td>إظهار وجه طفل حقيقي كاملًا في مُصغَّرة Etsy</td><td>استخدم ممثلًا مُصطنعًا أو وجهك؛ إذا كان طفلًا حقيقيًا فاطلب إذن الوالد وضبِّب/غطِّ إطار الكاميرا</td></tr>
+  <tr><td>نسيان الترجمة (Etsy يشغّل كتم الصوت)</td><td>ادمج ترجمة على كل لحظة أمر صوتي — «Unlock» و«Welcome back!»</td></tr>
+  <tr><td>الحديث عن «ذكاء اصطناعي سحابي»</td><td>قل «يعمل داخل متصفحك» و«بلا رفع» و«خصوصية منذ التصميم» مرتين على الأقل</td></tr>
+  <tr><td>عرض iOS / Safari في الفيديو</td><td>اعرض دائمًا على Chrome/Edge — face-api.js + getUserMedia يحتاجانهما</td></tr>
+  <tr><td>تخطي CTA</td><td>قل «اللعبة الكاملة + البرنامج الثابت + دليل المعلم، الرابط في الأسفل» في آخر 5 ثوانٍ</td></tr>
 </table>
 
 <!-- ═══════════ بطاقة سريعة ═══════════ -->
 <div class="slug">بطاقة الجيب المرجعية</div>
-<div class="copybox">قبل     V2 يعمل (أيقونة X) · Chrome مفتوح · BLE أخضر · هاتف 9:16
-صوِّر   خطاف في 3 ثوانٍ · إمالة ← انعكاس 3D · محرك يتحرك · محاكاة مخطط · CTA
-بعد     قصّ إلى 55 ثانية · ترجمة مدمجة · أول إطار = المصغَّرة
+<div class="copybox">قبل     الكاميرا جاهزة · Chrome مفتوح · النماذج محمَّلة · localStorage مُفرَّغ · هاتف 9:16
+صوِّر   الخطاف (Teach) · التحقق (MATCH) · الصوت «unlock» · القفل التلقائي · CTA
+بعد     قصّ إلى 55 ثانية · ترجمة على كل جملة صوتية · أول إطار = المصغَّرة
 أعلن    عنوان · وصف 160 حرفًا · 13 وسمًا · 7 صور · فئات الأسعار</div>
 
 <p style="text-align:center;margin-top:40px;color:var(--muted);font-size:.85rem">
