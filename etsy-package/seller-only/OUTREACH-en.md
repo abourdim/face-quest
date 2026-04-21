@@ -119,7 +119,7 @@
 >
 > Big fan of {{SHOP_NAME}} — your {{PRODUCT: "micro:bit starter kit" / "robotics bundle"}} is exactly where a tool I built would add a kid-magnet visual layer.
 >
-> I make a browser-based control panel for the BBC micro:bit V2. It's the "wow" moment parents post on Instagram — sensors stream live in the browser, LED matrix draws in real time, camera view tilts with the real one.
+> I make a browser-based control panel for the BBC micro:bit V2. It's the "wow" moment parents share with friends — the product comes alive in a browser tab, no install, no account.
 >
 > Two ways I can be useful:
 > 1. **Affiliate** — 30% commission on Etsy purchases via your link.

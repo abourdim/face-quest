@@ -55,13 +55,13 @@ Etsy loops the video, so the **end frame should match the cover** — keeps view
 
 ---
 
-## Script Template A — "Your micro:bit becomes a playground" (hero demo)
+## Script Template A — "Face Quest — AI Face-Recognition Game for Kids · face-api.js · 128-D Descriptor · Local Only · Chrome / Edge" (hero demo)
 
 **Use case:** the main Etsy listing video. Showcases the 3D, the BLE pairing, and the live graph in one go.
 
 | Time | What to SAY | What to CLICK / DO |
 |---|---|---|
-| 0–3 s | *"Your micro:bit becomes a playground — in the browser, in 60 seconds."* | Close-up of the real board with the X icon on the LEDs. Your hand holds it. |
+| 0–3 s | *"Face Quest — AI Face-Recognition Game for Kids · face-api.js · 128-D Descriptor · Local Only · Chrome / Edge — in the browser, in 60 seconds."* | Close-up of the real board with the X icon on the LEDs. Your hand holds it. |
 | 3–10 s | *"One page, one click, paired."* | Cut to the laptop. Click **🔗 Connect to micro:bit** → pick the board → chip turns green. |
 | 10–20 s | *"Sensors live — tilt it, the 3D model tilts too."* | Tab **6 · Camera View**. Tilt the real board. The virtual one mirrors it. Hold both in frame. |
 | 20–30 s | *"Click through the live demo — features run in the browser."* | Click through the live demo; features run in the browser.|
@@ -144,7 +144,7 @@ Etsy loops the video, so the **end frame should match the cover** — keeps view
 ## Etsy-specific upload tips
 
 - Etsy listing videos appear at the top as an **autoplaying preview tile**. First frame is the cover — make it visually clean.
-- Use the listing **title** to echo the video's first words. If you say *"Your micro:bit becomes a playground"*, the listing title starts with *"Face Quest — BLE Control Panel…"*.
+- Use the listing **title** to echo the video's first words. If you say *"Face Quest — AI Face-Recognition Game for Kids · face-api.js · 128-D Descriptor · Local Only · Chrome / Edge"*, the listing title starts with the same opening words.
 - Add the captions text into the listing **description** — searchable, helps SEO.
 - Tag the listing with words you actually said in the video.
 - Price tiers: single user `{{PRICE}}` · classroom / site `{{PRICE}}`.
@@ -184,7 +184,7 @@ Face Quest — BLE Control Panel for Teachers & Kids · Sensors · Face Enroll �
 
 **160-char short description:**
 ```
-Browser-based BLE control panel for the webcam + BBC micro:bit V2. Sensors, face scans, live graphs, 3D models, and a Voice Commands — all from Chrome. No install, no account.
+Browser-based computer vision tool + BBC micro:bit V2. Sensors, face scans, live graphs, 3D models, and a Voice Commands — all from Chrome. No install, no account.
 ```
 
 **13 Etsy tags:**
