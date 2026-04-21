@@ -1,8 +1,26 @@
 <!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════════════════════
+  ⚠️  REWRITE PER PRODUCT — DO NOT SHIP AS-IS
+  ───────────────────────────────────────────────────────────────────────
+  apply-template.mjs only substituted identifiers (Face Quest,
+  v1.0.0, https://abourdim.github.io/face-quest/, etc.). The feature content, steps,
+  shortcuts, and examples below were inherited from the template's
+  source product (face-quest) and WILL BE WRONG for your product
+  unless you rewrite them.
+  
+  Before including this file in a buyer ZIP:
+    1. Delete this banner.
+    2. Rewrite every mention of specific features, shortcuts,
+       tab names, hardware interactions, etc. to match your product.
+    3. Verify with: grep -iE "face scan|chart\.js|3d board|gamepad|
+       face tracker|face match|led matrix|3 modes|sensors tab" this-file.
+  ═══════════════════════════════════════════════════════════════════════
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Face Quest — Teach the App Your Face!</title>
+<title>Face Quest — We Control Robots with Code!</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Orbitron:wght@500&family=Tajawal:wght@400;500;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -64,72 +82,79 @@
   }
   .footer span { font-size: 11px; color: #64748b; }
   .footer .brand { font-family: 'Orbitron', monospace; font-size: 12px; color: #22c55e; }
+
+  .led-row { display: flex; gap: 4px; justify-content: center; margin-top: 4px; }
+  .led { width: 10px; height: 10px; border-radius: 2px; background: #22c55e; box-shadow: 0 0 6px rgba(34,197,94,.7); }
+  .led.off { background: #1e293b; box-shadow: none; }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <div class="corner-tl">🧠</div>
-  <div class="corner-br">📷</div>
+  <div class="corner-tl">🤖</div>
+  <div class="corner-br">🚀</div>
 
   <div class="header">
     <div class="icon">🎮</div>
-    <h1>Teach the App<br>Your Face!</h1>
+    <h1>We Control Robots<br>with Code!</h1>
     <h2>Face Quest &bull; Classroom Guide</h2>
+    <div class="led-row">
+      <div class="led off"></div><div class="led"></div><div class="led"></div><div class="led"></div><div class="led off"></div>
+    </div>
     <div class="line"></div>
   </div>
 
   <div class="rules">
     <div class="rule">
       <div class="rule-num">1</div>
-      <div class="rule-icon">📷</div>
+      <div class="rule-icon">🔌</div>
       <div class="rule-text">
-        <h3>Allow the Camera</h3>
-        <p>Open <strong style="color:#22d3ee;">index.html</strong> in Chrome. Click <strong style="color:#22c55e;">🚀 Start Mission</strong>. When the browser asks, allow the webcam. Your face appears in the scanner window.</p>
+        <h3>Power Up Your micro:bit</h3>
+        <p>Plug in the USB cable or snap in fresh batteries. You should see a friendly <strong style="color:#22c55e;">X</strong> on the LED grid &mdash; that means "ready to pair!"</p>
       </div>
     </div>
 
     <div class="rule">
       <div class="rule-num">2</div>
-      <div class="rule-icon">🧠</div>
+      <div class="rule-icon">🌐</div>
       <div class="rule-text">
-        <h3>Teach My Face (Enroll)</h3>
-        <p>Center your face, click <strong style="color:#22c55e;">🧠 Teach My Face</strong>. Three little AI brains turn your face into secret numbers &mdash; no photos saved. Done in seconds.</p>
+        <h3>Open Playground in Chrome</h3>
+        <p>Double-click <strong style="color:#22d3ee;">index.html</strong>. Our control panel loads. No internet, no login, no waiting.</p>
       </div>
     </div>
 
     <div class="rule">
       <div class="rule-num">3</div>
-      <div class="rule-icon">🔓</div>
+      <div class="rule-icon">📡</div>
       <div class="rule-text">
-        <h3>Unlock! (Verify)</h3>
-        <p>Step back, step forward. Click <strong style="color:#22c55e;">🔓 Unlock!</strong>. The app compares live numbers to your saved face. Match &rarr; &#x2705;. No match &rarr; &#x274C;.</p>
+        <h3>Click Connect, Choose Your Board</h3>
+        <p>A window pops up with a list. Pick <strong style="color:#22c55e;">BBC micro:bit [xxxxx]</strong>. The dot turns green &mdash; you are live over Bluetooth!</p>
       </div>
     </div>
 
     <div class="rule">
       <div class="rule-num">4</div>
-      <div class="rule-icon">🔗</div>
+      <div class="rule-icon">🎛️</div>
       <div class="rule-text">
-        <h3>Robot Buddy (optional)</h3>
-        <p>Flash the MakeCode BLE UART program to a BBC micro:bit V2. Click <strong style="color:#22c55e;">🤝 Connect</strong>, pick your board. On Unlock, the micro:bit shows &#x2705; / &#x274C; and can play sounds.</p>
+        <h3>Explore Every Tab</h3>
+        <p>Paint the LEDs. Watch live temperature and sound. Spin face scans. Drive the face landmark. Press keys <strong style="color:#22c55e;">1</strong> through <strong style="color:#22c55e;">8</strong> to jump between tools.</p>
       </div>
     </div>
 
     <div class="rule">
       <div class="rule-num">5</div>
-      <div class="rule-icon">⭐</div>
+      <div class="rule-icon">📈</div>
       <div class="rule-text">
-        <h3>Earn XP, Discuss Privacy</h3>
-        <p>Each Teach + Unlock earns XP in the top bar. Nothing leaves the computer &mdash; no cloud, no accounts. Perfect jump-off to talk about how real face recognition works.</p>
+        <h3>Graph It, Record It, Share It</h3>
+        <p>Open the <strong style="color:#22c55e;">Graph</strong> tab. Watch sensor lines dance. Hit <strong style="color:#22d3ee;">Record</strong> to save a session as JSON &mdash; then show a friend what you discovered!</p>
       </div>
     </div>
   </div>
 
   <div class="motto-wrap">
     <div class="motto">
-      <h3>Learn &bull; Spot &bull; Play</h3>
-      <p>Three AI brains, one webcam, zero data leaving the room.</p>
+      <h3>Every scientist started by asking "what happens if I press this?"</h3>
+      <p>Your micro:bit is a tiny computer. Today, you are its boss.</p>
     </div>
   </div>
 

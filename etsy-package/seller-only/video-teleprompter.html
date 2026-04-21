@@ -1,4 +1,23 @@
 <!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════════════════════
+  ⚠️  REWRITE PER PRODUCT — DO NOT SHIP AS-IS
+  ───────────────────────────────────────────────────────────────────────
+  apply-template.mjs substituted Face Quest / v1.0.0 only.
+  The SCENES array below (SAY + DO lines) was inherited from
+  face-quest and references product-specific things: BLE, LEDs,
+  face scans, Tab 3/5/6, "Camera View", "Motors", "Graph", "Neon theme", etc.
+  Rewrite each scene to match YOUR product's 60-second arc.
+
+  Before using:
+    1. Delete this banner.
+    2. Rewrite every scene in the SCENES array (keep the 8-scene shape
+       and the time boundaries — hook / context / 2-3 demos / payoff /
+       style / CTA / end — these are proven pacing).
+    3. Update the idle pre-flight line near the bottom of the body.
+    4. Keep keyboard controls (Space / R / F) as-is.
+  ═══════════════════════════════════════════════════════════════════════
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -141,7 +160,7 @@
 
   <main>
     <div class="say" id="say">Press <span style="color: var(--accent)">Space</span> to start</div>
-    <div class="do" id="do">Pre-flight: webcam on · good light · 9:16 phone · face-api models loaded</div>
+    <div class="do" id="do">Pre-flight: BLE green · Neon theme · 9:16 phone · desk clean</div>
   </main>
 
   <footer>
@@ -156,15 +175,15 @@
 
 <script>
 const SCENES = [
-  { t: 0,  phase: 'HOOK',     say: '"Your face is the key — learn, spot, play, in 60 seconds."',                       do: 'Close-up of kid smiling at the <strong>webcam</strong>. Browser open in background.' },
-  { t: 3,  phase: 'CONTEXT',  say: '"One page, one face. No account."',                                                 do: 'Cut to laptop. Click <strong>🚀 Start Mission</strong>. Camera preview appears.' },
-  { t: 10, phase: 'DEMO 1',   say: '"Teach My Face — the game remembers you."',                                         do: 'Click <strong>🧠 Teach My Face</strong>. Kid looks at lens. Green box locks on. <strong>ENROLLED</strong>.' },
-  { t: 20, phase: 'DEMO 2',   say: '"Lock it, walk away, come back — Unlock!"',                                         do: 'Click <strong>🔒 Lock</strong>. Kid steps out. 5s passes → auto-lock. Returns → <strong>🔓 Unlock!</strong> → <strong>MATCH</strong>.' },
-  { t: 30, phase: 'PAYOFF',   say: '"XP climbs. Voice commands. Optional micro:bit goes live."',                        do: 'XP counter ticks up. Say <strong>"Unlock"</strong> aloud. Micro:bit buzzer chirps, LEDs react on <strong>P0 HIGH</strong>.' },
-  { t: 40, phase: 'STYLE',    say: '"Tunable threshold, two math modes, PIN-gated Test Mode. Installs as a PWA."',      do: 'Quick glimpse of Test Mode panel: Euclidean / Cosine toggle, frames slider. Tap <strong>Install</strong>.' },
-  { t: 50, phase: 'CTA',      say: '"Link below — Learn, Spot, Play. Teachers and kids welcome."',                      do: 'Face-cam. <strong>Eye contact with the lens</strong>, not the screen.' },
-  { t: 55, phase: 'END',      say: '"Happy questing."',                                                                 do: 'Hold still. Logo + handle overlay freezes. This becomes the <strong>loop frame</strong>.' },
-  { t: 60, phase: 'CUT',      say: 'CUT',                                                                                do: 'Watch playback once. Aim for under 55s. Trim if needed.' },
+  { t: 0,  phase: 'HOOK',     say: '"Your micro:bit becomes a playground — in the browser, in 60 seconds."', do: 'Close-up of the <strong>real board</strong> with the X icon on the LEDs. Your hand holds it.' },
+  { t: 3,  phase: 'CONTEXT',  say: '"One page, one click, paired."',                                         do: 'Cut to laptop. Click <strong>🔗 Connect</strong> → pick board → chip turns <strong>green</strong>.' },
+  { t: 10, phase: 'DEMO 1',   say: '"Sensors live — tilt it, the 3D model tilts too."',                    do: 'Tab <strong>6 · Camera View</strong>. Tilt real board. Virtual mirrors. Both in frame.' },
+  { t: 20, phase: 'DEMO 2',   say: '"Click through the demo — live features run in the browser."',         do: 'Click through the live demo; features run in the browser.' },
+  { t: 30, phase: 'PAYOFF',   say: '"Live graph with record, replay, CSV. A lab in a browser tab."',       do: 'Tab <strong>5 · Graph</strong> → <strong>🎲 Simulate</strong> → hover <strong>⏺ Record</strong> and <strong>📄 CSV</strong>.' },
+  { t: 40, phase: 'STYLE',    say: '"4 themes, 3 languages, works offline, no install, no account."',       do: 'Theme dropdown → <strong>Neon</strong> → <strong>Arctic</strong>. Quick swap.' },
+  { t: 50, phase: 'CTA',      say: '"Link below — lifetime updates, teachers and kids welcome."',           do: 'Face-cam. <strong>Eye contact with the lens</strong>, not the screen.' },
+  { t: 55, phase: 'END',      say: '"Happy hacking."',                                                       do: 'Hold still. Logo + handle overlay freezes. This becomes the <strong>loop frame</strong>.' },
+  { t: 60, phase: 'CUT',      say: 'CUT',                                                                    do: 'Watch playback once. Aim for under 55s. Trim if needed.' },
 ];
 
 const clock = document.getElementById('clock');
@@ -236,7 +255,7 @@ function reset() {
   document.body.classList.add('idle');
   phase.textContent = 'READY';
   say.innerHTML = 'Press <span style="color: var(--accent)">Space</span> to start';
-  doEl.textContent = 'Pre-flight: webcam on · good light · 9:16 phone · face-api models loaded';
+  doEl.textContent = 'Pre-flight: BLE green · Neon theme · 9:16 phone · desk clean';
   clock.textContent = '0:00';
   clock.classList.remove('over');
   bar.style.width = '0%';

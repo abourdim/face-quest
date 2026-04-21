@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- REWRITE PER PRODUCT — DO NOT SHIP AS-IS · TRANSLATE TO ARABIC -->
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8" />
@@ -17,15 +18,22 @@
     --shadow: 0 4px 24px rgba(0,0,0,.5);
     --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
     --sans: 'Tajawal', ui-sans-serif, system-ui, sans-serif;
-    --display: 'Orbitron', system-ui, sans-serif;
+    --display: 'Orbitron', 'Tajawal', system-ui, sans-serif;
   }
   * { box-sizing: border-box; }
-  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.75; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.7; }
   body { max-width: 1080px; margin: 0 auto; padding: 24px 18px 80px; }
   a { color: var(--accent); text-decoration: none; border-bottom: 1px dashed rgba(34,197,94,.4); }
   a:hover { color: var(--accent2); border-bottom-color: var(--accent2); }
 
-  .slate { background: radial-gradient(ellipse at top left, rgba(34,211,238,.14), transparent 60%), linear-gradient(180deg, var(--panel2), var(--panel)); border: 2px solid var(--border); border-radius: 18px; padding: 36px 28px 28px; text-align: center; margin-bottom: 22px; box-shadow: var(--shadow); }
+  .slate {
+    background:
+      radial-gradient(ellipse at top left, rgba(34,211,238,.14), transparent 60%),
+      linear-gradient(180deg, var(--panel2), var(--panel));
+    border: 2px solid var(--border);
+    border-radius: 18px; padding: 36px 28px 28px;
+    text-align: center; margin-bottom: 22px; box-shadow: var(--shadow);
+  }
   .slate-clap { font-size: 56px; line-height: 1; margin-bottom: 8px; filter: drop-shadow(0 0 18px rgba(34,197,94,.5)); }
   .slate h1 { font-family: var(--display); font-size: 2rem; letter-spacing: 1.4px; margin: 6px 0 4px; color: var(--accent); font-weight: 900; }
   .slate h1 span { color: var(--accent2); }
@@ -33,27 +41,44 @@
   .slate .meta { display: flex; justify-content: center; gap: 24px; margin-top: 16px; font-size: .82rem; color: var(--muted); flex-wrap: wrap; }
   .slate .meta b { color: var(--ink); font-weight: 700; }
 
-  .toc { position: sticky; top: 0; z-index: 50; background: rgba(11,18,38,.93); backdrop-filter: blur(8px); border: 1px solid var(--border); border-radius: 14px; padding: 8px 12px; margin-bottom: 22px; display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
-  .toc a { background: rgba(34,197,94,.08); border: 1px solid rgba(34,197,94,.25); border-radius: 10px; padding: 6px 12px; font-size: .86rem; font-weight: 600; border-bottom: none; }
+  .toc {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(11,18,38,.93); backdrop-filter: blur(8px);
+    border: 1px solid var(--border); border-radius: 14px;
+    padding: 8px 12px; margin-bottom: 22px;
+    display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+  }
+  .toc a {
+    background: rgba(34,197,94,.08); border: 1px solid rgba(34,197,94,.25);
+    border-radius: 10px; padding: 6px 12px; font-size: .82rem; font-weight: 600;
+    border-bottom: none;
+  }
   .toc a:hover { background: rgba(34,197,94,.2); color: var(--accent); }
 
-  .slug { font-family: var(--mono); text-transform: uppercase; letter-spacing: 1.3px; font-size: .78rem; color: var(--accent); background: linear-gradient(270deg, rgba(34,197,94,.15), transparent); border-right: 4px solid var(--accent); padding: 8px 12px; margin: 28px 0 14px; border-radius: 8px 0 0 8px; }
+  .slug {
+    font-family: var(--mono); letter-spacing: 1.3px;
+    font-size: .82rem; color: var(--accent);
+    background: linear-gradient(270deg, rgba(34,197,94,.15), transparent);
+    border-right: 4px solid var(--accent); padding: 8px 12px;
+    margin: 28px 0 14px; border-radius: 8px 0 0 8px;
+  }
   h2 { font-family: var(--display); letter-spacing: 1px; color: var(--accent); margin: 8px 0 12px; font-size: 1.5rem; }
-  h3 { color: var(--ink); margin-top: 18px; font-size: 1.15rem; }
+  h3 { color: var(--ink); margin-top: 18px; font-size: 1.12rem; }
   h4 { color: var(--accent2); font-size: 1rem; margin: 14px 0 6px; font-family: var(--display); }
   p { margin: 8px 0; }
 
   .card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; margin: 12px 0; box-shadow: var(--shadow); }
+
   .checklist { list-style: none; padding: 0; margin: 0; }
   .checklist li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px; border-radius: 8px; transition: background .15s; cursor: pointer; user-select: none; }
   .checklist li:hover { background: rgba(34,197,94,.07); }
   .checklist input[type=checkbox] { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--accent); cursor: pointer; }
   .checklist li.checked label { color: var(--muted); text-decoration: line-through; opacity: .65; }
   .checklist label { cursor: pointer; flex: 1; }
-  .where { color: var(--muted); font-size: .85rem; display: block; margin-top: 2px; }
+  .where { color: var(--muted); font-size: .82rem; display: block; margin-top: 2px; }
 
   .scene { background: linear-gradient(180deg, var(--panel2), var(--panel)); border: 1px solid var(--border); border-radius: 14px; margin: 14px 0; overflow: hidden; }
-  .scene-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: rgba(0,0,0,.3); border-bottom: 1px solid var(--border); font-family: var(--mono); font-size: .78rem; letter-spacing: 1.3px; }
+  .scene-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: rgba(0,0,0,.3); border-bottom: 1px solid var(--border); font-family: var(--mono); font-size: .82rem; letter-spacing: 1.3px; }
   .scene-time { color: var(--accent); font-weight: 700; font-size: 1.05rem; }
   .scene-phase { padding: 3px 10px; border-radius: 999px; font-size: .72rem; font-weight: 800; }
   .phase-hook { background: rgba(245,158,11,.18); color: var(--hook); border: 1px solid rgba(245,158,11,.4); }
@@ -63,26 +88,30 @@
   .scene-body { padding: 14px 16px; display: grid; grid-template-columns: 1fr; gap: 12px; }
   .say { background: rgba(0,0,0,.3); border-right: 3px solid var(--accent); border-radius: 10px 0 0 10px; padding: 12px 14px; }
   .say-label { font-family: var(--mono); font-size: .72rem; letter-spacing: 1.4px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
-  .do { background: rgba(34,211,238,.08); border-right: 3px solid var(--accent2); border-radius: 10px 0 0 10px; padding: 12px 14px; font-family: var(--sans); font-size: .95rem; color: var(--ink); }
+  .do { background: rgba(34,211,238,.08); border-right: 3px solid var(--accent2); border-radius: 10px 0 0 10px; padding: 12px 14px; font-family: var(--sans); font-size: .92rem; color: var(--ink); }
   .do-label { font-size: .72rem; letter-spacing: 1.4px; color: var(--accent2); font-weight: 700; margin-bottom: 6px; }
 
-  .copybox { position: relative; background: #050b18; border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px 12px 60px; font-size: .92rem; color: var(--accent); white-space: pre-wrap; margin: 8px 0; direction: rtl; text-align: right; }
+  .copybox { position: relative; background: #050b18; border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px 12px 54px; font-family: var(--sans); font-size: .95rem; color: var(--accent); white-space: pre-wrap; margin: 8px 0; }
   .copybtn { position: absolute; top: 6px; left: 6px; background: var(--accent); color: #05140a; border: none; border-radius: 6px; padding: 4px 10px; font-size: .72rem; font-weight: 800; cursor: pointer; font-family: var(--display); letter-spacing: .5px; }
   .copybtn:hover { background: var(--accent2); color: #03141a; }
 
   table { width: 100%; border-collapse: collapse; margin: 12px 0; }
   th, td { padding: 9px 12px; border-bottom: 1px solid var(--border); text-align: right; font-size: .95rem; }
-  th { color: var(--accent2); font-family: var(--display); font-size: .82rem; text-transform: uppercase; letter-spacing: .8px; }
+  th { color: var(--accent2); font-family: var(--display); font-size: .82rem; letter-spacing: .8px; }
   tr:hover td { background: rgba(34,197,94,.04); }
 
   code { background: rgba(34,197,94,.12); color: var(--accent); padding: 2px 6px; border-radius: 4px; font-family: var(--mono); font-size: .88em; direction: ltr; display: inline-block; }
-  kbd { background: var(--panel); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-family: var(--mono); font-size: .82em; color: var(--accent); }
+  kbd { background: var(--panel); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-family: var(--mono); font-size: .82em; color: var(--accent); direction: ltr; display: inline-block; }
 
   .pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
-  .pill { background: rgba(34,211,238,.1); border: 1px solid rgba(34,211,238,.3); color: var(--accent2); padding: 4px 10px; border-radius: 999px; font-size: .82rem; font-weight: 600; }
+  .pill { background: rgba(34,211,238,.1); border: 1px solid rgba(34,211,238,.3); color: var(--accent2); padding: 4px 10px; border-radius: 999px; font-size: .85rem; font-weight: 600; font-family: var(--sans); }
+
+  pre { direction: ltr; text-align: left; }
+
+  @media (max-width: 640px) { body { padding: 14px 10px; } .slate h1 { font-size: 1.5rem; } h2 { font-size: 1.2rem; } }
 
   .lang-strip { display: flex; justify-content: center; gap: 8px; margin: 0 0 14px; font-family: var(--mono); font-size: .78rem; }
-  .lang-strip a { background: rgba(34,211,238,.08); border: 1px solid rgba(34,211,238,.28); border-radius: 8px; padding: 4px 12px; color: var(--accent2); text-transform: uppercase; letter-spacing: 1.2px; font-weight: 700; border-bottom: 1px solid rgba(34,211,238,.28); }
+  .lang-strip a { background: rgba(34,211,238,.08); border: 1px solid rgba(34,211,238,.28); border-radius: 8px; padding: 4px 12px; color: var(--accent2); letter-spacing: 1.2px; font-weight: 700; border-bottom: 1px solid rgba(34,211,238,.28); }
   .lang-strip a.active { background: rgba(34,197,94,.18); border-color: var(--accent); color: var(--accent); }
   .lang-strip a:hover { background: rgba(34,211,238,.22); color: var(--accent2); }
 </style>
@@ -97,232 +126,231 @@
 
 <div class="slate">
   <div class="slate-clap">🎬</div>
-  <div class="tag">— دليل Etsy · v1.0.0 —</div>
-  <h1>Face <span>Quest</span></h1>
-  <div class="tag">عرض الإعلان في دقيقة · مقتطفات جاهزة للنسخ</div>
+  <div class="tag">— دليل Etsy · الإصدار 1.0.2 —</div>
+  <h1>micro:bit <span>Playground</span></h1>
+  <div class="tag">عرض المنتج في دقيقة واحدة · مقتطفات جاهزة للنسخ</div>
   <div class="meta"><span><b>الصيغة:</b> عمودي 9:16</span><span><b>المدة:</b> ≤ 60 ثانية</span><span><b>الهدف:</b> تحويل المتصفحين إلى مشترين</span></div>
 </div>
 
 <div class="toc">
   <a href="#preflight">✅ التحضير</a>
   <a href="#arc">🎬 قوس 60 ثانية</a>
-  <a href="#script">📜 السيناريو</a>
+  <a href="#script">📜 النص</a>
   <a href="#listing">🛒 نص الإعلان</a>
-  <a href="#tags">🏷 الكلمات</a>
+  <a href="#tags">🏷 الوسوم</a>
   <a href="#images">📸 الصور</a>
   <a href="#mistakes">⚠️ الأخطاء</a>
 </div>
 
-<div class="slug" id="preflight">SLUG — قائمة التحضير · مرة واحدة لكل تصوير</div>
+<!-- ═══════════ التحضير ═══════════ -->
+<div class="slug" id="preflight">قائمة التحقق قبل التصوير · مرة واحدة لكل جلسة</div>
 <h2>قبل الضغط على تسجيل</h2>
 <div class="card">
   <ul class="checklist" onclick="var li=event.target.closest('li');if(li)li.classList.toggle('checked')">
-    <li><input type="checkbox"><label>كاميرا الحاسوب نظيفة، إضاءة جيدة من الأمام<span class="where">تجنّب الإضاءة الخلفية &mdash; الكاشف يفقد الوجوه أمام النوافذ</span></label></li>
-    <li><input type="checkbox"><label>Chrome أو Edge مفتوح، المجلد يُقدَّم عبر <code>python3 -m http.server 8012</code><span class="where">Safari / Firefox / iOS لن تعمل &mdash; لا Web Bluetooth، و getUserMedia حساس</span></label></li>
-    <li><input type="checkbox"><label>Face Quest محمَّل، تم النقر على Start Mission، الماسح الضوئي للوجه شغّال<span class="where">تأكّد أن البطاقة «Camera: ON» خضراء</span></label></li>
-    <li><input type="checkbox"><label>التسجيل السابق <strong>ممسوح</strong> &mdash; انقر 🧹 Reset Face<span class="where">حتى تُظهر خطوة Teach تجربة أوّل مرة حقيقية</span></label></li>
-    <li><input type="checkbox"><label>micro:bit V2 يعمل، وبرنامج MakeCode BLE UART مثبَّت (اختياري لكن مُستحسَن)<span class="where">يُظهر رمز ✓ / ✗ عند MATCH / NO</span></label></li>
-    <li><input type="checkbox"><label>العتبة Threshold مضبوطة على <strong>0.60</strong>، و Verify frames على 12<span class="where">القيم الافتراضية تعطي أنظف عرض</span></label></li>
-    <li><input type="checkbox"><label>الهاتف في وضع 9:16 على حامل، مُضاء من الأمام</label></li>
-    <li><input type="checkbox"><label>المكتب فارغ &mdash; فقط الحاسوب و (اختياريًا) لوحة micro:bit في الكادر</label></li>
-    <li><input type="checkbox"><label>قراءة السيناريو بصوت عالٍ مرّة واحدة &mdash; مدّته أقلّ من 55 ثانية</label></li>
+    <li><input type="checkbox"><label>جهاز micro:bit V2 يعمل ويعرض أيقونة <kbd>X</kbd><span class="where">إن لم يكن كذلك ← أعد تحميل <code>makecode.ts</code></span></label></li>
+    <li><input type="checkbox"><label>Chrome أو Edge مفتوح، وملف <code>index.html</code> محمَّل<span class="where">Safari وFirefox وiOS لن تعمل</span></label></li>
+    <li><input type="checkbox"><label>BLE متصل — شارة الحالة <strong>خضراء</strong><span class="where">اضغط 🔗 اتصال، ثم اختر BBC micro:bit من النافذة</span></label></li>
+    <li><input type="checkbox"><label>تم اختيار السمة — <strong>Neon</strong> تبدو الأفضل أمام الكاميرا<span class="where">الرأس ← قائمة رولر الطلاء</span></label></li>
+    <li><input type="checkbox"><label>المحرِّك موصول بـ P1 (عند عرض الذراع الروبوتية أو العربة)</label></li>
+    <li><input type="checkbox"><label>علامة تبويب Camera View مفتوحة، مع اختيار العربة أو الذراع<span class="where">علامة التبويب 6 ← قائمة النماذج</span></label></li>
+    <li><input type="checkbox"><label>الهاتف بوضع 9:16 على ترايبود، مضاء من الأمام</label></li>
+    <li><input type="checkbox"><label>المكتب مرتَّب — اللوحة وقطعة واحدة فقط في الإطار</label></li>
+    <li><input type="checkbox"><label>قراءة النص بصوت عالٍ مرة واحدة — بزمن أقل من 55 ثانية</label></li>
   </ul>
 </div>
 
-<div class="slug" id="arc">SLUG — قوس الـ 60 ثانية</div>
+<!-- ═══════════ القوس ═══════════ -->
+<div class="slug" id="arc">قوس الستين ثانية</div>
 <h2>البنية</h2>
 <div class="card">
-  <pre style="color:var(--accent2);font-family:var(--mono);font-size:.95rem;line-height:1.7;margin:0;direction:ltr;text-align:left">
- 0–3 s   HOOK       "In 60 seconds I'll teach a browser my face."
- 3–10 s  CONTEXT    Start Mission → camera on → detector boxes appear.
-10–35 s  DEMO       Teach My Face → Unlock → friend swaps → NO MATCH.
-35–50 s  PAYOFF     Optional: micro:bit shows ✓ on match, ✗ on no-match.
-50–55 s  CTA        "Full kit, lesson plan, stickers — link below."
-55–60 s  END FRAME  Logo + handle held still for the loop.</pre>
+  <pre style="color:var(--accent2);font-family:var(--mono);font-size:.9rem;line-height:1.7;margin:0">
+ 0–3 s   HOOK        «Watch what this micro:bit does in 60 seconds.»
+ 3–10 s  CONTEXT     Board on-screen, X icon → status turns green.
+10–35 s  DEMO        Demo the core features. Highlight main benefits.
+35–50 s  PAYOFF      Zoom on live graph + 3D model mirroring real board.
+50–55 s  CTA         «Full kit in my shop — link below.»
+55–60 s  END FRAME   Logo + handle frozen for the loop preview.</pre>
 </div>
 
-<div class="slug" id="script">SLUG — السيناريو مشهدًا بمشهد</div>
-<h2>القالب: «علِّم التطبيق وجهك»</h2>
+<!-- ═══════════ النص ═══════════ -->
+<div class="slug" id="script">النص مشهدًا مشهدًا</div>
+<h2>القالب: «الـ micro:bit يصبح ساحة لعب»</h2>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:00–00:03</span><span class="scene-phase phase-hook">الخطّاف</span></div>
+  <div class="scene-head"><span class="scene-time">00:00–00:03</span><span class="scene-phase phase-hook">الخطاف</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قُل</div>«في 60 ثانية سأعلِّم المتصفّح وجهي &mdash; ولن تغادر أي صورة حاسوبي.»</div>
-    <div class="do"><div class="do-label">🎬 افعل</div>لقطة قريبة على بطل Face Quest: لوحة «FACE SCANNER» الخضراء، وإطار الوجه ينبض فوق وجهك.</div>
+    <div class="say"><div class="say-label">🎙 قل</div>«جهاز micro:bit لديك هو ساحة لعب. بدون تثبيت، بدون حساب — فقط متصفح.»</div>
+    <div class="do"><div class="do-label">🎬 افعل</div>أمسك اللوحة في الإطار. لقطة مقربة لأيقونة X تنبض على شبكة LED.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:03–00:10</span><span class="scene-phase phase-demo">السياق</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قُل</div>«أفتح مجلّدًا في Chrome. أنقر Start Mission. ثلاثة نماذج ذكاء اصطناعي صغيرة تُحمَّل من القرص.»</div>
-    <div class="do"><div class="do-label">🎬 افعل</div>انقر <strong>🚀 Start Mission</strong>. تُفتَح الكاميرا. يعرض Quest Log: detector loaded / landmarks loaded / recognition loaded.</div>
+    <div class="say"><div class="say-label">🎙 قل</div>«افتح الصفحة، اضغط اتصال — وهذا كل شيء. حساسات مباشرة، LED مباشر، محركات مباشرة.»</div>
+    <div class="do"><div class="do-label">🎬 افعل</div>تسجيل شاشة: اضغط على <strong>🔗 الاتصال بـ micro:bit</strong>، اختر اللوحة، شارة الحالة تصبح خضراء.</div>
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:10–00:22</span><span class="scene-phase phase-demo">العرض · TEACH</span></div>
+  <div class="scene-head"><span class="scene-time">00:10–00:25</span><span class="scene-phase phase-demo">العرض · الحساسات + 3D</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قُل</div>«أُوسِّط وجهي. أنقر Teach. يلتقط التطبيق عيّنات واضحة ويحفظ سلسلة أرقام &mdash; ليست صورة.»</div>
-    <div class="do"><div class="do-label">🎬 افعل</div>انقر <strong>🧠 Teach My Face</strong>. يُظهر السجلّ العيّنات المجموعة. يزداد عدّاد XP. انتقل إلى IndexedDB في DevTools: يظهر واصف (أرقام) وليس صورة.</div>
+    <div class="say"><div class="say-label">🎙 قل</div>«أملها — فيميل النموذج ثلاثي الأبعاد على الشاشة أيضًا. المس الشعار — فيستجيب.»</div>
+    <div class="do"><div class="do-label">🎬 افعل</div>علامة التبويب <kbd>6</kbd> ← Camera View. أمل اللوحة الحقيقية ← فيتبعها النموذج الافتراضي. اليد تحمل micro:bit بجانب الشاشة للانقسام.</div>
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:22–00:35</span><span class="scene-phase phase-demo">العرض · UNLOCK</span></div>
+  <div class="scene-head"><span class="scene-time">00:25–00:40</span><span class="scene-phase phase-demo">العرض · المحركات + يد التحكم</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قُل</div>«أبتعد وأقترب. Unlock &mdash; MATCH. يدخل صديق مكاني. NO MATCH.»</div>
-    <div class="do"><div class="do-label">🎬 افعل</div>انقر <strong>🔓 Unlock!</strong> &larr; «MATCH ✅». يدخل الصديق إلى الكادر، انقر Unlock &larr; «NO MATCH ❌». اعرض منزلقة Threshold تتحرّك.</div>
+    <div class="say"><div class="say-label">🎙 قل</div>«حرّك محركًا من المتصفح. قُد روبوتًا بيد التحكم.»</div>
+    <div class="do"><div class="do-label">🎬 افعل</div>عرض الميزات الأساسية.
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:35–00:50</span><span class="scene-phase phase-payoff">المكافأة · ROBOT BUDDY</span></div>
+  <div class="scene-head"><span class="scene-time">00:40–00:50</span><span class="scene-phase phase-payoff">المكافأة · المخطط</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قُل</div>«أُقرِن micro:bit V2 فيُضيء MATCH شبكة LED حقيقية. عرض مثالي داخل القسم.»</div>
-    <div class="do"><div class="do-label">🎬 افعل</div>انقر <strong>🤝 Connect</strong>، اختر اللوحة. Unlock &larr; تعرض micro:bit ✓ ويصبح P0 = HIGH. لقطة قريبة على اللوحة.</div>
+    <div class="say"><div class="say-label">🎙 قل</div>«سجّل، أعِد التشغيل، صدِّر CSV. إنه مختبر علوم كامل داخل علامة تبويب.»</div>
+    <div class="do"><div class="do-label">🎬 افعل</div>علامة التبويب <kbd>5</kbd> ← 🎲 محاكاة ← يرقص المخطط الحي. زُم على أزرار التسجيل/CSV.</div>
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:50–00:60</span><span class="scene-phase phase-cta">الدعوة + إطار الإغلاق</span></div>
+  <div class="scene-head"><span class="scene-time">00:50–00:60</span><span class="scene-phase phase-cta">CTA + إطار الختام</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قُل</div>«الحزمة الكاملة، خطّة الدرس، 30 ملصقًا &mdash; الرابط في الوصف. اذكرني عند استخدامه في القسم.»</div>
-    <div class="do"><div class="do-label">🎬 افعل</div>انتقل إلى شعار Face Quest + الاسم فوق الصورة. ثبِّت 3 ثوانٍ &mdash; تصبح صورة التكرار.</div>
+    <div class="say"><div class="say-label">🎙 قل</div>«طقم كامل، تحديثات مدى الحياة — الرابط في الوصف. أيها المعلمون، اذكروني عند استخدامه.»</div>
+    <div class="do"><div class="do-label">🎬 افعل</div>انتقل إلى طبقة الشعار + المعرّف. ثبّت 3 ثوانٍ بلا حركة — لتصبح إطار التكرار.</div>
   </div>
 </div>
 
-<div class="slug" id="listing">SLUG — نصّ الإعلان جاهز للنسخ</div>
-<h2>عنوان Etsy (140 حرفًا كحدّ أقصى)</h2>
-<div class="copybox">Face Quest — مختبر تعرّف على الوجوه داخل المتصفّح للأطفال والصفوف · كاميرا ويب + micro:bit · بدون سحابة · Chrome / Edge<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
+<!-- ═══════════ نص الإعلان ═══════════ -->
+<div class="slug" id="listing">نص إعلان جاهز للنسخ</div>
+<h2>عنوان Etsy (140 حرفًا كحد أقصى)</h2>
+<div class="copybox">Face Quest — لوحة تحكم BLE للمعلمين والأطفال · حساسات · محركات · مخطط حي · نماذج 3D · بلا تثبيت · Chrome / Edge<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
 
-<h2>الوصف القصير (أوّل 160 حرفًا &mdash; يظهر في البحث)</h2>
-<div class="copybox">مختبر تعرّف على الوجوه يعمل داخل المتصفّح، للأطفال والصفوف. ثلاثة نماذج ذكاء اصطناعي محلّية &mdash; لا تُحفظ أيّ صور. كاميرا ويب + micro:bit V2 اختياري.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
+<h2>الوصف المختصر (أول 160 حرفًا — تظهر في البحث)</h2>
+<div class="copybox">لوحة تحكم BLE داخل المتصفح للوحة webcam + BBC micro:bit V2. حساسات ومحركات ومخططات حية ونماذج ثلاثية الأبعاد ويد تحكم — كلها من Chrome. بلا تثبيت وبلا حساب.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
 
 <h2>الوصف الكامل</h2>
-<div class="copybox">🧠 Face Quest &mdash; مختبر تعرّف على الوجوه يعمل داخل المتصفّح للأطفال والصفوف وعشّاق الميكِر.
+<div class="copybox">🎮 Face Quest — لوحة تحكم BLE تعمل داخل المتصفح للوحة webcam + BBC micro:bit V2.
 
-افتح ملف HTML واحدًا في Chrome أو Edge، اسمح بالكاميرا، وعلّم التطبيق وجهك. ثلاثة نماذج ذكاء اصطناعي صغيرة تعمل بالكامل على حاسوبك &mdash; لا تُحفظ أيّ صور، لا سحابة، لا حساب.
+افتح ملف HTML واحدًا في Chrome أو Edge، واقترن عبر Bluetooth، وافتح 8 علامات تبويب من المرح التعليمي (STEM) التفاعلي — بلا تثبيت، بلا حساب، بلا خادم خلفي، بلا تتبع.
 
-ماذا تحصل
-• 📷 ماسح ضوئي للوجه مباشر مع مرآة، وتبديل كاميرا، وتأثير خطّ المسح
-• 🧠 «Teach My Face»: تسجيل 1:1 (عيّنات واضحة، واصف من 128 رقمًا)
-• 🔓 «Unlock»: حلقة تحقّق MATCH / NO MATCH + تحفيز XP
-• 📐 عتبة قابلة للضبط (إقليدية أو جيبية)، كاشف SSD أو Tiny
-• 🔒 قفل تلقائي بعد ثوانٍ دون وجه في الإطار
-• 🔑 وضع اختبار محمي برمز PIN من 4 أرقام للعروض المستمرّة
-• 🎤 أوامر صوتية ("Start", "Teach", "Unlock", "Lock", "Reset") + 🔊 ردّ منطوق
-• 🤖 وصلة BLE UART إلى BBC micro:bit V2 &mdash; MATCH / NO / ENROLLED / LOCK / TEST
-• 🧾 وحدة Quest Log مختومة بالوقت وملوّنة
-• 📱 PWA قابل للتثبيت &mdash; يعمل دون اتّصال بعد التحميل الأوّل
+ما ستحصل عليه
+• 🎛 شبكة LED + أيقونات جاهزة + نص متحرك
+• 📡 حساسات مباشرة: الحرارة، الإضاءة، الصوت، مقياس التسارع، البوصلة، اللمس
+• ⚙️ محركان (P1 + P2) مع منزلقات ومؤشرات وضبط وأزرار إيقاف
+• 🎮 يد تحكم D-pad للروبوتات والألعاب
+• 📈 مخطط حي (face-api.js) — تسجيل وإعادة تشغيل وتعليقات وتصدير PNG + CSV
+• 🎲 5 نماذج ثلاثية الأبعاد تفاعلية (Three.js): micro:bit، العربة، الذراع، التوازن، الطقس
+• 🎨 4 سمات (Stealth · Neon · Arctic · Blaze) + 3 لغات (EN · FR · AR مع دعم RTL كامل)
+• 📱 PWA — قابل للتثبيت ويعمل بدون إنترنت
+• 👶 وضع المبتدئ + 🧙 وضع الخبير
 
-محتوى التنزيل
-• index.html و app.js و styles.css &mdash; تطبيق Face Quest Lab كاملاً
-• face-api.min.js + /models &mdash; الأدمغة الذكيّة الثلاثة مضمَّنة
-• ble_microbit.js + microbit.ts &mdash; برنامج Robot Buddy لـ MakeCode
-• README.md &mdash; نظرة عامّة مبسَّطة للأطفال
-• USERGUIDE.html و .md &mdash; دليل إعداد كامل + استكشاف الأخطاء
-• قابلة للطباعة: بطاقة بدء A4، دليل أزرار A4، ملصق صفّي A3، خطّة درس 45 دقيقة، 30 ملصقًا
-• LICENSE &mdash; ترخيص شخصي / صفّي مستخدم واحد
+محتويات التنزيل
+• index.html — التطبيق الكامل
+• makecode.ts — برنامج micro:bit الثابت (تُحمَّل مرة واحدة من MakeCode)
+• SETUP.md — بداية سريعة في 5 دقائق
+• docs/ — دليل مصور، ومرجع سريع، وأسئلة شائعة، ودليل Etsy
+• LICENSE — رخصة مستخدم وحيد للاستخدام الشخصي / الصفي
 
-المتطلّبات
-• كاميرا ويب (داخلية أو USB)
-• Chrome أو Edge على سطح المكتب (getUserMedia + Web Bluetooth)
-• طريقة لتقديم المجلّد عبر HTTP محلّيًا (الدليل يعرض python3 -m http.server)
-• اختياري: BBC micro:bit V2 لعرض Robot Buddy
+المتطلبات
+• webcam + BBC micro:bit V2 (V1 يعمل لكن بدون حساس صوت)
+• Chrome أو Edge على سطح المكتب (أو Chrome على أندرويد)
+• تفعيل Bluetooth
+• HTTPS أو file:// — النقر المزدوج على HTML يكفي
 
-لمن هذا؟
-المعلّمون الذين يُدرِّسون الثقافة الرقميّة والذكاء الاصطناعي · العائلات التي تُعلِّم منزليًا · أندية الروبوتيكس والبرمجة · صانعون يُجرِّبون التعرّف داخل الجهاز · أطفال فضوليّون من سنّ 9.
+لمن هو موجَّه
+المعلمون الذين يديرون ورش STEM · الأسر التي تدرّس منزليًا · نوادي الروبوتات · صانعو النماذج الأولية لمشاريع BLE · كل مهتم بـ micro:bit.
 
-الخصوصيّة أوّلاً
-لا تُحفظ أيّ صورة. face-api.js يعمل داخل متصفّحك؛ يعيش واصف من 128 رقمًا فقط في IndexedDB، ويمكنك مسحه بـ Reset Face. لا حساب، لا سحابة، لا تحليل، أبدًا.
+الخصوصية أولًا
+لا شيء يغادر جهازك. بلا تتبع، بلا تسجيل دخول، بلا سحابة. جميع المعايرات والتسجيلات والإعدادات المسبقة تبقى في localStorage للمتصفح وعلى قرصك.
 
 تحديثات مدى الحياة
-كلّ إصدار يصدُر من هذا الإعلان ملكك إلى الأبد. أعد تنزيل آخر ZIP من مشترياتك في Etsy متى شئت.
+كل إصدار يُطرح من هذا الإعلان هو ملكك للأبد. أعد تنزيل أحدث ZIP في أي وقت من صفحة مشترياتك في Etsy.
 
-قرصنة ممتعة! 🧠📷🔓<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
+قرصنة سعيدة! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
 
-<h2>مستويات السعر</h2>
+<h2>فئات الأسعار</h2>
 <table>
-  <tr><th>المستوى</th><th>لمن</th><th>السعر (USD)</th></tr>
-  <tr><td>إطلاق / early-bird</td><td>أوّل 100 مشترٍ</td><td><code>$14.99</code></td></tr>
-  <tr><td>قياسي مستخدم واحد</td><td>معلّم / عائلة / صانع</td><td><code>$19.99</code></td></tr>
-  <tr><td>حزمة (كلّ الإضافات)</td><td>مستخدم واحد + جميع القابلات للطباعة + مجموعة الدروس</td><td><code>$34.99</code></td></tr>
-  <tr><td>Tripwire</td><td>بطاقة بدء فقط، لجذب العملاء الأوائل</td><td><code>$5</code></td></tr>
-  <tr><td>موقع / صفّي</td><td>مدرسة واحدة، طلاّب غير محدودين</td><td><code>$249</code></td></tr>
-  <tr><td>منطقة / OEM</td><td>مواقع متعدّدة &mdash; راسلني عبر طلب Etsy</td><td><code>$599+</code></td></tr>
+  <tr><th>الفئة</th><th>لمن</th><th>السعر</th></tr>
+  <tr><td>مستخدم وحيد</td><td>معلم / عائلة / صانع واحد</td><td><code>{{PRICE}}</code></td></tr>
+  <tr><td>صف / موقع</td><td>حتى 30 معلمًا في مدرسة واحدة، طلاب بلا حدود</td><td><code>{{PRICE}}</code></td></tr>
+  <tr><td>منطقة / OEM</td><td>مواقع متعددة — تواصل عبر طلب Etsy</td><td>حسب الطلب</td></tr>
 </table>
 
-<h2>عرض الإطلاق</h2>
-<p>شارك رمز <code>QUESTLAUNCH</code> في يوم الإطلاق &mdash; مستخدم واحد بـ <code>$8</code> خلال أوّل 48 ساعة.</p>
-
-<div class="slug" id="tags">SLUG — الكلمات المفتاحيّة + المواد</div>
-<h2>13 وسمًا على Etsy (20 حرفًا لكل وسم)</h2>
+<!-- ═══════════ الوسوم ═══════════ -->
+<div class="slug" id="tags">الوسوم والمواد</div>
+<h2>13 وسمًا لـ Etsy (20 حرفًا لكل وسم)</h2>
 <div class="pills">
-  <span class="pill">تعرّف على الوجوه</span>
-  <span class="pill">ذكاء اصطناعي</span>
-  <span class="pill">STEM</span>
-  <span class="pill">تعليم</span>
   <span class="pill">micro:bit</span>
-  <span class="pill">مشروع كاميرا</span>
-  <span class="pill">نادي برمجة</span>
-  <span class="pill">موارد معلّم</span>
-  <span class="pill">قسم مدرسي</span>
+  <span class="pill">BLE</span>
+  <span class="pill">bluetooth</span>
+  <span class="pill">تعليم</span>
+  <span class="pill">STEM</span>
+  <span class="pill">روبوتات</span>
+  <span class="pill">برمجة أطفال</span>
+  <span class="pill">مورد للمعلم</span>
+  <span class="pill">حساسات</span>
+  <span class="pill">محركات</span>
+  <span class="pill">غرفة صف</span>
   <span class="pill">تعليم منزلي</span>
-  <span class="pill">خصوصيّة</span>
-  <span class="pill">تطبيق متصفّح</span>
-  <span class="pill">فضاء صُنّاع</span>
+  <span class="pill">ميكرسبيس</span>
 </div>
 
-<h2>المواد (ما يُشغِّل التطبيق)</h2>
+<h2>المواد (ما الذي يشغّله)</h2>
 <div class="pills">
   <span class="pill">HTML5</span>
   <span class="pill">JavaScript</span>
-  <span class="pill">face-api.js</span>
   <span class="pill">Web Bluetooth</span>
-  <span class="pill">IndexedDB</span>
+  <span class="pill">face-api.js</span>
+  <span class="pill">Three.js</span>
   <span class="pill">PWA</span>
   <span class="pill">MakeCode</span>
   <span class="pill">TypeScript</span>
 </div>
 
 <h2>كلمات SEO</h2>
-<p><code>face recognition in browser</code> · <code>no photos saved</code> · <code>privacy-first AI</code> · <code>offline capable</code> · <code>web bluetooth micro:bit</code> · <code>AI literacy lesson</code> · <code>kids coding</code> · <code>face-api.js classroom</code></p>
+<p><code>browser-based</code> · <code>no-install</code> · <code>privacy-first</code> · <code>offline-capable</code> · <code>web bluetooth</code> · <code>teacher resource</code> · <code>STEM workshop</code> · <code>micro:bit V2</code></p>
 
-<div class="slug" id="images">SLUG — ترتيب الصور السبع</div>
-<h2>تسلسل الصور (Etsy يعرض 1 و 2 بالحجم الأكبر)</h2>
+<!-- ═══════════ الصور ═══════════ -->
+<div class="slug" id="images">ترتيب الصور السبع للإعلان</div>
+<h2>تسلسل الصور (Etsy يعرض 1 و 2 بأكبر حجم)</h2>
 <div class="card">
   <ol style="padding-right:22px;line-height:2">
-    <li><strong>الصورة الرئيسيّة</strong> &mdash; ماسح Face Quest مفتوح، إطار + نقاط المعالم على وجهك، زرّ «🧠 Teach My Face» مُضاء. عنوان بخط Orbitron.</li>
-    <li><strong>تدفّق Teach / Unlock</strong> &mdash; ثلاث لوحات: Start &larr; Teach &larr; Unlock مع MATCH ✅.</li>
-    <li><strong>لقطة قريبة للعتبة</strong> &mdash; منزلقة على 0.60 مع Quest Log: «MATCH distance 0.42».</li>
-    <li><strong>Robot Buddy</strong> &mdash; micro:bit V2 حقيقي يُظهر ✓ بجانب حاسوب يُشغِّل Face Quest.</li>
-    <li><strong>وعد الخصوصيّة</strong> &mdash; بطاقة من 3 نقاط: «لا صور»، «لا إنترنت»، «لا حساب».</li>
-    <li><strong>حزمة القابلات للطباعة</strong> &mdash; تصوير مسطّح: بطاقة بدء، دليل أزرار، ملصق A3، ورقة ملصقات.</li>
-    <li><strong>بطاقة نصّيّة</strong> &mdash; «ترخيص مستخدم واحد · تحديثات مدى الحياة · Chrome / Edge · كاميرا ويب مطلوبة» على تدرّج داكن.</li>
+    <li><strong>الصورة البطل</strong> — micro:bit حقيقي + لقطة شاشة مقسومة للحاسوب تُظهر النموذج ثلاثي الأبعاد وهو يعكس ميل اللوحة. عنوان بخط Orbitron فوقها.</li>
+    <li><strong>نظرة عامة على الألسنة</strong> — لقطة شبكية لجميع الألسنة الثماني مع رموزها.</li>
+    <li><strong>لقطة مقرَّبة للمخطط</strong> — face-api.js بخطوط ملونة وتعليقات، مع زر تسجيل أحمر متوهج.</li>
+    <li><strong>العربة + الذراع الروبوتية 3D</strong> — لقطة شاشة مقسومة تُظهر نموذجين من بين نماذج Three.js الخمسة.</li>
+    <li><strong>يد تمسك اللوحة</strong> — محرك حقيقي موصول بـ P1، والمنزلقات على الشاشة في الخلفية.</li>
+    <li><strong>عيّنة السمات</strong> — شبكة 2×2: Stealth · Neon · Arctic · Blaze.</li>
+    <li><strong>بطاقة نصية</strong> — «رخصة مستخدم وحيد · تحديثات مدى الحياة · بلا سحابة · Chrome / Edge» على تدرج داكن.</li>
   </ol>
 </div>
 
-<div class="slug" id="mistakes">SLUG — تجنّب هذه الأخطاء</div>
-<h2>الأخطاء الشائعة</h2>
+<!-- ═══════════ الأخطاء ═══════════ -->
+<div class="slug" id="mistakes">تجنَّب ذلك</div>
+<h2>أخطاء شائعة</h2>
 <table>
   <tr><th>❌ لا تفعل</th><th>✅ افعل</th></tr>
-  <tr><td>ابدأ بـ «مرحبًا، أنا…» و 10 ثوانٍ من التعريف</td><td>افتح بإطار الوجه يلتصق بوجهك في أوّل 3 ثوانٍ</td></tr>
-  <tr><td>التصوير بالاتّجاه الأفقي (16:9)</td><td>9:16 عمودي &mdash; Etsy يشغّله تلقائيًا على الموبايل</td></tr>
-  <tr><td>حفظ صورة وجه المشتري أو عرضها</td><td>اعرض الواصف (الأرقام) فقط في DevTools &mdash; يُعزّز وعد الخصوصيّة</td></tr>
-  <tr><td>نسيان الترجمة المكتوبة (Etsy يشغّل بدون صوت)</td><td>أدرج ترجمات: «Teach»، «Unlock»، «MATCH»، «NO MATCH»</td></tr>
-  <tr><td>العرض على Safari / iPhone</td><td>دائمًا على Chrome / Edge سطح المكتب &mdash; غيرهم سيشتري ثم يرجع</td></tr>
-  <tr><td>تخطّي الدعوة إلى التصرّف</td><td>قُل «الرابط في الأسفل» في آخر 5 ثوانٍ في كلّ مرّة</td></tr>
+  <tr><td>ابدأ بـ «مرحبًا، أنا…» مع 10 ثوانٍ من المقدمة</td><td>افتح باللوحة الحقيقية وهي تُميل نموذجًا ثلاثي الأبعاد في أول 3 ثوانٍ</td></tr>
+  <tr><td>التصوير بالوضع الأفقي (16:9)</td><td>عمودي 9:16 — Etsy يشغّل تلقائيًا على الجوال</td></tr>
+  <tr><td>التحدث فوق رسوم متحركة مزدحمة</td><td>اترك الصورة تتنفس لثانية، ثم اشرح</td></tr>
+  <tr><td>نسيان الترجمة (Etsy يشغّل كتم الصوت)</td><td>ادمج الترجمة أو أضف نصًا في كل مشهد</td></tr>
+  <tr><td>عرض iOS / Safari في الفيديو</td><td>اعرض دائمًا على Chrome/Edge — مستخدمو iPhone سيشترون ثم يطلبون استرجاع المبلغ</td></tr>
+  <tr><td>تخطي CTA</td><td>قل «الرابط في الأسفل» في آخر 5 ثوانٍ في كل مرة</td></tr>
 </table>
 
-<div class="slug">SLUG — بطاقة الجيب</div>
-<div class="copybox">قبل  كاميرا نظيفة · Chrome مقدَّم عبر http.server · Reset face · عتبة 0.60 · هاتف 9:16
-تصوير  خطّاف 3 ث · Start → Teach → Unlock match · صديق → no match · micro:bit ✓
-بعد    قصّ إلى 55 ث · ترجمات مدمجة · أوّل إطار = صورة مصغّرة
-نشر    عنوان · وصف 160 حرفًا · 13 وسمًا · 7 صور · مستويات · عرض QUESTLAUNCH</div>
+<!-- ═══════════ بطاقة سريعة ═══════════ -->
+<div class="slug">بطاقة الجيب المرجعية</div>
+<div class="copybox">قبل     V2 يعمل (أيقونة X) · Chrome مفتوح · BLE أخضر · هاتف 9:16
+صوِّر   خطاف في 3 ثوانٍ · إمالة ← انعكاس 3D · محرك يتحرك · محاكاة مخطط · CTA
+بعد     قصّ إلى 55 ثانية · ترجمة مدمجة · أول إطار = المصغَّرة
+أعلن    عنوان · وصف 160 حرفًا · 13 وسمًا · 7 صور · فئات الأسعار</div>
 
-<p style="text-align:center;margin-top:40px;color:var(--muted);font-size:.9rem">
-  Face Quest v1.0.0 &mdash; دليل Etsy في دقيقة · اطبعه A4 · غلِّفه · ضعه بجانب معدّات التصوير
+<p style="text-align:center;margin-top:40px;color:var(--muted);font-size:.85rem">
+  Face Quest v1.0.0 — دليل Etsy في دقيقة · اطبع بحجم A4 · غلّفه · واحتفظ به بجانب معدات التصوير
 </p>
 
 </body>

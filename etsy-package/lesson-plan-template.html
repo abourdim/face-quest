@@ -1,4 +1,22 @@
 <!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════════════════════
+  ⚠️  REWRITE PER PRODUCT — DO NOT SHIP AS-IS
+  ───────────────────────────────────────────────────────────────────────
+  apply-template.mjs only substituted identifiers (Face Quest,
+  v1.0.0, https://abourdim.github.io/face-quest/, etc.). The feature content, steps,
+  shortcuts, and examples below were inherited from the template's
+  source product (face-quest) and WILL BE WRONG for your product
+  unless you rewrite them.
+  
+  Before including this file in a buyer ZIP:
+    1. Delete this banner.
+    2. Rewrite every mention of specific features, shortcuts,
+       tab names, hardware interactions, etc. to match your product.
+    3. Verify with: grep -iE "face scan|chart\.js|3d board|gamepad|
+       face tracker|face match|led matrix|3 modes|sensors tab" this-file.
+  ═══════════════════════════════════════════════════════════════════════
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -78,10 +96,10 @@
 <!-- PAGE 1: Template -->
 <div class="page">
   <div class="header">
-    <div class="header-logo"><span>FQ</span></div>
+    <div class="header-logo"><span>µP</span></div>
     <div class="header-text">
       <h1>Face Quest Lesson Plan</h1>
-      <span>45-Minute STEM &amp; AI Lesson Planner &bull; v1.0.0</span>
+      <span>45-Minute STEM Lesson Planner &bull; v1.0.0</span>
     </div>
   </div>
 
@@ -100,13 +118,14 @@
 
   <div class="section"><div class="dot"></div> Materials &amp; Setup</div>
   <ul class="checklist">
-    <li>Laptop with webcam and Chrome or Edge (1 per student or pair)</li>
-    <li>BBC micro:bit V2 (optional, for the Robot Buddy demo)</li>
-    <li>USB cable or battery pack for the micro:bit</li>
-    <li>Face Quest opened via <code>index.html</code> on a local server</li>
-    <li>Firmware flashed from the provided <code>microbit.ts</code> MakeCode project</li>
-    <li>Printed Quick-Start Card &amp; Controls cheat sheet</li>
-    <li>Classroom agreement on privacy (no photos are saved)</li>
+    <li>webcam + BBC micro:bit V2 (1 per student or per pair)</li>
+    <li>USB cable or battery pack</li>
+    <li>Laptop / tablet with Chrome or Edge (Bluetooth enabled)</li>
+    <li>Face Quest opened via <code>index.html</code></li>
+    <li>Firmware flashed from <code>makecode.ts</code></li>
+    <li>micro:bit V2 (optional)</li>
+    <li>Printed Quick-Start Card &amp; Shortcuts sheet</li>
+    <li>Theme chosen: ________________</li>
   </ul>
 
   <div class="section"><div class="dot"></div> Lesson Timeline (45 min)</div>
@@ -114,7 +133,7 @@
     <div class="trow thead">
       <div class="tcol-time">Time</div>
       <div class="tcol-act">Activity</div>
-      <div class="tcol-tool">Face Quest Step</div>
+      <div class="tcol-tool">Playground Tab</div>
       <div class="tcol-notes">Notes</div>
     </div>
     <div class="trow"><div class="tcol-time"></div><div class="tcol-act"></div><div class="tcol-tool"></div><div class="tcol-notes"></div></div>
@@ -128,9 +147,9 @@
 
   <div class="section"><div class="dot"></div> Wrap-up</div>
   <ul class="checklist">
-    <li>Click Reset Face to clear each student's enrollment</li>
-    <li>Students copy the Quest Log to compare results</li>
-    <li>One-sentence reflection: "Where else does face recognition show up in daily life?"</li>
+    <li>Stop streaming (Space)</li>
+    <li>Save session JSON from Graph tab</li>
+    <li>Students share one observation</li>
     <li>Exit-ticket question</li>
   </ul>
 
@@ -146,50 +165,50 @@
 <!-- PAGE 2: Sample lesson -->
 <div class="page">
   <div class="header">
-    <div class="header-logo"><span>FQ</span></div>
+    <div class="header-logo"><span>µP</span></div>
     <div class="header-text">
-      <h1>Sample Lesson: How Does a Face Become a Password?</h1>
-      <span>Ready-to-teach 45-minute AI intro</span>
+      <h1>Sample Lesson: Hot or Not? The Sensor Detective</h1>
+      <span>Ready-to-teach 45-minute example</span>
     </div>
   </div>
 
   <div class="field-row">
-    <div class="field"><label>Lesson Title</label><div class="input"><span class="sample">How Does a Face Become a Password?</span></div></div>
+    <div class="field"><label>Lesson Title</label><div class="input"><span class="sample">Hot or Not? The Sensor Detective</span></div></div>
     <div class="field" style="width:30%;flex:none;"><label>Duration</label><div class="input"><span class="sample">45 minutes</span></div></div>
   </div>
   <div class="field-row">
     <div class="field"><label>Grade / Age Group</label><div class="input"><span class="sample">Ages 9&ndash;14</span></div></div>
-    <div class="field"><label>Subject</label><div class="input"><span class="sample">AI Literacy / Computing / Ethics</span></div></div>
+    <div class="field"><label>Subject</label><div class="input"><span class="sample">STEM / Physics / Data Literacy</span></div></div>
   </div>
 
   <div class="section"><div class="dot"></div> Learning Objectives</div>
-  <div class="field"><div class="input input-tall"><span class="sample">1. Explain, in plain words, what a face detector, landmarks model, and recognition model each do.<br>2. Enroll and verify their own face using the Face Quest app.<br>3. Describe why the threshold slider changes MATCH / NO MATCH results.<br>4. Discuss one privacy-friendly design choice of the app (everything stays local).</span></div></div>
+  <div class="field"><div class="input input-tall"><span class="sample">1. Pair a micro:bit V2 over Web Bluetooth.<br>2. Read temperature, light, and sound sensors.<br>3. Graph a measurement over time and identify trends.<br>4. Explain a physical cause for an observed spike.</span></div></div>
 
   <div class="section"><div class="dot"></div> Lesson Timeline</div>
   <div class="timeline">
     <div class="trow thead">
       <div class="tcol-time">Time</div>
       <div class="tcol-act">Activity</div>
-      <div class="tcol-tool">Face Quest Step</div>
+      <div class="tcol-tool">Playground</div>
       <div class="tcol-notes">Notes</div>
     </div>
-    <div class="trow"><div class="tcol-time"><span class="sample">0&ndash;5</span></div><div class="tcol-act"><span class="sample">Hook: "How does your phone know it's you?"</span></div><div class="tcol-tool"><span class="sample">Discuss first</span></div><div class="tcol-notes"><span class="sample">Gather ideas on board</span></div></div>
-    <div class="trow"><div class="tcol-time"><span class="sample">5&ndash;10</span></div><div class="tcol-act"><span class="sample">Open index.html, click Start Mission, allow camera</span></div><div class="tcol-tool"><span class="sample">🚀 Start</span></div><div class="tcol-notes"><span class="sample">Watch 3 models load</span></div></div>
-    <div class="trow"><div class="tcol-time"><span class="sample">10&ndash;18</span></div><div class="tcol-act"><span class="sample">Teach My Face &mdash; enroll clean samples</span></div><div class="tcol-tool"><span class="sample">🧠 Teach</span></div><div class="tcol-notes"><span class="sample">Good light, centered</span></div></div>
-    <div class="trow"><div class="tcol-time"><span class="sample">18&ndash;28</span></div><div class="tcol-act"><span class="sample">Unlock + swap with a friend &mdash; predict MATCH / NO</span></div><div class="tcol-tool"><span class="sample">🔓 Unlock</span></div><div class="tcol-notes"><span class="sample">Discuss false positives</span></div></div>
-    <div class="trow"><div class="tcol-time"><span class="sample">28&ndash;35</span></div><div class="tcol-act"><span class="sample">Slide the Threshold; observe when strict vs loose</span></div><div class="tcol-tool"><span class="sample">Threshold knob</span></div><div class="tcol-notes"><span class="sample">Try 0.4 and 0.9</span></div></div>
-    <div class="trow"><div class="tcol-time"><span class="sample">35&ndash;40</span></div><div class="tcol-act"><span class="sample">Optional: pair the micro:bit, watch ✓ / ✗ LEDs</span></div><div class="tcol-tool"><span class="sample">🤝 Connect</span></div><div class="tcol-notes"><span class="sample">MATCH/NO over UART</span></div></div>
-    <div class="trow"><div class="tcol-time"><span class="sample">40&ndash;45</span></div><div class="tcol-act"><span class="sample">Reset Face &bull; discuss privacy &bull; exit ticket</span></div><div class="tcol-tool"><span class="sample">🧹 Reset</span></div><div class="tcol-notes"><span class="sample">Nothing leaves the PC</span></div></div>
+    <div class="trow"><div class="tcol-time"><span class="sample">0&ndash;5</span></div><div class="tcol-act"><span class="sample">Hook: "Can your micro:bit feel a hand on its face?"</span></div><div class="tcol-tool"><span class="sample">LEDs tab</span></div><div class="tcol-notes"><span class="sample">Show heart preset</span></div></div>
+    <div class="trow"><div class="tcol-time"><span class="sample">5&ndash;10</span></div><div class="tcol-act"><span class="sample">Flash firmware &amp; pair board</span></div><div class="tcol-tool"><span class="sample">Connect btn</span></div><div class="tcol-notes"><span class="sample">Help with BLE prompts</span></div></div>
+    <div class="trow"><div class="tcol-time"><span class="sample">10&ndash;18</span></div><div class="tcol-act"><span class="sample">Tour the Camera panel &mdash; name each reading</span></div><div class="tcol-tool"><span class="sample">Sensors (2)</span></div><div class="tcol-notes"><span class="sample">Pause with Space</span></div></div>
+    <div class="trow"><div class="tcol-time"><span class="sample">18&ndash;28</span></div><div class="tcol-act"><span class="sample">Investigate: cover light sensor, cup hands around board</span></div><div class="tcol-tool"><span class="sample">Graph (5)</span></div><div class="tcol-notes"><span class="sample">Press R to record</span></div></div>
+    <div class="trow"><div class="tcol-time"><span class="sample">28&ndash;35</span></div><div class="tcol-act"><span class="sample">Annotate spikes on the graph</span></div><div class="tcol-tool"><span class="sample">Graph + K</span></div><div class="tcol-notes"><span class="sample">Timestamp notes</span></div></div>
+    <div class="trow"><div class="tcol-time"><span class="sample">35&ndash;40</span></div><div class="tcol-act"><span class="sample">Export session JSON, open in next class</span></div><div class="tcol-tool"><span class="sample">Graph &rarr; Export</span></div><div class="tcol-notes"><span class="sample">Save to shared folder</span></div></div>
+    <div class="trow"><div class="tcol-time"><span class="sample">40&ndash;45</span></div><div class="tcol-act"><span class="sample">Share one finding + exit ticket</span></div><div class="tcol-tool"><span class="sample">&mdash;</span></div><div class="tcol-notes"><span class="sample">Peer applause</span></div></div>
   </div>
 
   <div class="callout">
-    <h4>Face Quest features used in this lesson</h4>
+    <h4>Playground features used in this lesson</h4>
     <ul>
-      <li><span class="pill pg">Start Mission</span> loads face-api.js models locally from ./models</li>
-      <li><span class="pill pb">Teach / Unlock</span> 1:1 enrollment and verification with live samples</li>
-      <li><span class="pill py">Threshold &amp; Detector</span> Euclidean / Cosine, SSD (accurate) vs Tiny (fast)</li>
-      <li><span class="pill pg">BLE micro:bit</span> MATCH / NO over UART, P0 HIGH/LOW, ✓ / ✗ icons</li>
-      <li><span class="pill pb">Quest Log</span> timestamped, color-coded events for classroom discussion</li>
+      <li><span class="pill pg">BLE Connect</span> Web Bluetooth pairing with auto-reconnect</li>
+      <li><span class="pill pb">Live Sensors</span> temp, light, sound, accel, face match all at once</li>
+      <li><span class="pill py">face-api.js Graph</span> live rolling plot, fullscreen with F</li>
+      <li><span class="pill pg">Session Recording</span> press R, export as JSON for later analysis</li>
+      <li><span class="pill pb">Simulate Mode</span> great backup if a board fails mid-class</li>
     </ul>
   </div>
 
@@ -201,10 +220,10 @@
       <div class="tcol-tool">Good (2)</div>
       <div class="tcol-notes">Needs Work (1)</div>
     </div>
-    <div class="trow"><div class="tcol-time"><span class="sample">Enrollment</span></div><div class="tcol-act"><span class="sample">Enrolled first try, stable</span></div><div class="tcol-tool"><span class="sample">With 1 retry</span></div><div class="tcol-notes"><span class="sample">Needed help</span></div></div>
-    <div class="trow"><div class="tcol-time"><span class="sample">Naming 3 models</span></div><div class="tcol-act"><span class="sample">All 3 named correctly</span></div><div class="tcol-tool"><span class="sample">2 of 3</span></div><div class="tcol-notes"><span class="sample">&lt; 2 correct</span></div></div>
-    <div class="trow"><div class="tcol-time"><span class="sample">Threshold reasoning</span></div><div class="tcol-act"><span class="sample">Explained strict vs loose</span></div><div class="tcol-tool"><span class="sample">Noticed change</span></div><div class="tcol-notes"><span class="sample">Did not observe</span></div></div>
-    <div class="trow"><div class="tcol-time"><span class="sample">Privacy reflection</span></div><div class="tcol-act"><span class="sample">Named 2 design choices</span></div><div class="tcol-tool"><span class="sample">Named 1</span></div><div class="tcol-notes"><span class="sample">Off-task</span></div></div>
+    <div class="trow"><div class="tcol-time"><span class="sample">BLE pairing</span></div><div class="tcol-act"><span class="sample">Paired independently</span></div><div class="tcol-tool"><span class="sample">With 1 hint</span></div><div class="tcol-notes"><span class="sample">Needed help</span></div></div>
+    <div class="trow"><div class="tcol-time"><span class="sample">Sensor naming</span></div><div class="tcol-act"><span class="sample">Named all 6 correctly</span></div><div class="tcol-tool"><span class="sample">4&ndash;5 correct</span></div><div class="tcol-notes"><span class="sample">&lt; 4 correct</span></div></div>
+    <div class="trow"><div class="tcol-time"><span class="sample">Graph reading</span></div><div class="tcol-act"><span class="sample">Explained spike with cause</span></div><div class="tcol-tool"><span class="sample">Identified spike</span></div><div class="tcol-notes"><span class="sample">Missed spike</span></div></div>
+    <div class="trow"><div class="tcol-time"><span class="sample">Curiosity</span></div><div class="tcol-act"><span class="sample">Tested own hypothesis</span></div><div class="tcol-tool"><span class="sample">Followed guide</span></div><div class="tcol-notes"><span class="sample">Off-task</span></div></div>
   </div>
 
   <div class="footer">
